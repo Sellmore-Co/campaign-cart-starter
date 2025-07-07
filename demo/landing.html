@@ -81,6 +81,8 @@
     </style>
 
 
+
+
   </head>
   <body>
     <div class="page-wrapper">
@@ -224,7 +226,7 @@
                       </div>
                       <div data-next-selector-id="drone-packages" data-next-cart-selector="" data-next-selection-mode="swap" class="os-option">
                         <div class="os-cards__vertical os--gap-m">
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" class="os-card next-selected">
+                          <div data-next-shipping-id="1" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" data-next-await="" class="os-card next-selected">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -241,7 +243,7 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
@@ -268,7 +270,7 @@
                               </div>
                             </div>
                           </div>
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" class="os-card">
+                          <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" data-next-await="" class="os-card">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -285,14 +287,14 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00 + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
                                 <div os-slot="right" class="os-card__secondary-slot">
                                   <div class="os-card__pricing">
                                     <div os-component="price-container" class="os-card__price-container">
-                                      <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">$16.95</div>
+                                      <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">-</div>
                                       <div class="os-card__price os--current"><span data-next-display="package.price">-</span>/ea</div>
                                     </div>
                                     <div os-component="total-container" class="os-card__total-container">
@@ -307,7 +309,7 @@
                             </div>
                             <div os-slot="footer" class="os-card__footer-slot"></div>
                           </div>
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" class="os-card">
+                          <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" data-next-await="" class="os-card">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -324,7 +326,7 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
@@ -359,8 +361,8 @@
                           </div>
                           <div class="os-button__secondary-slot">
                             <div data-next-await="" class="os-button__price-bubble">
-                              <div data-next-display="cart.compareTotal" class="pb-form-price__amount pb--compare">$29.99</div>
-                              <div data-next-display="cart.subtotal" class="pb-form-price__amount">$10.50</div>
+                              <div data-next-display="selection.drone-packages.compareTotal" class="pb-form-price__amount pb--compare">$29.99</div>
+                              <div data-next-display="selection.drone-packages.total" class="pb-form-price__amount">$10.50</div>
                             </div>
                             <div os-slot="icon" class="os-button__icon os--absolutes w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--heroicons" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20">
                                 <path fill="currentColor" fill-rule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clip-rule="evenodd" width="100%" height="100%"></path>
@@ -381,6 +383,7 @@
         </div>
       </section>
     </div>
+
 
 
   </body>

@@ -16,7 +16,7 @@
     <script src="https://campaign-cart-v2.pages.dev/loader.js"></script>
 
     <!-- NEXT Metatags -->
-    <meta name="next-next-url" content="/upsell">
+    <meta name="next-next-url" content="/playground">
 
 
     <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -80,6 +80,7 @@
     </style>
 
 
+
   </head>
   <body>
     <div class="page-wrapper is-styleguide">
@@ -134,7 +135,7 @@
                         <div>Attributes</div>
                       </div>
                     </a>
-                    <a href="#sg-conditional" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <a href="#" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
                       <div class="sidebar_link-text">
                         <div>Conditional Display</div>
                       </div>
@@ -273,7 +274,7 @@
                     <div class="sample-sec">
                       <div data-next-selector-id="drone-packages" data-next-cart-selector="" data-next-selection-mode="swap" class="os-option">
                         <div class="os-cards__vertical os--gap-m">
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" class="os-card next-selected">
+                          <div data-next-shipping-id="1" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" data-next-await="" class="os-card next-selected">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -290,7 +291,7 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
@@ -317,7 +318,7 @@
                               </div>
                             </div>
                           </div>
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" class="os-card">
+                          <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" data-next-await="" class="os-card">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -334,14 +335,14 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00 + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
                                 <div os-slot="right" class="os-card__secondary-slot">
                                   <div class="os-card__pricing">
                                     <div os-component="price-container" class="os-card__price-container">
-                                      <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">$16.95</div>
+                                      <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">-</div>
                                       <div class="os-card__price os--current"><span data-next-display="package.price">-</span>/ea</div>
                                     </div>
                                     <div os-component="total-container" class="os-card__total-container">
@@ -356,7 +357,7 @@
                             </div>
                             <div os-slot="footer" class="os-card__footer-slot"></div>
                           </div>
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" class="os-card">
+                          <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" data-next-await="" class="os-card">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -373,7 +374,7 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
@@ -434,6 +435,207 @@
                       </div>
                     </div>
                   </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm">Selection Display Feature</h1>
+                    <div class="sg_grid-cards">
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">SELECTED PACKAGE</div>
+                        <div data-next-display="selection.drone-packages.name" class="sg__card-value">Title</div>
+                      </div>
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">quantity</div>
+                        <div data-next-display="selection.drone-packages.totalUnits" class="sg__card-value">Title</div>
+                      </div>
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">Price per unit</div>
+                        <div data-next-display="selection.drone-packages.price" class="sg__card-value">$19.99</div>
+                      </div>
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">total</div>
+                        <div data-next-display="selection.drone-packages.total" class="sg__card-value">$19.99</div>
+                      </div>
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">compare total</div>
+                        <div data-next-display="selection.drone-packages.compareTotal" class="sg__card-value os-compare">$19.99</div>
+                      </div>
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">SAVINGS AMOUNT</div>
+                        <div data-next-display="selection.drone-packages.savings" class="sg__card-value">$10</div>
+                      </div>
+                      <div class="sg_grid-item">
+                        <div class="sg__card-title">SAVING PERCENTAGE</div>
+                        <div data-next-display="selection.drone-packages.savingsPercentage" class="sg__card-value">20%</div>
+                      </div>
+                    </div>
+                    <div class="sg_griid-2colsss">
+                      <div class="sg_itemss">
+                        <div class="sg_item-sub">
+                          <div>
+                            <div class="sg_sub-item">Basic Selection Display</div>
+                          </div>
+                          <div data-pb-component="code" class="elevation-code-block">
+                            <div class="code-block__header">
+                              <div class="code-block__header--left">
+                                <div class="code-block__title">Code</div>
+                              </div>
+                              <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                                  <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                                      <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                        <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                        <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="a">
+                                          <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                        </clipPath>
+                                      </defs>
+                                    </svg></div>
+                                  <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                                    </svg></div>
+                                </button></div>
+                            </div>
+                            <div class="code-block__content">
+                              <div class="code-block__content--wrapper cc-flex">
+                                <div data-pb-component="code-area" class="code_piece">
+                                  <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#d4d0ab">&lt;!-- Display current selection values --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.total"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">$35.98</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.name"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">2x Drone</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.unitPrice"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">$17.99</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.savings"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">$22.00</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span></code></pre>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sg_itemss">
+                        <div class="sg_item-sub">
+                          <div>
+                            <div class="sg_sub-item">Conditional Display</div>
+                          </div>
+                          <div data-pb-component="code" class="elevation-code-block">
+                            <div class="code-block__header">
+                              <div class="code-block__header--left">
+                                <div class="code-block__title">Code</div>
+                              </div>
+                              <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                                  <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                                      <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                        <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                        <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="a">
+                                          <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                        </clipPath>
+                                      </defs>
+                                    </svg></div>
+                                  <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                                    </svg></div>
+                                </button></div>
+                            </div>
+                            <div class="code-block__content">
+                              <div class="code-block__content--wrapper cc-flex">
+                                <div data-pb-component="code-area" class="code_piece">
+                                  <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#d4d0ab">&lt;!-- Show/hide based on selection properties --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">div</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-show</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.hasSavings"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span><span class="xml"> You save </span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.savingsPercentage"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">55%</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">!
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">div</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="xml"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span>
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">6</span><span class="xml"></span><span class="xml" style="color:#d4d0ab">&lt;!-- Comparison conditions --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">7</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">div</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-show</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.savings &gt; 20"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="xml"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">8</span> Big savings alert!
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">9</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">div</span><span class="xml" style="color:#ffa07a">&gt;</span></code></pre>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sg_itemss">
+                        <div class="sg_item-sub">
+                          <div>
+                            <div class="sg_sub-item">Calculated Fields</div>
+                          </div>
+                          <div data-pb-component="code" class="elevation-code-block">
+                            <div class="code-block__header">
+                              <div class="code-block__header--left">
+                                <div class="code-block__title">Code</div>
+                              </div>
+                              <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                                  <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                                      <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                        <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                        <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="a">
+                                          <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                        </clipPath>
+                                      </defs>
+                                    </svg></div>
+                                  <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                                    </svg></div>
+                                </button></div>
+                            </div>
+                            <div class="code-block__content">
+                              <div class="code-block__content--wrapper cc-flex">
+                                <div data-pb-component="code-area" class="code_piece">
+                                  <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#d4d0ab">&lt;!-- Mathematical expressions --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.total*0.1"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">$3.60</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml"> </span><span class="xml" style="color:#d4d0ab">&lt;!-- 10% tax --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.total/4"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">$9.00</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml"> </span><span class="xml" style="color:#d4d0ab">&lt;!-- Split 4 ways --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.drone-packages.monthlyPrice"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">$3.00</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml"> </span><span class="xml" style="color:#d4d0ab">&lt;!-- Monthly --&gt;</span></code></pre>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sg_itemss">
+                        <div class="sg_item-sub">
+                          <div>
+                            <div class="sg_sub-item">Multiple Selectors</div>
+                          </div>
+                          <div data-pb-component="code" class="elevation-code-block">
+                            <div class="code-block__header">
+                              <div class="code-block__header--left">
+                                <div class="code-block__title">Code</div>
+                              </div>
+                              <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                                  <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                                      <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                        <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                        <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                                      </g>
+                                      <defs>
+                                        <clipPath id="a">
+                                          <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                        </clipPath>
+                                      </defs>
+                                    </svg></div>
+                                  <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                      <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                                    </svg></div>
+                                </button></div>
+                            </div>
+                            <div class="code-block__content">
+                              <div class="code-block__content--wrapper cc-flex">
+                                <div data-pb-component="code-area" class="code_piece">
+                                  <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#d4d0ab">&lt;!-- Reference different selectors by ID --&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.product-selector.name"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">Premium Drone</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.color-selector.name"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">Midnight Black</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                                      </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">data-next-display</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"selection.size-selector.name"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">Large</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">span</span><span class="xml" style="color:#ffa07a">&gt;</span></code></pre>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="section_cards">
                   <div class="sg_header">
@@ -446,7 +648,7 @@
                     <div class="sample-sec">
                       <div data-next-selector-id="demo-2" data-next-cart-selector="" data-next-selection-mode="select" class="os-option">
                         <div class="os-cards__vertical os--gap-m">
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" class="os-card next-selected">
+                          <div data-next-shipping-id="1" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" data-next-await="" class="os-card next-selected">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -463,7 +665,7 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
@@ -490,7 +692,7 @@
                               </div>
                             </div>
                           </div>
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" class="os-card">
+                          <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" data-next-await="" class="os-card">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -507,14 +709,14 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00 + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
                                 <div os-slot="right" class="os-card__secondary-slot">
                                   <div class="os-card__pricing">
                                     <div os-component="price-container" class="os-card__price-container">
-                                      <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">$16.95</div>
+                                      <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">-</div>
                                       <div class="os-card__price os--current"><span data-next-display="package.price">-</span>/ea</div>
                                     </div>
                                     <div os-component="total-container" class="os-card__total-container">
@@ -529,7 +731,7 @@
                             </div>
                             <div os-slot="footer" class="os-card__footer-slot"></div>
                           </div>
-                          <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" class="os-card">
+                          <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" data-next-await="" class="os-card">
                             <div os-slot="header" class="os-card__header-slot"></div>
                             <div class="os-card__wrapper">
                               <div class="os-card__content os--align-middle">
@@ -546,7 +748,7 @@
                                       </div>
                                     </div>
                                     <div class="os-card__subtitle-wrapper">
-                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                      <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                     </div>
                                   </div>
                                 </div>
@@ -643,6 +845,14 @@
                           <div class="os-button__main-slot">
                             <div class="os-button__text-wrapper">
                               <div id="cta_text" class="os-button__text">Add &amp;&nbsp;Go to Checkout</div>
+                            </div>
+                          </div>
+                        </div>
+                      </button><button data-next-action="add-to-cart" data-next-package-id="2" data-next-quantity="1" data-next-url="/demo/checkout" data-next-clear-cart="true" class="sg_button">
+                        <div os-slot="content" class="button_content">
+                          <div class="os-button__main-slot">
+                            <div class="os-button__text-wrapper">
+                              <div id="cta_text" class="os-button__text">Clear Cart, Add &amp;&nbsp;Go to Checkout</div>
                             </div>
                           </div>
                         </div>
@@ -890,41 +1100,6 @@
                               </button></div>
                           </div>
                           <div class="code-block__content">
-                            <div class="div-block-1579">
-                              <div data-file-extension=".html" data-file-version="html" class="code-block_header-item">
-                                <div class="treemap-icon w-embed"><svg viewBox="0 0 20 20" width="100%" height="100%" focusable="false">
-                                    <path fill="currentColor" d="M12.221 4.956a.75.75 0 0 0-1.442-.412l-3 10.5a.75.75 0 1 0 1.442.412l3-10.5Z"></path>
-                                    <path fill="currentColor" d="M7.03 6.22a.75.75 0 0 1 0 1.06l-2.72 2.72 2.72 2.72a.75.75 0 0 1-1.06 1.06l-3.25-3.25a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z"></path>
-                                    <path fill="currentColor" d="M12.97 13.78a.75.75 0 0 1 0-1.06l2.72-2.72-2.72-2.72a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0Z"></path>
-                                  </svg></div>
-                                <div class="code-block__file">
-                                  <div data-pb-shopify="component" class="tree-font cc-title">index</div>
-                                  <div class="tree-font">.html</div>
-                                </div>
-                              </div>
-                              <div data-file-extension=".html" data-file-version="html" class="code-block_header-item">
-                                <div class="treemap-icon w-embed"><svg viewBox="0 0 20 20" width="100%" height="100%" focusable="false">
-                                    <path fill="currentColor" d="M12.221 4.956a.75.75 0 0 0-1.442-.412l-3 10.5a.75.75 0 1 0 1.442.412l3-10.5Z"></path>
-                                    <path fill="currentColor" d="M7.03 6.22a.75.75 0 0 1 0 1.06l-2.72 2.72 2.72 2.72a.75.75 0 0 1-1.06 1.06l-3.25-3.25a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z"></path>
-                                    <path fill="currentColor" d="M12.97 13.78a.75.75 0 0 1 0-1.06l2.72-2.72-2.72-2.72a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0Z"></path>
-                                  </svg></div>
-                                <div class="code-block__file">
-                                  <div data-pb-shopify="component" class="tree-font cc-title">styles</div>
-                                  <div class="tree-font">.css</div>
-                                </div>
-                              </div>
-                              <div data-file-extension=".html" data-file-version="html" class="code-block_header-item">
-                                <div class="treemap-icon w-embed"><svg viewBox="0 0 20 20" width="100%" height="100%" focusable="false">
-                                    <path fill="currentColor" d="M12.221 4.956a.75.75 0 0 0-1.442-.412l-3 10.5a.75.75 0 1 0 1.442.412l3-10.5Z"></path>
-                                    <path fill="currentColor" d="M7.03 6.22a.75.75 0 0 1 0 1.06l-2.72 2.72 2.72 2.72a.75.75 0 0 1-1.06 1.06l-3.25-3.25a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z"></path>
-                                    <path fill="currentColor" d="M12.97 13.78a.75.75 0 0 1 0-1.06l2.72-2.72-2.72-2.72a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0Z"></path>
-                                  </svg></div>
-                                <div class="code-block__file">
-                                  <div data-pb-shopify="component" class="tree-font cc-title">scripts</div>
-                                  <div class="tree-font">.js</div>
-                                </div>
-                              </div>
-                            </div>
                             <div class="code-block__content--wrapper cc-flex">
                               <div data-pb-component="code-area" class="code_piece">
                                 <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">div</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">class</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"product-container"</span><span class="xml" style="color:#ffa07a">
@@ -1045,41 +1220,6 @@
                               </button></div>
                           </div>
                           <div class="code-block__content">
-                            <div class="div-block-1579">
-                              <div data-file-extension=".html" data-file-version="html" class="code-block_header-item">
-                                <div class="treemap-icon w-embed"><svg viewBox="0 0 20 20" width="100%" height="100%" focusable="false">
-                                    <path fill="currentColor" d="M12.221 4.956a.75.75 0 0 0-1.442-.412l-3 10.5a.75.75 0 1 0 1.442.412l3-10.5Z"></path>
-                                    <path fill="currentColor" d="M7.03 6.22a.75.75 0 0 1 0 1.06l-2.72 2.72 2.72 2.72a.75.75 0 0 1-1.06 1.06l-3.25-3.25a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z"></path>
-                                    <path fill="currentColor" d="M12.97 13.78a.75.75 0 0 1 0-1.06l2.72-2.72-2.72-2.72a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0Z"></path>
-                                  </svg></div>
-                                <div class="code-block__file">
-                                  <div data-pb-shopify="component" class="tree-font cc-title">index</div>
-                                  <div class="tree-font">.html</div>
-                                </div>
-                              </div>
-                              <div data-file-extension=".html" data-file-version="html" class="code-block_header-item">
-                                <div class="treemap-icon w-embed"><svg viewBox="0 0 20 20" width="100%" height="100%" focusable="false">
-                                    <path fill="currentColor" d="M12.221 4.956a.75.75 0 0 0-1.442-.412l-3 10.5a.75.75 0 1 0 1.442.412l3-10.5Z"></path>
-                                    <path fill="currentColor" d="M7.03 6.22a.75.75 0 0 1 0 1.06l-2.72 2.72 2.72 2.72a.75.75 0 0 1-1.06 1.06l-3.25-3.25a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z"></path>
-                                    <path fill="currentColor" d="M12.97 13.78a.75.75 0 0 1 0-1.06l2.72-2.72-2.72-2.72a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0Z"></path>
-                                  </svg></div>
-                                <div class="code-block__file">
-                                  <div data-pb-shopify="component" class="tree-font cc-title">styles</div>
-                                  <div class="tree-font">.css</div>
-                                </div>
-                              </div>
-                              <div data-file-extension=".html" data-file-version="html" class="code-block_header-item">
-                                <div class="treemap-icon w-embed"><svg viewBox="0 0 20 20" width="100%" height="100%" focusable="false">
-                                    <path fill="currentColor" d="M12.221 4.956a.75.75 0 0 0-1.442-.412l-3 10.5a.75.75 0 1 0 1.442.412l3-10.5Z"></path>
-                                    <path fill="currentColor" d="M7.03 6.22a.75.75 0 0 1 0 1.06l-2.72 2.72 2.72 2.72a.75.75 0 0 1-1.06 1.06l-3.25-3.25a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0Z"></path>
-                                    <path fill="currentColor" d="M12.97 13.78a.75.75 0 0 1 0-1.06l2.72-2.72-2.72-2.72a.75.75 0 0 1 1.06-1.06l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0Z"></path>
-                                  </svg></div>
-                                <div class="code-block__file">
-                                  <div data-pb-shopify="component" class="tree-font cc-title">scripts</div>
-                                  <div class="tree-font">.js</div>
-                                </div>
-                              </div>
-                            </div>
                             <div class="code-block__content--wrapper cc-flex">
                               <div data-pb-component="code-area" class="code_piece">
                                 <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#d4d0ab">&lt;!-- Warranty syncs with drone quantity --&gt;</span><span class="xml">
@@ -1546,10 +1686,13 @@
                 <h2 class="sg_heading">Attributes</h2>
                 <p class="pb-sg_sub">Attributes are utilities that can be used to render content dynamically</p>
               </div>
-              <div class="sg_grid_attrs">
+              <div class="section_list">
                 <div class="section_cards">
-                  <div class="tab-title">
-                    <div>Campaign Data Display</div>
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>Campaign Attributes</div>
+                    </div>
+                    <div>Description</div>
                   </div>
                   <div class="display_table">
                     <div class="display_row">
@@ -1566,145 +1709,1268 @@
                     </div>
                   </div>
                 </div>
-                <div class="section_cards">
-                  <div class="tab-title">
-                    <div>Cart Data Display</div>
+                <div data-next-package-id="3" class="section_cards">
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>📦 Package Attributes</div>
+                    </div>
+                    <div>Display package/product data with context awareness. These work within package context (e.g., inside selector cards).<br><br>You can also use package context for example package.X.name<br><br>These examples have the data-next-package-id on this parent container.</div>
                   </div>
-                  <div class="display_table">
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.total"</div>
-                      <div data-next-display="cart.total" class="attr-value">cart.total</div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">📋 Basic Package Properties<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.name"</div>
+                            <div>Package name</div>
+                          </div>
+                          <div data-next-display="package.name" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.image"</div>
+                            <div>Package image URL</div>
+                          </div>
+                          <div data-next-display="package.image" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.qty"</div>
+                            <div>Number of units in package</div>
+                          </div>
+                          <div data-next-display="package.qty" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.is_recurring"</div>
+                            <div>If package is recurring</div>
+                          </div>
+                          <div data-next-display="package.is_recurring" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.interval"</div>
+                            <div>Recurring interval frequency</div>
+                          </div>
+                          <div data-next-display="package.interval" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.compareTotal"</div>
-                      <div data-next-display="cart.compareTotal" class="attr-value">cart.compareTotal</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">💰 Pricing Properties<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.price"</div>
+                            <div>Per-unit price (formatted)</div>
+                          </div>
+                          <div data-next-display="package.price" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.price_total"</div>
+                            <div>Total package price (formatted)</div>
+                          </div>
+                          <div data-next-display="package.price_total" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.price_retail"</div>
+                            <div>Per-unit retail price (formatted)</div>
+                          </div>
+                          <div data-next-display="package.price_retail" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.price_retail_total"</div>
+                            <div>Total retail price (formatted)</div>
+                          </div>
+                          <div data-next-display="package.price_retail_total" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.unitPrice" </div>
+                            <div>&nbsp;Same as package.price (alias)</div>
+                          </div>
+                          <div data-next-display="package.unitPrice" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.packageTotal"</div>
+                            <div>Same as package.price_total (alias)</div>
+                          </div>
+                          <div data-next-display="package.packageTotal" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.total.value"</div>
-                      <div data-next-display="cart.total.value" class="attr-value">cart.total.value</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🎯 Calculated Fields<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.savingsAmount"</div>
+                            <div>Total savings amount (formatted)</div>
+                          </div>
+                          <div data-next-display="package.savingsAmount" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.savingsPercentage"</div>
+                            <div>Savings percentage (formatted)</div>
+                          </div>
+                          <div data-next-display="package.savingsPercentage" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.unitSavings"</div>
+                            <div>Per-unit savings amount</div>
+                          </div>
+                          <div data-next-display="package.unitSavings" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.unitSavingsPercentage"</div>
+                            <div>Per-unit savings percentage</div>
+                          </div>
+                          <div data-next-display="package.unitSavingsPercentage" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.unitRetailPrice"</div>
+                            <div>Per-unit retail price</div>
+                          </div>
+                          <div data-next-display="package.unitRetailPrice" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.subtotal"</div>
-                      <div data-next-display="cart.subtotal" class="attr-value">cart.subtotal</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">✅ Boolean Properties (for conditionals)<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.hasSavings"</div>
+                            <div>Show if package has savings</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="package.hasSavings" class="attr-value">This package has savings</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.hasRetailPrice"</div>
+                            <div>Show if retail price exists</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="package.hasRetailPrice" class="attr-value">This package has retail</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.isBundle"</div>
+                            <div>Show if qty &gt; 1</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="package.isBundle" class="attr-value">This package is a bundle</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.isRecurring"</div>
+                            <div>Show if subscription</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="package.isRecurring" class="attr-value">This package is a subscription</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.isOneTime"</div>
+                            <div>Show if one-time purchase</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="package.isOneTime" class="attr-value">This package is a one time order</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.shipping"</div>
-                      <div data-next-display="cart.shipping" class="attr-value">cart.shipping</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.tax"</div>
-                      <div data-next-display="cart.tax" class="attr-value">cart.tax</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.discounts"</div>
-                      <div data-next-display="cart.discounts" class="attr-value">cart.discounts</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.savings"</div>
-                      <div data-next-display="cart.savings" class="attr-value">cart.savings</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.savingsPercentage"</div>
-                      <div data-next-display="cart.savingsPercentage" class="attr-value">cart.savingsPercentage</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.count"</div>
-                      <div data-next-display="cart.count" class="attr-value">cart.count</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.isEmpty"</div>
-                      <div data-next-display="cart.isEmpty" class="attr-value">cart.isEmpty</div>
-                    </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="cart.hasItems"</div>
-                      <div data-next-display="cart.hasItems" class="attr-value">cart.hasItems</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🔢 Raw Values (unformatted)<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.price.raw"</div>
+                            <div>Raw price value</div>
+                          </div>
+                          <div data-next-display="package.price.raw" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.savingsAmount.raw"</div>
+                            <div>Raw savings amount</div>
+                          </div>
+                          <div data-next-display="package.savingsAmount.raw" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.savingsPercentage.raw"</div>
+                            <div>Raw savings percentage</div>
+                          </div>
+                          <div data-next-display="package.savingsPercentage.raw" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.unitPrice.raw"</div>
+                            <div>Raw unit price</div>
+                          </div>
+                          <div data-next-display="package.unitPrice.raw" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="section_cards">
-                  <div class="tab-title">
-                    <div>Package Display</div>
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>🎯 Selection Attributes</div>
+                    </div>
+                    <div>Display data based on currently selected package in a selector. Updates when selection changes.</div>
                   </div>
-                  <div class="display_table">
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.name"</div>
-                      <div data-next-display="package.2.name" class="attr-value">package.2.name</div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">📋 Basic Selection Properties<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.name"</div>
+                            <div>Selected package name</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.name" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.packageId"</div>
+                            <div>Selected package ID</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.packageId" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.quantity"</div>
+                            <div>Selected quantity</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.quantity" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.hasSelection"</div>
+                            <div>Whether something is selected</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.hasSelection" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.price"</div>
-                      <div data-next-display="package.2.price" class="attr-value">package.2.price</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">💰 Selection Pricing<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.price"</div>
+                            <div>Unit price of selection</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.price" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.total"</div>
+                            <div>Total price of selection</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.total" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.compareTotal"</div>
+                            <div>Compare/retail total</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.compareTotal" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.unitPrice"</div>
+                            <div>Price per unit</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.unitPrice" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.price_retail"</div>
-                      <div data-next-display="package.2.price_retail" class="attr-value">package.2.price_retail</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🎯 Selection Calculated Fields<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.savingsAmount"</div>
+                            <div>Total savings</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.savingsAmount" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.savingsPercentage"</div>
+                            <div>Savings percentage</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.savingsPercentage" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.hasSavings"</div>
+                            <div>Has savings boolean</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.hasSavings" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.isBundle"</div>
+                            <div>Is multi-pack</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.isBundle" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.totalUnits"</div>
+                            <div>Total units selected</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.totalUnits" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.price_total"</div>
-                      <div data-next-display="package.2.price_total" class="attr-value">package.2.price_total</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">📊 Advanced Selection Calculations<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.monthlyPrice"</div>
+                            <div>Monthly cost calculation</div>
+                          </div>
+                          <div data-next-display="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.yearlyPrice"</div>
+                            <div>&nbsp;Yearly cost calculation</div>
+                          </div>
+                          <div data-next-display="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.pricePerDay"</div>
+                            <div>Daily cost calculation</div>
+                          </div>
+                          <div data-next-display="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.savingsPerUnit"</div>
+                            <div>Savings per unit</div>
+                          </div>
+                          <div data-next-display="ATTR" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.price_retail_total"</div>
-                      <div data-next-display="package.2.price_retail_total" class="attr-value">package.2.price_retail_total</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🧮 Mathematical Expressions<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.total*0.1"</div>
+                            <div>10% of total</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.total*0.1" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.price+5"</div>
+                            <div>Price plus $5</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.price+5" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.total-10"</div>
+                            <div>Total minus $10</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.total-10" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.total/2"</div>
+                            <div>Half of total</div>
+                          </div>
+                          <div data-next-display="selection.drone-packages.total/2" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.image"</div>
-                      <div data-next-display="package.2.image" class="attr-value">package.2.image</div>
+                  </div>
+                </div>
+                <div class="section_cards">
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>🛒 Cart Attributes</div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.quantity"</div>
-                      <div data-next-display="package.2.quantity" class="attr-value">package.2.quantity</div>
+                    <div>Display cart totals, quantities, and calculated values. Updates automatically when cart changes.</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">📊 Cart Status Properties<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.isEmpty"</div>
+                            <div>Whether cart is empty</div>
+                          </div>
+                          <div data-next-display="cart.isEmpty" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.hasItems" </div>
+                            <div>Whether cart has items</div>
+                          </div>
+                          <div data-next-display="cart.hasItems" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.itemCount"</div>
+                            <div>Number of different items</div>
+                          </div>
+                          <div data-next-display="cart.itemCount" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.quantity" </div>
+                            <div>Total quantity of all items</div>
+                          </div>
+                          <div data-next-display="cart.quantity" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.count"</div>
+                            <div>Same as quantity (alias)</div>
+                          </div>
+                          <div data-next-display="cart.count" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.is_recurring"</div>
-                      <div data-next-display="package.2.is_recurring" class="attr-value">package.2.is_recurring</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">💰 Cart Financial Totals<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.subtotal"</div>
+                            <div>&nbsp;Cart subtotal (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.subtotal" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.total"</div>
+                            <div>&nbsp;Cart total (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.total" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.shipping"</div>
+                            <div>Shipping cost (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.shipping" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.discounts"</div>
+                            <div>&nbsp;Discount amount (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.discounts" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.savingsAmount"</div>
+                            <div>Total savings (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.savingsAmount" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.savingsPercentage"</div>
+                            <div>&nbsp;Savings percentage (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.savingsPercentage" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.compareTotal"</div>
+                            <div>Compare-at total (formatted)</div>
+                          </div>
+                          <div data-next-display="cart.compareTotal" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="display_row">
-                      <div class="sg-attribute-tag">data-next-display="package.X.interval"</div>
-                      <div data-next-display="package.2.interval" class="attr-value">package.2.interval</div>
+                  </div>
+                  <div class="sg_grid-3col">
+                    <div class="conditional__wrapper">
+                      <div class="conditional_title">cart.isEmpty</div>
+                      <div data-next-show="cart.isEmpty" class="sg-conditional empty">
+                        <div>🛒 <strong>Cart Empty:</strong> This message shows when cart is empty<br></div>
+                      </div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="cart.hasItems" class="sg-conditional has-items">
+                        <div>✅ <strong>Cart Has Items:</strong> This message shows when cart has items<br></div>
+                      </div>
+                      <div class="conditional_title">cart.hasItems</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="cart.hasItem(2)" class="sg-conditional has-package-2">
+                        <div>🚁 <strong>Drone Added:</strong> This shows only when the drone (package 2) is in cart<br></div>
+                      </div>
+                      <div class="conditional_title">cart.hasItem(2)</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="cart.total > 50" class="sg-conditional has-package-2">
+                        <div>🚁 <strong>Cart &gt; 50:</strong> This shows only when the cart.total is more than 50<br></div>
+                      </div>
+                      <div class="conditional_title">cart.total &gt; 50</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="cart.hasSavings" class="sg-conditional has-package-2">
+                        <div>🚁 <strong>Cart has savings:</strong> This shows only when the cart has savings<br></div>
+                      </div>
+                      <div class="conditional_title">cart.hasSavings</div>
+                    </div>
+                    <div class="conditional__wrapper"></div>
+                  </div>
+                </div>
+                <div class="section_cards">
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>📋 Order Attributes</div>
+                    </div>
+                    <div>Display order confirmation data. Requires order ID in URL (?ref_id=ORDER_ID) or manual loading.</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">📋 Basic Order Properties<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.number"</div>
+                            <div>Order number</div>
+                          </div>
+                          <div data-next-display="order.number" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.refId"</div>
+                            <div>Order reference ID</div>
+                          </div>
+                          <div data-next-display="order.refId" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.status"</div>
+                            <div>Order status</div>
+                          </div>
+                          <div data-next-display="order.status" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.createdAt"</div>
+                            <div>Order date (formatted)</div>
+                          </div>
+                          <div data-next-display="order.createdAt" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.currency"</div>
+                            <div>Order currency</div>
+                          </div>
+                          <div data-next-display="order.currency" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.paymentMethod" </div>
+                            <div>Payment method used</div>
+                          </div>
+                          <div data-next-display="order.paymentMethod" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingMethod" </div>
+                            <div>Shipping&nbsp;&nbsp;method used</div>
+                          </div>
+                          <div data-next-display="order.shippingMethod" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">💰 Order Financial Data<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.total"</div>
+                            <div>Order total including tax (formatted)</div>
+                          </div>
+                          <div data-next-display="order.total" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.subtotal"</div>
+                            <div>Order subtotal excluding tax (formatted)</div>
+                          </div>
+                          <div data-next-display="order.subtotal" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.tax"</div>
+                            <div>Tax amount (formatted)</div>
+                          </div>
+                          <div data-next-display="order.tax" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shipping"</div>
+                            <div>Shipping cost including tax (formatted)</div>
+                          </div>
+                          <div data-next-display="order.shipping" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order. shippingExclTax"</div>
+                            <div>Shipping cost excluding tax (formatted)</div>
+                          </div>
+                          <div data-next-display="order.shippingExclTax" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingTax"</div>
+                            <div>Shipping tax amount (formatted)</div>
+                          </div>
+                          <div data-next-display="order.shippingTax" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.discounts"</div>
+                            <div>&nbsp;Discount amount (formatted)</div>
+                          </div>
+                          <div data-next-display="order.discounts" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">👤 Customer Information<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.customer.name"</div>
+                            <div>&nbsp;Full customer name</div>
+                          </div>
+                          <div data-next-display="order.customer.name" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.customer.firstName"</div>
+                            <div>First name only</div>
+                          </div>
+                          <div data-next-display="order.customer.firstName" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.customer.lastName"</div>
+                            <div>Last name only</div>
+                          </div>
+                          <div data-next-display="order.customer.lastName" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.customer.email"</div>
+                            <div>Customer email</div>
+                          </div>
+                          <div data-next-display="order.customer.email" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.customer.phone"</div>
+                            <div>Customer phone</div>
+                          </div>
+                          <div data-next-display="order.customer.phone" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🏠 Address Information<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingAddress.full"</div>
+                            <div>Full shipping address</div>
+                          </div>
+                          <div data-next-display="order.shippingAddress.full" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingAddress.line1"</div>
+                            <div>Address line 1</div>
+                          </div>
+                          <div data-next-display="order.shippingAddress.line1" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingAddress.line2"</div>
+                            <div>Address line 2</div>
+                          </div>
+                          <div data-next-display="order.shippingAddress.line2" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingAddress.city"</div>
+                            <div>City</div>
+                          </div>
+                          <div data-next-display="order.shippingAddress.city" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingAddress.state"</div>
+                            <div>State/Province</div>
+                          </div>
+                          <div data-next-display="order.shippingAddress.state" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.shippingAddress.country"</div>
+                            <div>Country</div>
+                          </div>
+                          <div data-next-display="order.shippingAddress.country" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="order.billingAddress.full"</div>
+                            <div>Full billing address</div>
+                          </div>
+                          <div data-next-display="order.billingAddress.full" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">✅ Order Boolean Properties<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="order.isTest"</div>
+                            <div>Show if test order</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="order.isTest" class="attr-value">This is a test order</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="order.hasItems"</div>
+                            <div>Show if order has items</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="order.hasItems" class="attr-value">Order has items</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="order.hasDiscounts"</div>
+                            <div>Show if order has discount</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="order.hasDiscounts" class="attr-value">Has Discounts</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="order.hasShipping"</div>
+                            <div>Show if shipping charged</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="order.hasShipping" class="attr-value">Has Shipping</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="order.hasTax"</div>
+                            <div>Show if tax charged</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="order.hasTax" class="attr-value">Has Tax</div>
+                          </div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="order.hasUpsells"</div>
+                            <div>Show if order has upsells</div>
+                          </div>
+                          <div class="conditional__wrapper">
+                            <div data-next-show="order.hasUpsells" class="attr-value">Has Upsells</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg_grid-3col">
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.exists" class="sg-conditional has-items">
+                        <div>✅ Order found!<br></div>
+                      </div>
+                      <div class="conditional_title">order.exists / order.hasOrder</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.supportsUpsells" class="sg-conditional has-items">
+                        <div>🎁 Order accepts additional items<br></div>
+                      </div>
+                      <div class="conditional_title">order.exists / order.hasOrder</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.isRecent" class="sg-conditional has-package-2">
+                        <div>✨ Order placed less than 15 minutes ago<br></div>
+                      </div>
+                      <div class="conditional_title">order.isRecent</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.isExpired" class="sg-conditional is-error">
+                        <div>📋 Order placed more than 15 minutes ago<br></div>
+                      </div>
+                      <div class="conditional_title">order.isExpired</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.isNewOrder" class="sg-conditional is-error">
+                        <div>🎉 New order (placed &lt; 15 min ago)<br></div>
+                      </div>
+                      <div class="conditional_title">order.isNewOrder</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.hasError" class="sg-conditional is-error">
+                        <div>Unable to load order. Please try again.<br></div>
+                      </div>
+                      <div class="conditional_title">order.hasError</div>
+                    </div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="order.isTest" class="sg-conditional is-error">
+                        <div>🧪 TEST ORDER - No real charges<br></div>
+                      </div>
+                      <div class="conditional_title">order.isTest</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section_cards">
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>🎭 Conditional Display Attributes</div>
+                    </div>
+                    <div>Show/hide elements based on conditions. Works with cart, package, selection, and order data.</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">👁️ Show/Hide Attributes<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="cart.hasItems"</div>
+                            <div>Show when cart has items</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-hide="cart.isEmpty"</div>
+                            <div>Hide when cart is empty</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.hasSavings"</div>
+                            <div>Show when package has savings</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="selection.{id}.hasSelection"</div>
+                            <div>Show when selector has selection</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🔢 Comparison Conditions<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="cart.total &gt; 50"</div>
+                            <div>Show when cart total over $50</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="cart.quantity &gt;= 3"</div>
+                            <div>Show when 3+ items in cart</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.qty == 1"</div>
+                            <div>Show for single-unit packages</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-hide="selection.{id}.total &lt; 20"</div>
+                            <div>Hide when selection under $20</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🎯 Advanced Conditionals<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="cart.savingsPercentage &gt; 30"</div>
+                            <div>Show when savings over 30%</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="package.isRecurring"</div>
+                            <div>Show for subscription products</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-show="selection.{id}.isBundle"</div>
+                            <div>Show for multi-pack selections</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-hide="order.hasUpsells"</div>
+                            <div>Hide when order has upsells</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section_cards">
+                  <div class="sg_header">
+                    <div class="section_card__title">
+                      <div>🎨 Formatting Options</div>
+                    </div>
+                    <div>Control how values are displayed with formatting attributes.</div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🎨 Format Types<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-format="currency"</div>
+                            <div>Format as currency ($12.34)</div>
+                          </div>
+                          <div data-format="currency" data-next-display="package.2.price" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-format="number"</div>
+                            <div>Format as number (1,234.56)</div>
+                          </div>
+                          <div data-format="number" data-next-display="package.2.price" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🎯 Conditional Hiding<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-hide-if-zero="true"</div>
+                            <div>Hide element if value is 0</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-hide-if-false="true"</div>
+                            <div>Hide element if value is false</div>
+                          </div>
+                          <div data-next-show="ATTR" class="attr-value">----------</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sg__parent">
+                    <h1 class="display-sm-copy">🧮 Mathematical Transformations<br></h1>
+                    <div class="sg-container">
+                      <div class="display_table">
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-multiply-by="2"</div>
+                            <div>Multiply value by 2</div>
+                          </div>
+                          <div data-multiply-by="2" data-next-display="package.2.price" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-divide-by="2"</div>
+                            <div>Divide value by 2</div>
+                          </div>
+                          <div data-divide-by="2" data-next-display="package.2.price" class="attr-value">----------</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div id="sg-conditional" class="sg_container">
+          <div id="sg-utilities" class="sg_container">
             <div class="container cc-large">
               <div class="full-demo_header">
-                <h2 class="sg_heading">Conditional Display Examples</h2>
-                <p class="pb-sg_sub">Conditional Visibility Helpers</p>
+                <h2 class="sg_heading">Getting Started</h2>
+                <p class="pb-sg_sub">Add the main script into your page</p>
               </div>
-              <div class="sg_grid-3col">
-                <div class="conditional__wrapper">
-                  <div class="conditional_title">cart.isEmpty</div>
-                  <div data-next-show="cart.isEmpty" class="sg-conditional empty">
-                    <div>🛒 <strong>Cart Empty:</strong> This message shows when cart is empty<br></div>
+              <div class="section_cards">
+                <div class="sg_header">
+                  <div class="section_card__title">
+                    <div>FOMO Script</div>
+                  </div>
+                  <div>Fomo script descriptoin</div>
+                </div>
+                <div class="sg_griddd">
+                  <div data-pb-component="code" class="elevation-code-block">
+                    <div class="code-block__header">
+                      <div class="code-block__header--left">
+                        <div class="code-block__title">Code</div>
+                      </div>
+                      <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                          <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                              <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                              </g>
+                              <defs>
+                                <clipPath id="a">
+                                  <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                </clipPath>
+                              </defs>
+                            </svg></div>
+                          <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                              <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                            </svg></div>
+                        </button></div>
+                    </div>
+                    <div class="code-block__content">
+                      <div class="code-block__content--wrapper cc-flex">
+                        <div data-pb-component="code-area" class="code_piece">
+                          <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml"> </span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Wait for SDK to be fully initialized</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.addEventListener(</span><span class="xml javascript" style="color:#abe338">'next:initialized'</span><span class="xml javascript">, </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">console</span><span class="xml javascript">.log(</span><span class="xml javascript" style="color:#abe338">'SDK initialized, starting FOMO popups...'</span><span class="xml javascript">);
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Simple usage - starts immediately with defaults</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">6</span> next.fomo();
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">7</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Optional: Listen to events for analytics</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">8</span><span class="xml javascript"> next.on(</span><span class="xml javascript" style="color:#abe338">'fomo:shown'</span><span class="xml javascript">, </span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function" style="color:#f5ab35">data</span><span class="xml javascript hljs-function">) =&gt;</span><span class="xml javascript"> {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">9</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">console</span><span class="xml javascript">.log(</span><span class="xml javascript" style="color:#abe338">'FOMO shown:'</span><span class="xml javascript">, data.customer, </span><span class="xml javascript" style="color:#abe338">'purchased'</span><span class="xml javascript">, data.product);
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">10</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">11</span> });
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">12</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Control functions</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">13</span><span class="xml javascript"> </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">startFomo</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">14</span> next.fomo({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">15</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">initialDelay</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">2000</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#d4d0ab">// Start after 2 seconds</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">16</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">displayDuration</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">5000</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#d4d0ab">// Show for 5 seconds</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">17</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">delayBetween</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">10000</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// 10 seconds between popups</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">18</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">19</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">20</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">21</span><span class="xml javascript"> </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">stopFomo</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">22</span> next.stopFomo();
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">23</span> }
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">24</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Custom configuration example</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">25</span><span class="xml javascript"> </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">customFomo</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">26</span> next.fomo({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">27</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">items</span><span class="xml javascript">: [{
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">28</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">text</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">"Premium Bundle - Save 30%"</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">29</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">"https://example.com/premium-bundle.jpg"</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">30</span> }, {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">31</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">text</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">"Starter Pack"</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">32</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">"https://example.com/starter-pack.jpg"</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">33</span> }],
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">34</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">customers</span><span class="xml javascript">: {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">35</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">US</span><span class="xml javascript">: [</span><span class="xml javascript" style="color:#abe338">"Sarah from Dallas"</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#abe338">"Mike from Boston"</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#abe338">"Lisa from Miami"</span><span class="xml javascript">],
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">36</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">CA</span><span class="xml javascript">: [</span><span class="xml javascript" style="color:#abe338">"Jean from Montreal"</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#abe338">"Pierre from Quebec"</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#abe338">"Marie from Toronto"</span><span class="xml javascript">]
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">37</span> },
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">38</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">maxMobileShows</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">3</span><span class="xml javascript">, </span><span class="xml javascript" style="color:#d4d0ab">// Show max 3 times on mobile</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">39</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">displayDuration</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">4000</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">40</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">delayBetween</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">15000</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">41</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">initialDelay</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#f5ab35">0</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Start immediately</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">42</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">43</span> }
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">44</span><span class="xml javascript"> </span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span></code></pre>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="conditional__wrapper">
-                  <div data-next-show="cart.hasItems" class="sg-conditional has-items">
-                    <div>✅ <strong>Cart Has Items:</strong> This message shows when cart has items<br></div>
+              </div>
+              <div class="section_cards">
+                <div class="sg_header">
+                  <div class="section_card__title">
+                    <div>Exit intent popup</div>
                   </div>
-                  <div class="conditional_title">cart.hasItems</div>
+                  <div>Exit intent popup</div>
                 </div>
-                <div class="conditional__wrapper">
-                  <div data-next-show="cart.hasItem(2)" class="sg-conditional has-package-2">
-                    <div>🚁 <strong>Drone Added:</strong> This shows only when the drone (package 2) is in cart<br></div>
+                <div class="sg_griddd">
+                  <div data-pb-component="code" class="elevation-code-block">
+                    <div class="code-block__header">
+                      <div class="code-block__header--left">
+                        <div class="code-block__title">Code</div>
+                      </div>
+                      <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                          <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                              <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                              </g>
+                              <defs>
+                                <clipPath id="a">
+                                  <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                </clipPath>
+                              </defs>
+                            </svg></div>
+                          <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                              <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                            </svg></div>
+                        </button></div>
+                    </div>
+                    <div class="code-block__content">
+                      <div class="code-block__content--wrapper cc-flex">
+                        <div data-pb-component="code-area" class="code_piece">
+                          <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml"> </span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Wait for SDK to be fully initialized</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.addEventListener(</span><span class="xml javascript" style="color:#abe338">'next:initialized'</span><span class="xml javascript">, </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">console</span><span class="xml javascript">.log(</span><span class="xml javascript" style="color:#abe338">'SDK initialized, setting up exit intent...'</span><span class="xml javascript">);
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">6</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Super simple exit intent setup</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">7</span> next.exitIntent({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">8</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">'https://cdn.prod.website-files.com/68106277c04984fe676e423a/6823ba8d65474fce67152554_exit-popup1.webp'</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">9</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">action</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#dcc6e0">async</span><span class="xml javascript"> () =&gt; {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">10</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> result = </span><span class="xml javascript" style="color:#dcc6e0">await</span><span class="xml javascript"> next.applyCoupon(</span><span class="xml javascript" style="color:#abe338">'SAVE10'</span><span class="xml javascript">);
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">11</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#dcc6e0">if</span><span class="xml javascript"> (result.success) {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">12</span><span class="xml javascript"> alert(</span><span class="xml javascript" style="color:#abe338">'Coupon applied successfully: '</span><span class="xml javascript"> + result.message);
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">13</span><span class="xml javascript"> } </span><span class="xml javascript" style="color:#dcc6e0">else</span><span class="xml javascript"> {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">14</span><span class="xml javascript"> alert(</span><span class="xml javascript" style="color:#abe338">'Coupon failed: '</span><span class="xml javascript"> + result.message);
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">15</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">16</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">17</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">18</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">19</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Optional: Listen to events for analytics</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">20</span><span class="xml javascript"> next.on(</span><span class="xml javascript" style="color:#abe338">'exit-intent:shown'</span><span class="xml javascript">, </span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function" style="color:#f5ab35">data</span><span class="xml javascript hljs-function">) =&gt;</span><span class="xml javascript"> {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">21</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">console</span><span class="xml javascript">.log(</span><span class="xml javascript" style="color:#abe338">'Exit intent popup shown:'</span><span class="xml javascript">, data.imageUrl);
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">22</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">23</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">24</span><span class="xml javascript"> next.on(</span><span class="xml javascript" style="color:#abe338">'exit-intent:clicked'</span><span class="xml javascript">, </span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function" style="color:#f5ab35">data</span><span class="xml javascript hljs-function">) =&gt;</span><span class="xml javascript"> {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">25</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">console</span><span class="xml javascript">.log(</span><span class="xml javascript" style="color:#abe338">'Exit intent popup clicked:'</span><span class="xml javascript">, data.imageUrl);
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">26</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">27</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">28</span><span class="xml javascript"> next.on(</span><span class="xml javascript" style="color:#abe338">'exit-intent:dismissed'</span><span class="xml javascript">, </span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function" style="color:#f5ab35">data</span><span class="xml javascript hljs-function">) =&gt;</span><span class="xml javascript"> {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">29</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">console</span><span class="xml javascript">.log(</span><span class="xml javascript" style="color:#abe338">'Exit intent popup dismissed:'</span><span class="xml javascript">, data.imageUrl);
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">30</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">31</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">32</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">33</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Even simpler examples:</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">34</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">35</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Just show a popup (no action)</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">36</span><span class="xml javascript"> </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">justShowPopup</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">37</span> next.exitIntent({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">38</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">'https://example.com/just-popup.webp'</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">39</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">40</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">41</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">42</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Redirect instead of coupon</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">43</span><span class="xml javascript"> </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">redirectExample</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">44</span> next.exitIntent({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">45</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">'https://example.com/special-offer.webp'</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">46</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">action</span><span class="xml javascript">: </span><span class="xml javascript hljs-function">() =&gt;</span><span class="xml javascript"> {
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">47</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.location.href = </span><span class="xml javascript" style="color:#abe338">'/special-offer'</span><span class="xml javascript">;
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">48</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">49</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">50</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">51</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">52</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#d4d0ab">// Conditional popup based on cart</span><span class="xml javascript">
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">53</span><span class="xml javascript"> </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">conditionalExample</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">54</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> cartCount = next.getCartCount();
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">55</span>
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">56</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#dcc6e0">if</span><span class="xml javascript"> (cartCount === </span><span class="xml javascript" style="color:#f5ab35">0</span><span class="xml javascript">) {
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">57</span> next.exitIntent({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">58</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">'https://example.com/empty-cart.webp'</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">59</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">action</span><span class="xml javascript">: </span><span class="xml javascript hljs-function">() =&gt;</span><span class="xml javascript"> </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.location.href = </span><span class="xml javascript" style="color:#abe338">'/products'</span><span class="xml javascript">
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">60</span> });
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">61</span><span class="xml javascript"> } </span><span class="xml javascript" style="color:#dcc6e0">else</span><span class="xml javascript"> {
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">62</span> next.exitIntent({
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">63</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">image</span><span class="xml javascript">: </span><span class="xml javascript" style="color:#abe338">'https://example.com/discount.webp'</span><span class="xml javascript">,
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">64</span><span class="xml javascript"> </span><span class="xml javascript hljs-attr">action</span><span class="xml javascript">: </span><span class="xml javascript hljs-function">() =&gt;</span><span class="xml javascript"> next.applyCoupon(</span><span class="xml javascript" style="color:#abe338">'SAVE10'</span><span class="xml javascript">)
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">65</span> });
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">66</span> }
+                              </span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">67</span> }
+                              </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">68</span><span class="xml javascript"> </span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span></code></pre>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="conditional_title">cart.hasItem(2)</div>
                 </div>
-                <div class="conditional__wrapper">
-                  <div data-next-show="cart.total > 50" class="sg-conditional has-package-2">
-                    <div>🚁 <strong>Cart &gt; 50:</strong> This shows only when the cart.total is more than 50<br></div>
-                  </div>
-                  <div class="conditional_title">cart.total &gt; 50</div>
-                </div>
-                <div class="conditional__wrapper">
-                  <div data-next-show="cart.hasSavings" class="sg-conditional has-package-2">
-                    <div>🚁 <strong>Cart has savings:</strong> This shows only when the cart has savings<br></div>
-                  </div>
-                  <div class="conditional_title">cart.hasSavings</div>
-                </div>
-                <div class="conditional__wrapper"></div>
               </div>
             </div>
           </div>
@@ -1714,7 +2980,7 @@
                 <div class="checkout__column checkout__column--left">
                   <div class="checkout__form-container cc-checkout">
                     <div class="checkout__header">
-                      <div class="checkout__header-brand"><img src="images/next-logo.png" loading="lazy" alt="" class="brand-logo">
+                      <div class="checkout__header-brand cc-shop"><img src="images/next-logo.png" loading="lazy" alt="" class="brand-logo">
                         <div class="secure-checkout"><img loading="lazy" src="images/locker.svg" alt="" class="secure-checkout__icon">
                           <div class="secure-checkout__text">CHECKOUT</div>
                         </div>
@@ -1809,10 +3075,10 @@
                                     <div class="order-totals__section">
                                       <div class="order-totals__line">
                                         <div class="order-totals__label">Subtotal</div>
-                                        <div data-next-display="cart.subtotal" class="order-totals__value">$138.30<br></div>
+                                        <div data-next-display="cart.subtotal" class="order-totals__value">$0.00<br></div>
                                       </div>
                                     </div>
-                                    <div class="order-totals__section hide">
+                                    <div data-next-show="cart.hasShipping" class="order-totals__section">
                                       <div class="order-totals__line">
                                         <div class="order-totals__label-group">
                                           <div class="order-totals__label">Shipping<br></div>
@@ -1823,7 +3089,6 @@
                                             </svg></div>
                                         </div>
                                         <div class="order-totals__value-group">
-                                          <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>
                                           <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
                                         </div>
                                       </div>
@@ -1843,7 +3108,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div data-os-cart-summary="shipping-bar" class="order-totals__section shipping-message">
+                                    <div class="order-totals__section shipping-message hide">
                                       <div>Shipping and tax will be settled upon checkout confirmation</div>
                                     </div>
                                     <div data-next-show="cart.hasSavings" class="order-totals__section">
@@ -1852,13 +3117,13 @@
                                           <div class="order-totals__label">Today You Saved<br></div>
                                           <div class="badge badge--small">
                                             <div class="label__wrapper cc-sm">
-                                              <div class="badge__text"><span data-next-display="cart.savingsPercentage">20%</span> OFF</div>
+                                              <div class="badge__text"><span data-next-display="cart.savingsPercentage">0%</span> OFF</div>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="order-totals__value-group">
                                           <div class="order-totals__label">Discount:<br></div>
-                                          <div data-next-display="cart.savings" class="order-totals__value">$0.70<br></div>
+                                          <div data-next-display="cart.savingsAmount" class="order-totals__value">$0.00<br></div>
                                         </div>
                                       </div>
                                     </div>
@@ -1867,7 +3132,7 @@
                                         <div class="order-totals__label order-totals__label--total">Grand Total:</div>
                                         <div class="order-totals__value-group">
                                           <div class="summary-total__coin">USD<br></div>
-                                          <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$109.96</div>
+                                          <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$0.00</div>
                                         </div>
                                       </div>
                                       <div data-next-show="cart.hasSavings" class="order-totals__savings">
@@ -1875,7 +3140,7 @@
                                           <div class="order-totals__savings-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
                                               <path stroke-linecap="round" stroke-linejoin="round" d="m10.802 15.686 5.367-5.368a.15.15 0 0 0 .046-.109V4.144m-2.998-.95h-5.67a.16.16 0 0 0-.11.046L1.779 8.897a.154.154 0 0 0 0 .219l5.594 5.593c.06.06.158.06.218 0l5.658-5.657a.15.15 0 0 0 .045-.11v-5.67a.077.077 0 0 0-.077-.077Zm-3.06 3.749a.643.643 0 1 1-1.286 0 .643.643 0 0 1 1.286 0m-.648-.005h.01v.01h-.01z"></path>
                                             </svg></div>
-                                          <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savings">$28.34</span><br></div>
+                                          <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savingsAmount">$0.00</span><br></div>
                                         </div>
                                       </div>
                                     </div>
@@ -1902,7 +3167,7 @@
                       <div data-i18n="step_02" class="steps-text text-step_2">Special Offers<br></div><img loading="lazy" src="https://cdn.prod.website-files.com/68117d05d09b8f2101e76605/68117d05d09b8f2101e76ef1_Polygon%207.svg" alt="" class="steps-arrow">
                       <div data-i18n="step_03" class="steps-text text-step_3">Order Receipt<br></div>
                     </div>
-                    <div data-next-show="cart.hasItems">
+                    <div data-next-await="" data-next-show="cart.hasItems">
                       <div data-next-package-sync="2,3,4" data-next-bump="" data-next-package-id="6" class="upsell next-active">
                         <div data-next-toggle="toggle" class="upsell__header next-active">
                           <div class="upsell__header-content">
@@ -1999,11 +3264,11 @@
                             <div class="spinner"></div>
                           </div>
                         </button></div>
-                    </div>
-                    <div class="divider-section">
-                      <div class="divider-section__line"></div>
-                      <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
-                      <div class="divider-section__line"></div>
+                      <div class="divider-section">
+                        <div class="divider-section__line"></div>
+                        <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
+                        <div class="divider-section__line"></div>
+                      </div>
                     </div>
                     <div class="checkout-form">
                       <form data-next-checkout="form" id="combo_form" method="post">
@@ -2399,10 +3664,10 @@
                                   <div class="order-totals__section">
                                     <div class="order-totals__line">
                                       <div class="order-totals__label">Subtotal</div>
-                                      <div data-next-display="cart.subtotal" class="order-totals__value">$138.30<br></div>
+                                      <div data-next-display="cart.subtotal" class="order-totals__value">$0.00<br></div>
                                     </div>
                                   </div>
-                                  <div class="order-totals__section hide">
+                                  <div data-next-show="cart.hasShipping" class="order-totals__section">
                                     <div class="order-totals__line">
                                       <div class="order-totals__label-group">
                                         <div class="order-totals__label">Shipping<br></div>
@@ -2413,7 +3678,6 @@
                                           </svg></div>
                                       </div>
                                       <div class="order-totals__value-group">
-                                        <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>
                                         <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
                                       </div>
                                     </div>
@@ -2433,7 +3697,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div data-os-cart-summary="shipping-bar" class="order-totals__section shipping-message">
+                                  <div class="order-totals__section shipping-message hide">
                                     <div>Shipping and tax will be settled upon checkout confirmation</div>
                                   </div>
                                   <div data-next-show="cart.hasSavings" class="order-totals__section">
@@ -2442,13 +3706,13 @@
                                         <div class="order-totals__label">Today You Saved<br></div>
                                         <div class="badge badge--small">
                                           <div class="label__wrapper cc-sm">
-                                            <div class="badge__text"><span data-next-display="cart.savingsPercentage">20%</span> OFF</div>
+                                            <div class="badge__text"><span data-next-display="cart.savingsPercentage">0%</span> OFF</div>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="order-totals__value-group">
                                         <div class="order-totals__label">Discount:<br></div>
-                                        <div data-next-display="cart.savings" class="order-totals__value">$0.70<br></div>
+                                        <div data-next-display="cart.savingsAmount" class="order-totals__value">$0.00<br></div>
                                       </div>
                                     </div>
                                   </div>
@@ -2457,7 +3721,7 @@
                                       <div class="order-totals__label order-totals__label--total">Grand Total:</div>
                                       <div class="order-totals__value-group">
                                         <div class="summary-total__coin">USD<br></div>
-                                        <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$109.96</div>
+                                        <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$0.00</div>
                                       </div>
                                     </div>
                                     <div data-next-show="cart.hasSavings" class="order-totals__savings">
@@ -2465,7 +3729,7 @@
                                         <div class="order-totals__savings-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m10.802 15.686 5.367-5.368a.15.15 0 0 0 .046-.109V4.144m-2.998-.95h-5.67a.16.16 0 0 0-.11.046L1.779 8.897a.154.154 0 0 0 0 .219l5.594 5.593c.06.06.158.06.218 0l5.658-5.657a.15.15 0 0 0 .045-.11v-5.67a.077.077 0 0 0-.077-.077Zm-3.06 3.749a.643.643 0 1 1-1.286 0 .643.643 0 0 1 1.286 0m-.648-.005h.01v.01h-.01z"></path>
                                           </svg></div>
-                                        <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savings">$28.34</span><br></div>
+                                        <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savingsAmount">$0.00</span><br></div>
                                       </div>
                                     </div>
                                   </div>

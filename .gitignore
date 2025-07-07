@@ -1,0 +1,10 @@
+node_modules/
+package-lock.json
+import
+reports
+src
+tests
+package.json
+README.md 
+dist
+index.html

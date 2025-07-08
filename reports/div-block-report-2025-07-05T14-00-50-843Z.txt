@@ -1,0 +1,799 @@
+📊 DIV-BLOCK CLASS REPORT
+========================
+
+Generated: 7/5/2025, 11:00:50 AM
+
+📄 Files with div-block classes: 20
+🔢 Total div-block elements found: 120
+
+DETAILED FINDINGS:
+------------------
+
+📄 playground.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~891
+      Classes: div-block-1579
+      Parent: <DIV>
+      Content: "index
+                                  .html
+    ..."
+
+   2. <div> at line ~891
+      Classes: div-block-1579
+      Parent: <DIV>
+      Content: "index
+                                  .html
+    ..."
+
+
+📄 style-guide/style.html
+   Found 19 element(s) with div-block classes:
+
+   1. <div> at line ~1975
+      Classes: div-block-1591
+      Parent: <DIV>
+      Content: "icon cc-em"
+
+   2. <div> at line ~2052
+      Classes: div-block-1591
+      Parent: <DIV>
+      Content: "icon cc-rem"
+
+   3. <div> at line ~2129
+      Classes: div-block-1591
+      Parent: <DIV>
+      Content: "icon cc-image"
+
+   4. <div> at line ~2133
+      Classes: div-block-1591
+      Parent: <DIV>
+      Content: "icon cc-mini"
+
+   5. <div> at line ~2146
+      Classes: div-block-1591
+      Parent: <DIV>
+      Content: "icon-wrapper"
+
+   6. <div> at line ~2607
+      Classes: div-block-1433
+      Parent: <DIV>
+      Content: "CALL TO ACTION"
+
+   7. <div> at line ~2607
+      Classes: div-block-1433
+      Parent: <DIV>
+      Content: "CALL TO ACTION"
+
+   8. <div> at line ~2607
+      Classes: div-block-1433
+      Parent: <DIV>
+      Content: "CALL TO ACTION"
+
+   9. <div> at line ~2607
+      Classes: div-block-1433
+      Parent: <DIV>
+      Content: "CALL TO ACTION"
+
+   10. <div> at line ~2607
+      Classes: div-block-1433
+      Parent: <DIV>
+      Content: "CALL TO ACTION"
+
+   11. <div> at line ~3888
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   12. <div> at line ~3894
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   13. <div> at line ~3900
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   14. <div> at line ~3906
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   15. <div> at line ~3912
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   16. <div> at line ~3918
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   17. <div> at line ~3924
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   18. <div> at line ~3930
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+   19. <div> at line ~3936
+      Classes: div-block-1497
+      Parent: <DIV>
+      Content: "Content"
+
+
+📄 style-guide/skeletons.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~815
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~826
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                  
+              ..."
+
+
+📄 style-guide/shop-copy.html
+   Found 3 element(s) with div-block classes:
+
+   1. <div> at line ~881
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~892
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                      
+          ..."
+
+   3. <div> at line ~901
+      Classes: div-block-1647
+      Parent: <DIV>
+      Content: "Have a Question? We Can Help!
+                    ..."
+
+
+📄 demo/receipt.html
+   Found 4 element(s) with div-block classes:
+
+   1. <div> at line ~369
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~380
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                        
+        ..."
+
+   3. <div> at line ~682
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   4. <div> at line ~693
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                      
+          ..."
+
+
+📄 demo/checkout.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~414
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~425
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                        
+        ..."
+
+
+📄 components/swipers.html
+   Found 1 element(s) with div-block classes:
+
+   1. <div> at line ~82
+      Classes: div-block-1284
+      Parent: <MAIN>
+      Content: "document.querySelectorAll('[swiper="sw01"]').forEa..."
+
+
+📄 components/presell-blocks.html
+   Found 19 element(s) with div-block classes:
+
+   1. <div> at line ~155
+      Classes: div-block-1629
+      ID: w-node-ca3ecf2c-64c3-68e6-9447-e88cb73df721-5dd703e2
+      Parent: <DIV>
+
+   2. <div> at line ~162
+      Classes: div-block-1629
+      ID: w-node-ca3ecf2c-64c3-68e6-9447-e88cb73df72a-5dd703e2
+      Parent: <DIV>
+
+   3. <div> at line ~169
+      Classes: div-block-1629
+      ID: w-node-ca3ecf2c-64c3-68e6-9447-e88cb73df733-5dd703e2
+      Parent: <DIV>
+
+   4. <div> at line ~176
+      Classes: div-block-1629
+      ID: w-node-ca3ecf2c-64c3-68e6-9447-e88cb73df73c-5dd703e2
+      Parent: <DIV>
+
+   5. <div> at line ~363
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "QUALITY
+                  
+                  
+    ..."
+
+   6. <div> at line ~364
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "QUALITY"
+
+   7. <div> at line ~367
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "This is the same high-quality fabric used by luxur..."
+
+   8. <div> at line ~394
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "VALUE
+                  
+                  
+      ..."
+
+   9. <div> at line ~395
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "VALUE"
+
+   10. <div> at line ~398
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "You’re paying a fraction of what you’d pay for exp..."
+
+   11. <div> at line ~425
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "CUSTOMER EXPERIENCE
+                  
+           ..."
+
+   12. <div> at line ~426
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "CUSTOMER EXPERIENCE"
+
+   13. <div> at line ~429
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "One small packaging mishap aside, I’ve had an incr..."
+
+   14. <div> at line ~456
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "BRAND
+                  
+                  
+      ..."
+
+   15. <div> at line ~457
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "BRAND"
+
+   16. <div> at line ~460
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "Miracle doesn’t have quite the hype or flourish of..."
+
+   17. <div> at line ~487
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "PERKS
+                  
+                  
+      ..."
+
+   18. <div> at line ~488
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "PERKS"
+
+   19. <div> at line ~491
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "The company is solid and focus on delivering a qua..."
+
+
+📄 templates/upsells/up02.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~397
+      Classes: div-block-1618
+      Parent: <DIV>
+      Content: "$118
+                    $99
+                    
+..."
+
+   2. <div> at line ~839
+      Classes: div-block-1618
+      Parent: <DIV>
+      Content: "$118
+                      $99
+                   ..."
+
+
+📄 templates/receipt/shop.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~389
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~400
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                      
+          ..."
+
+
+📄 templates/receipt/re01.html
+   Found 3 element(s) with div-block classes:
+
+   1. <div> at line ~536
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~547
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                      
+          ..."
+
+   3. <div> at line ~556
+      Classes: div-block-1647
+      Parent: <DIV>
+      Content: "Have a Question? We Can Help!
+                    ..."
+
+
+📄 templates/presells/ps04.html
+   Found 7 element(s) with div-block classes:
+
+   1. <div> at line ~314
+      Classes: div-block-1238
+      Parent: <DIV>
+      Content: "Mark P.
+                      
+                   ..."
+
+   2. <div> at line ~402
+      Classes: div-block-1516
+      Parent: <DIV>
+      Content: "FREE GIFTS WITH YOUR ORDER"
+
+   3. <div> at line ~424
+      Classes: div-block-1648
+      Parent: <DIV>
+      Content: "Sell-Out Risk: High"
+
+   4. <div> at line ~425
+      Classes: div-block-1514
+      Parent: <DIV>
+      Content: "Sell-Out Risk: High"
+
+   5. <div> at line ~429
+      Classes: div-block-5
+      Parent: <DIV>
+      Content: "|"
+
+   6. <div> at line ~432
+      Classes: div-block-1513
+      Parent: <DIV>
+      Content: "FREE shipping"
+
+   7. <div> at line ~433
+      Classes: div-block-1517
+      Parent: <DIV>
+      Content: "FREE shipping"
+
+
+📄 templates/presells/ps03.html
+   Found 8 element(s) with div-block classes:
+
+   1. <div> at line ~298
+      Classes: div-block-1508
+      Parent: <DIV>
+      Content: "1.
+                        Beyond Greens"
+
+   2. <div> at line ~313
+      Classes: div-block-1509
+      Parent: <DIV>
+      Content: "Pros
+                          
+                  ..."
+
+   3. <div> at line ~314
+      Classes: div-block-1510
+      Parent: <DIV>
+      Content: "Pros
+                          
+                  ..."
+
+   4. <div> at line ~315
+      Classes: div-block-1511
+      Parent: <DIV>
+      Content: "Pros
+                          
+                  ..."
+
+   5. <div> at line ~350
+      Classes: div-block-1511
+      Parent: <DIV>
+      Content: "Cons
+                          
+                  ..."
+
+   6. <div> at line ~391
+      Classes: div-block-1510
+      Parent: <DIV>
+      Content: "The Bottom Line
+                          
+       ..."
+
+   7. <div> at line ~392
+      Classes: div-block-1511
+      Parent: <DIV>
+      Content: "The Bottom Line
+                          
+       ..."
+
+   8. <div> at line ~405
+      Classes: div-block-1512
+      Parent: <DIV>
+      Content: "Learn More"
+
+
+📄 templates/presells/ps02.html
+   Found 21 element(s) with div-block classes:
+
+   1. <div> at line ~238
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "QUALITY
+                      
+                   ..."
+
+   2. <div> at line ~239
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "QUALITY"
+
+   3. <div> at line ~242
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "This is the same high-quality fabric used by luxur..."
+
+   4. <div> at line ~269
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "VALUE
+                      
+                     ..."
+
+   5. <div> at line ~270
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "VALUE"
+
+   6. <div> at line ~273
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "You’re paying a fraction of what you’d pay for exp..."
+
+   7. <div> at line ~300
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "CUSTOMER EXPERIENCE
+                      
+       ..."
+
+   8. <div> at line ~301
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "CUSTOMER EXPERIENCE"
+
+   9. <div> at line ~304
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "One small packaging mishap aside, I’ve had an incr..."
+
+   10. <div> at line ~331
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "BRAND
+                      
+                     ..."
+
+   11. <div> at line ~332
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "BRAND"
+
+   12. <div> at line ~335
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "Miracle doesn’t have quite the hype or flourish of..."
+
+   13. <div> at line ~362
+      Classes: div-block-1587
+      Parent: <DIV>
+      Content: "PERKS
+                      
+                     ..."
+
+   14. <div> at line ~363
+      Classes: div-block-1588
+      Parent: <DIV>
+      Content: "PERKS"
+
+   15. <div> at line ~366
+      Classes: div-block-1589
+      Parent: <DIV>
+      Content: "The company is solid and focus on delivering a qua..."
+
+   16. <div> at line ~694
+      Classes: div-block-1516
+      Parent: <DIV>
+      Content: "FREE GIFTS WITH YOUR ORDER"
+
+   17. <div> at line ~716
+      Classes: div-block-1648
+      Parent: <DIV>
+      Content: "Sell-Out Risk: High"
+
+   18. <div> at line ~717
+      Classes: div-block-1514
+      Parent: <DIV>
+      Content: "Sell-Out Risk: High"
+
+   19. <div> at line ~721
+      Classes: div-block-5
+      Parent: <DIV>
+      Content: "|"
+
+   20. <div> at line ~724
+      Classes: div-block-1513
+      Parent: <DIV>
+      Content: "FREE shipping"
+
+   21. <div> at line ~725
+      Classes: div-block-1517
+      Parent: <DIV>
+      Content: "FREE shipping"
+
+
+📄 templates/presells/ps01.html
+   Found 18 element(s) with div-block classes:
+
+   1. <div> at line ~237
+      Classes: div-block-1629
+      ID: w-node-_8a8ab808-7d22-8fbd-ac14-41fb6fc91407-6fc91405
+      Parent: <DIV>
+
+   2. <div> at line ~244
+      Classes: div-block-1629
+      ID: w-node-_8a8ab808-7d22-8fbd-ac14-41fb6fc91410-6fc91405
+      Parent: <DIV>
+
+   3. <div> at line ~251
+      Classes: div-block-1629
+      ID: w-node-_8a8ab808-7d22-8fbd-ac14-41fb6fc91419-6fc91405
+      Parent: <DIV>
+
+   4. <div> at line ~258
+      Classes: div-block-1629
+      ID: w-node-_8a8ab808-7d22-8fbd-ac14-41fb6fc91422-6fc91405
+      Parent: <DIV>
+
+   5. <div> at line ~295
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "We’ve hosted 5 family gatherings (without scrambli..."
+
+   6. <div> at line ~301
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "We use our outdoor space daily again"
+
+   7. <div> at line ~307
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "Our stress over the issue is gone"
+
+   8. <div> at line ~313
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "I’ve saved hundreds compared to the old “fixes” I ..."
+
+   9. <div> at line ~442
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "Relaxed dinners without interruption"
+
+   10. <div> at line ~448
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "Morning coffee without chaos"
+
+   11. <div> at line ~454
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "Kids who play outside until the sun goes down"
+
+   12. <div> at line ~460
+      Classes: div-block-1632
+      Parent: <DIV>
+      Content: "A space that finally lives up to its potential"
+
+   13. <div> at line ~516
+      Classes: div-block-1516
+      Parent: <DIV>
+      Content: "FREE GIFTS WITH YOUR ORDER"
+
+   14. <div> at line ~538
+      Classes: div-block-1648
+      Parent: <DIV>
+      Content: "Sell-Out Risk: High"
+
+   15. <div> at line ~539
+      Classes: div-block-1514
+      Parent: <DIV>
+      Content: "Sell-Out Risk: High"
+
+   16. <div> at line ~543
+      Classes: div-block-5
+      Parent: <DIV>
+      Content: "|"
+
+   17. <div> at line ~546
+      Classes: div-block-1513
+      Parent: <DIV>
+      Content: "FREE shipping"
+
+   18. <div> at line ~547
+      Classes: div-block-1517
+      Parent: <DIV>
+      Content: "FREE shipping"
+
+
+📄 templates/landing-pages/lp03.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~504
+      Classes: div-block-985
+      Parent: <DIV>
+      Content: "ONE-TIME PURCHASE - $199.95
+                      ..."
+
+   2. <div> at line ~1037
+      Classes: div-block-1112
+      Parent: <DIV>
+      Content: "Video Reviews
+                  
+                 ..."
+
+
+📄 templates/landing-pages/lp02.html
+   Found 1 element(s) with div-block classes:
+
+   1. <div> at line ~1778
+      Classes: div-block-990
+      Parent: <DIV>
+      Content: "Yes! I Want 40% Off Mosquito TNT 2.0"
+
+
+📄 templates/landing-pages/lp01.html
+   Found 1 element(s) with div-block classes:
+
+   1. <div> at line ~2643
+      Classes: div-block-1621
+      Parent: <DIV>
+      Content: "WARNING: Low Stock Notice
+                  
+     ..."
+
+
+📄 templates/checkout/shop.html
+   Found 2 element(s) with div-block classes:
+
+   1. <div> at line ~413
+      Classes: div-block-3
+      Parent: <DIV>
+      Content: "Powered by 29next"
+
+   2. <div> at line ~424
+      Classes: div-block-4
+      Parent: <DIV>
+      Content: "Terms of Service
+                        
+        ..."
+
+
+📄 templates/checkout/olympus.html
+   Found 1 element(s) with div-block classes:
+
+   1. <div> at line ~1040
+      Classes: div-block-1625
+      Parent: <DIV>
+      Content: "Have a Question? We Can Help!
+                    ..."
+
+
+SUMMARY BY CLASS NAME:
+----------------------
+   div-block-1587: 10 occurrence(s)
+   div-block-1588: 10 occurrence(s)
+   div-block-1589: 10 occurrence(s)
+   div-block-1497: 9 occurrence(s)
+   div-block-3: 8 occurrence(s)
+   div-block-4: 8 occurrence(s)
+   div-block-1629: 8 occurrence(s)
+   div-block-1632: 8 occurrence(s)
+   div-block-1591: 5 occurrence(s)
+   div-block-1433: 5 occurrence(s)
+   div-block-1516: 3 occurrence(s)
+   div-block-1648: 3 occurrence(s)
+   div-block-1514: 3 occurrence(s)
+   div-block-5: 3 occurrence(s)
+   div-block-1513: 3 occurrence(s)
+   div-block-1517: 3 occurrence(s)
+   div-block-1511: 3 occurrence(s)
+   div-block-1579: 2 occurrence(s)
+   div-block-1647: 2 occurrence(s)
+   div-block-1618: 2 occurrence(s)
+   div-block-1510: 2 occurrence(s)
+   div-block-1284: 1 occurrence(s)
+   div-block-1238: 1 occurrence(s)
+   div-block-1508: 1 occurrence(s)
+   div-block-1509: 1 occurrence(s)
+   div-block-1512: 1 occurrence(s)
+   div-block-985: 1 occurrence(s)
+   div-block-1112: 1 occurrence(s)
+   div-block-990: 1 occurrence(s)
+   div-block-1621: 1 occurrence(s)
+   div-block-1625: 1 occurrence(s)
+
+✨ Report complete!
+

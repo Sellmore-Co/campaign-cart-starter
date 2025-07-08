@@ -1,27 +1,20 @@
 #!/bin/bash
 
-# Script to merge only generated files from files branch to current branch
-
-# Array of directories/files to merge
-GENERATED_DIRS=(
-    "components"
-    "css"
-    "js"
-    "templates"
-    "demo"
-)
+# Script to merge only the dist folder from files branch to current branch
 
 # Get current branch
 CURRENT_BRANCH=$(git branch --show-current)
 
-echo "Merging generated files from 'files' branch to '$CURRENT_BRANCH'"
+echo "Merging dist folder from 'files' branch to '$CURRENT_BRANCH'"
 
-# Checkout each directory from files branch
-for dir in "${GENERATED_DIRS[@]}"; do
-    if git ls-tree -r files --name-only | grep -q "^$dir/"; then
-        echo "Merging $dir/..."
-        git checkout files -- "$dir/"
-    fi
-done
+# Check if dist folder exists in files branch
+if git ls-tree -r files --name-only | grep -q "^dist/"; then
+    echo "Merging dist/..."
+    git checkout files -- "dist/"
+    echo "✅ dist folder merged successfully"
+else
+    echo "❌ No dist folder found in files branch"
+    exit 1
+fi
 
 echo "Generated files merged. Review changes and commit when ready."

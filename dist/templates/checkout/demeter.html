@@ -718,7 +718,7 @@
                               </div>
                             </div>
                             <div data-next-hide="cart.isEmpty" class="order-totals">
-                              <div class="order-totals__section">
+                              <div data-next-show="cart.hasShipping" class="order-totals__section">
                                 <div class="order-totals__line">
                                   <div class="accordion__right">
                                     <div class="order-totals__label">Shipping<br></div>
@@ -729,7 +729,6 @@
                                       </svg></div>
                                   </div>
                                   <div class="accordion__right">
-                                    <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>
                                     <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
                                   </div>
                                 </div>
@@ -796,9 +795,7 @@
       </div>
     </div>
 
-    <!--  Google Tag Manager (noscript)  -->
 
-    <!--  End Google Tag Manager (noscript)  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script src="https://core.spreedly.com/iframe/iframe-v1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">

@@ -135,7 +135,7 @@ export class HtmlProcessor {
 
   removePageblockStyles($) {
     // Remove the pageblock-styles div that contains the campaign-cart.css link
-    $('.pageblock-styles').each((i, elem) => {
+    $('[data-remove-prod]').each((i, elem) => {
       const $elem = $(elem);
       // Check if this contains the campaign-cart.css link
       if ($elem.find('link[href*="campaign-cart.css"]').length > 0) {

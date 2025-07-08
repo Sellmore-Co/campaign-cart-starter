@@ -37,6 +37,9 @@ export const config = {
     },
     removeWebflowComment: {
       enabled: true
+    },
+    removeTrackingScripts: {
+      enabled: true
     }
   },
   beautify: {

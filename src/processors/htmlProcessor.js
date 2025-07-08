@@ -36,6 +36,9 @@ export class HtmlProcessor {
     if (this.config.processors.consolidateInlineCSS?.enabled) {
       this.processors.push(this.consolidateInlineCSS.bind(this));
     }
+    if (this.config.processors.removeTrackingScripts?.enabled) {
+      this.processors.push(this.removeTrackingScripts.bind(this));
+    }
   }
 
   async process(html) {
@@ -319,6 +322,42 @@ export class HtmlProcessor {
         $('body').append(consolidatedCSS);
       }
     }
+    
+    return $;
+  }
+
+  removeTrackingScripts($) {
+    // Remove Facebook Pixel script
+    $('script').each((i, elem) => {
+      const $elem = $(elem);
+      const scriptContent = $elem.html();
+      
+      // Check for Facebook Pixel code
+      if (scriptContent && 
+          (scriptContent.includes('connect.facebook.net/en_US/fbevents.js') ||
+           scriptContent.includes('fbq(') ||
+           scriptContent.includes('f.fbq'))) {
+        $elem.remove();
+      }
+      
+      // Check for Google Tag Manager code
+      if (scriptContent && 
+          (scriptContent.includes('googletagmanager.com/gtm.js') ||
+           scriptContent.includes('GTM-') ||
+           scriptContent.includes('dataLayer'))) {
+        $elem.remove();
+      }
+    });
+    
+    // Remove Google Tag Manager noscript iframe
+    $('noscript').each((i, elem) => {
+      const $elem = $(elem);
+      const content = $elem.html();
+      
+      if (content && content.includes('googletagmanager.com/ns.html')) {
+        $elem.remove();
+      }
+    });
     
     return $;
   }

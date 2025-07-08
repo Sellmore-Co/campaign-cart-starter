@@ -15,6 +15,9 @@
     <!-- Campaign Loader Script -->
     <script src="https://campaign-cart-v2.pages.dev/loader.js"></script>
 
+    <!-- NEXT Metatags -->
+    <meta name="next-page-type" content="upsell">
+
 
     <link href="../../css/normalize.css" rel="stylesheet" type="text/css">
     <link href="../../css/components.css" rel="stylesheet" type="text/css">
@@ -76,6 +79,7 @@
 
     </style>
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
@@ -87,37 +91,33 @@
           <div class="container cc-0">
             <div class="upsell-navbar">
               <div class="upsell-navbar__wrapper">
-                <div class="upsell-navbar__wrapper--content">
-                  <div class="progress-contain">
-                    <div class="progress-bar1">
-                      <div class="progress-pct">
-                        <div class="progress-progress"></div>
+                <div class="upsell-steps">
+                  <div class="os-bundle__selector">
+                    <div class="os-bundle__progress-bar">
+                      <div class="os-bundle__progress-fill"></div>
+                    </div>
+                    <div class="os-bundle__option os-bundle__option--active">
+                      <div class="os-bundle__option-circle2 os-bundle__option-circle--active">
+                        <div>1</div>
                       </div>
-                      <div class="progress-wrapper">
-                        <div class="progress-item">
-                          <div>1</div>
-                        </div>
-                      </div>
-                      <div class="progress-wrapper">
-                        <div class="progress-item">
-                          <div>2</div>
-                        </div>
-                      </div>
-                      <div class="progress-wrapper">
-                        <div class="progress-item cc-inactive">
-                          <div>3</div>
-                        </div>
+                      <div class="os-bundle__option-content">
+                        <div class="os-bundle__option-quantity"><strong>Checkout</strong></div>
                       </div>
                     </div>
-                    <div class="progress-bar1">
-                      <div class="progress-wrapper">
-                        <div class="progress-text">Checkout</div>
+                    <div class="os-bundle__option">
+                      <div class="os-bundle__option-circle2">
+                        <div>2</div>
                       </div>
-                      <div class="progress-wrapper">
-                        <div class="progress-text">Bonus Deals</div>
+                      <div class="os-bundle__option-content">
+                        <div class="os-bundle__option-quantity">Special Deal</div>
                       </div>
-                      <div class="progress-wrapper">
-                        <div class="progress-text cc-inactive">Summary</div>
+                    </div>
+                    <div class="os-bundle__option">
+                      <div class="os-bundle__option-circle2">
+                        <div>3</div>
+                      </div>
+                      <div class="os-bundle__option-content">
+                        <div class="os-bundle__option-quantity">Summary</div>
                       </div>
                     </div>
                   </div>
@@ -396,7 +396,7 @@
                     </div>
                   </div>
                   <h2 class="display-lg">All-In-One Facial® Set (4 Facials + Brush)</h2>
-                  <div class="div-block-1618">
+                  <div class="flex_price">
                     <div class="cc-compare">$118</div>
                     <div>$99</div>
                     <div class="exclusive-deal-badge">
@@ -838,7 +838,7 @@
                       </div>
                     </div>
                     <h2 class="display-lg">All-In-One Facial® Set (4 Facials + Brush)</h2>
-                    <div class="div-block-1618">
+                    <div class="flex_price">
                       <div class="cc-compare">$118</div>
                       <div>$99</div>
                       <div class="exclusive-deal-badge">
@@ -1116,6 +1116,10 @@
         </footer>
       </div>
     </div>
+
+    <!--  Google Tag Manager (noscript)  -->
+
+    <!--  End Google Tag Manager (noscript)  -->
 
 
     <!-- Consolidated Custom CSS -->

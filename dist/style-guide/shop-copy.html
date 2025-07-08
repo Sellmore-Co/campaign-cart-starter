@@ -76,6 +76,7 @@
 
     </style>
 
+
     <!--  SDK Configuration  -->
     <meta name="tn-api-key" content="kLGpgEfCX3iUZG16hpI5zrCH9qxcOdahDY1im6ud">
     <meta name="tn-payment-env-key" content="kLGpgEfCX3iUZG16hpI5zrCH9qxcOdahDY1im6ud">
@@ -204,10 +205,10 @@
                                   <div class="order-totals__section">
                                     <div class="order-totals__line">
                                       <div class="order-totals__label">Subtotal</div>
-                                      <div data-next-display="cart.subtotal" class="order-totals__value">$138.30<br></div>
+                                      <div data-next-display="cart.subtotal" class="order-totals__value">$0.00<br></div>
                                     </div>
                                   </div>
-                                  <div class="order-totals__section hide">
+                                  <div data-next-show="cart.hasShipping" class="order-totals__section">
                                     <div class="order-totals__line">
                                       <div class="order-totals__label-group">
                                         <div class="order-totals__label">Shipping<br></div>
@@ -218,7 +219,6 @@
                                           </svg></div>
                                       </div>
                                       <div class="order-totals__value-group">
-                                        <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>
                                         <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
                                       </div>
                                     </div>
@@ -238,7 +238,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div data-os-cart-summary="shipping-bar" class="order-totals__section shipping-message">
+                                  <div class="order-totals__section shipping-message hide">
                                     <div>Shipping and tax will be settled upon checkout confirmation</div>
                                   </div>
                                   <div data-next-show="cart.hasSavings" class="order-totals__section">
@@ -247,13 +247,13 @@
                                         <div class="order-totals__label">Today You Saved<br></div>
                                         <div class="badge badge--small">
                                           <div class="label__wrapper cc-sm">
-                                            <div class="badge__text"><span data-next-display="cart.savingsPercentage">20%</span> OFF</div>
+                                            <div class="badge__text"><span data-next-display="cart.savingsPercentage">0%</span> OFF</div>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="order-totals__value-group">
                                         <div class="order-totals__label">Discount:<br></div>
-                                        <div data-next-display="cart.savings" class="order-totals__value">$0.70<br></div>
+                                        <div data-next-display="cart.savingsAmount" class="order-totals__value">$0.00<br></div>
                                       </div>
                                     </div>
                                   </div>
@@ -262,7 +262,7 @@
                                       <div class="order-totals__label order-totals__label--total">Grand Total:</div>
                                       <div class="order-totals__value-group">
                                         <div class="summary-total__coin">USD<br></div>
-                                        <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$109.96</div>
+                                        <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$0.00</div>
                                       </div>
                                     </div>
                                     <div data-next-show="cart.hasSavings" class="order-totals__savings">
@@ -270,7 +270,7 @@
                                         <div class="order-totals__savings-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="m10.802 15.686 5.367-5.368a.15.15 0 0 0 .046-.109V4.144m-2.998-.95h-5.67a.16.16 0 0 0-.11.046L1.779 8.897a.154.154 0 0 0 0 .219l5.594 5.593c.06.06.158.06.218 0l5.658-5.657a.15.15 0 0 0 .045-.11v-5.67a.077.077 0 0 0-.077-.077Zm-3.06 3.749a.643.643 0 1 1-1.286 0 .643.643 0 0 1 1.286 0m-.648-.005h.01v.01h-.01z"></path>
                                           </svg></div>
-                                        <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savings">$28.34</span><br></div>
+                                        <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savingsAmount">$0.00</span><br></div>
                                       </div>
                                     </div>
                                   </div>
@@ -392,6 +392,11 @@
                           <div class="spinner"></div>
                         </div>
                       </button></div>
+                    <div class="divider-section">
+                      <div class="divider-section__line"></div>
+                      <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
+                      <div class="divider-section__line"></div>
+                    </div>
                   </div>
                   <div class="divider-section">
                     <div class="divider-section__line"></div>
@@ -792,10 +797,10 @@
                                 <div class="order-totals__section">
                                   <div class="order-totals__line">
                                     <div class="order-totals__label">Subtotal</div>
-                                    <div data-next-display="cart.subtotal" class="order-totals__value">$138.30<br></div>
+                                    <div data-next-display="cart.subtotal" class="order-totals__value">$0.00<br></div>
                                   </div>
                                 </div>
-                                <div class="order-totals__section hide">
+                                <div data-next-show="cart.hasShipping" class="order-totals__section">
                                   <div class="order-totals__line">
                                     <div class="order-totals__label-group">
                                       <div class="order-totals__label">Shipping<br></div>
@@ -806,7 +811,6 @@
                                         </svg></div>
                                     </div>
                                     <div class="order-totals__value-group">
-                                      <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>
                                       <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
                                     </div>
                                   </div>
@@ -826,7 +830,7 @@
                                     </div>
                                   </div>
                                 </div>
-                                <div data-os-cart-summary="shipping-bar" class="order-totals__section shipping-message">
+                                <div class="order-totals__section shipping-message hide">
                                   <div>Shipping and tax will be settled upon checkout confirmation</div>
                                 </div>
                                 <div data-next-show="cart.hasSavings" class="order-totals__section">
@@ -835,13 +839,13 @@
                                       <div class="order-totals__label">Today You Saved<br></div>
                                       <div class="badge badge--small">
                                         <div class="label__wrapper cc-sm">
-                                          <div class="badge__text"><span data-next-display="cart.savingsPercentage">20%</span> OFF</div>
+                                          <div class="badge__text"><span data-next-display="cart.savingsPercentage">0%</span> OFF</div>
                                         </div>
                                       </div>
                                     </div>
                                     <div class="order-totals__value-group">
                                       <div class="order-totals__label">Discount:<br></div>
-                                      <div data-next-display="cart.savings" class="order-totals__value">$0.70<br></div>
+                                      <div data-next-display="cart.savingsAmount" class="order-totals__value">$0.00<br></div>
                                     </div>
                                   </div>
                                 </div>
@@ -850,7 +854,7 @@
                                     <div class="order-totals__label order-totals__label--total">Grand Total:</div>
                                     <div class="order-totals__value-group">
                                       <div class="summary-total__coin">USD<br></div>
-                                      <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$109.96</div>
+                                      <div data-next-display="cart.total" class="order-totals__value order-totals__value--total">$0.00</div>
                                     </div>
                                   </div>
                                   <div data-next-show="cart.hasSavings" class="order-totals__savings">
@@ -858,7 +862,7 @@
                                       <div class="order-totals__savings-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 18 18" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
                                           <path stroke-linecap="round" stroke-linejoin="round" d="m10.802 15.686 5.367-5.368a.15.15 0 0 0 .046-.109V4.144m-2.998-.95h-5.67a.16.16 0 0 0-.11.046L1.779 8.897a.154.154 0 0 0 0 .219l5.594 5.593c.06.06.158.06.218 0l5.658-5.657a.15.15 0 0 0 .045-.11v-5.67a.077.077 0 0 0-.077-.077Zm-3.06 3.749a.643.643 0 1 1-1.286 0 .643.643 0 0 1 1.286 0m-.648-.005h.01v.01h-.01z"></path>
                                         </svg></div>
-                                      <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savings">$28.34</span><br></div>
+                                      <div class="order-totals__savings-text">TOTAL SAVINGS <span data-next-display="cart.savingsAmount">$0.00</span><br></div>
                                     </div>
                                   </div>
                                 </div>
@@ -927,7 +931,9 @@
       </div>
     </div>
 
+    <!--  Google Tag Manager (noscript)  -->
 
+    <!--  End Google Tag Manager (noscript)  -->
     <script src="https://core.spreedly.com/iframe/iframe-v1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>

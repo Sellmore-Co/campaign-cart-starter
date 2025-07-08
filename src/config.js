@@ -1,6 +1,6 @@
 export const config = {
   inputDir: 'import',
-  outputDir: '',
+  outputDir: 'dist',
   processors: {
     removeWebflowAttributes: {
       enabled: true,

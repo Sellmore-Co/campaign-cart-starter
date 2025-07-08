@@ -166,8 +166,7 @@ async function main() {
     })
     .option('output', {
       alias: 'o',
-      describe: 'Output directory for processed files',
-      default: ''
+      describe: 'Output directory for processed files'
     })
     .option('config', {
       alias: 'c',
@@ -189,9 +188,10 @@ async function main() {
   }
 
   const config = {
+    ...defaultConfig,
     ...customConfig,
-    inputDir: argv.input,
-    outputDir: argv.output
+    inputDir: argv.input || customConfig.inputDir || defaultConfig.inputDir,
+    outputDir: argv.output || customConfig.outputDir || defaultConfig.outputDir
   };
 
   const processor = new WebflowProcessor(config);

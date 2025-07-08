@@ -80,6 +80,7 @@
 
     </style>
 
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -153,7 +154,7 @@
                               <h2 class="form-section__title">Select Your Bundle</h2>
                               <div data-next-selector-id="drone-packages" data-next-cart-selector="" data-next-selection-mode="swap" class="os-option">
                                 <div class="os-cards__vertical os--gap-m">
-                                  <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" class="os-card next-selected">
+                                  <div data-next-shipping-id="1" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" data-next-await="" class="os-card next-selected">
                                     <div os-slot="header" class="os-card__header-slot"></div>
                                     <div class="os-card__wrapper">
                                       <div class="os-card__content os--align-middle">
@@ -170,7 +171,7 @@
                                               </div>
                                             </div>
                                             <div class="os-card__subtitle-wrapper">
-                                              <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                              <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                             </div>
                                           </div>
                                         </div>
@@ -197,7 +198,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" class="os-card">
+                                  <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="3" data-next-quantity="1" data-next-await="" class="os-card">
                                     <div os-slot="header" class="os-card__header-slot"></div>
                                     <div class="os-card__wrapper">
                                       <div class="os-card__content os--align-middle">
@@ -214,14 +215,14 @@
                                               </div>
                                             </div>
                                             <div class="os-card__subtitle-wrapper">
-                                              <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                              <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00 + Free Shipping</span></div>
                                             </div>
                                           </div>
                                         </div>
                                         <div os-slot="right" class="os-card__secondary-slot">
                                           <div class="os-card__pricing">
                                             <div os-component="price-container" class="os-card__price-container">
-                                              <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">$16.95</div>
+                                              <div data-next-display="package.price_retail" class="os-card__price os--compare os-style">-</div>
                                               <div class="os-card__price os--current"><span data-next-display="package.price">-</span>/ea</div>
                                             </div>
                                             <div os-component="total-container" class="os-card__total-container">
@@ -236,7 +237,7 @@
                                     </div>
                                     <div os-slot="footer" class="os-card__footer-slot"></div>
                                   </div>
-                                  <div data-next-await="" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" class="os-card">
+                                  <div data-next-shipping-id="2" role="button" data-next-selector-card="" data-next-package-id="2" data-next-quantity="1" data-next-await="" class="os-card">
                                     <div os-slot="header" class="os-card__header-slot"></div>
                                     <div class="os-card__wrapper">
                                       <div class="os-card__content os--align-middle">
@@ -253,7 +254,7 @@
                                               </div>
                                             </div>
                                             <div class="os-card__subtitle-wrapper">
-                                              <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savings">$XX.00</span> + Free Shipping</div>
+                                              <div data-next-show="package.hasSavings" class="os-card__subtitle-text">Save <span data-next-display="package.savingsAmount">$0.00</span><span data-next-show="shipping.isFree"> + Free Shipping</span></div>
                                             </div>
                                           </div>
                                         </div>
@@ -335,11 +336,11 @@
                                     <div class="spinner"></div>
                                   </div>
                                 </button></div>
-                            </div>
-                            <div class="divider-section">
-                              <div class="divider-section__line"></div>
-                              <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
-                              <div class="divider-section__line"></div>
+                              <div class="divider-section">
+                                <div class="divider-section__line"></div>
+                                <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
+                                <div class="divider-section__line"></div>
+                              </div>
                             </div>
                             <div class="form-section form-section--first">
                               <h2 class="form-section__title">Contact Information</h2>
@@ -744,7 +745,7 @@
                                     </div>
                                   </div>
                                   <div class="accordion__right">
-                                    <div data-next-display="cart.savings" class="order-totals__value">- $28.34<br></div>
+                                    <div data-next-display="cart.savingsAmount" class="order-totals__value">- $28.34<br></div>
                                   </div>
                                 </div>
                                 <div class="coupon-tags"></div>
@@ -795,7 +796,9 @@
       </div>
     </div>
 
+    <!--  Google Tag Manager (noscript)  -->
 
+    <!--  End Google Tag Manager (noscript)  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script src="https://core.spreedly.com/iframe/iframe-v1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">

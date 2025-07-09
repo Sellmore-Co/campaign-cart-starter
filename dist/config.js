@@ -43,11 +43,14 @@ window.nextConfig = {
                 enabled: true
             },
             gtm: {
-                enabled: true,
+                enabled: false,
                 settings: {
                     containerId: "GTM-MCGB3JBM",
                     dataLayerName: "dataLayer"
                 }
+            },
+            rudderstack: {
+                enabled: false,
             },
             facebook: {
                 enabled: true,

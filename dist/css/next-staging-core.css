@@ -9113,12 +9113,6 @@ figcaption {
   line-height: 1;
 }
 
-.os-card__subtitle-text.os--last {
-  border-left: 1px solid #000;
-  padding-left: .5em;
-  font-weight: 400;
-}
-
 .os-card__secondary-slot {
   flex-flow: column;
   flex: 0 auto;
@@ -9175,17 +9169,6 @@ figcaption {
 .os-card__price.os--compare-diagonal {
   color: #929292;
   font-weight: 500;
-}
-
-.os-card__custom-price {
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
-  display: flex;
-}
-
-.os-card__custom-price-row {
-  color: #929292;
-  font-size: .825rem;
 }
 
 .os-card__bottom-slot {
@@ -13508,8 +13491,19 @@ figcaption {
   width: 16ch;
 }
 
+.skeleton.skeleton-text.skeleton-text--medium.skeleton-align-middle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .skeleton.skeleton-text.skeleton-text--large {
   width: 38ch;
+}
+
+.skeleton.skeleton-text.skeleton-text--large.skeleton-height--large {
+  width: 42ch;
+  min-height: 4rem;
+  max-height: 4em;
 }
 
 .skeleton.skeleton-text.skeleton-text--tiny {
@@ -13541,10 +13535,24 @@ figcaption {
   max-height: 9rem;
 }
 
+.skeleton.skeleton-box.skeleton-box--xs {
+  min-height: 4rem;
+  max-height: 4rem;
+}
+
+.skeleton.skeleton-box.skeleton-box-card {
+  min-height: 5rem;
+  max-height: 5rem;
+}
+
 .skeleton.skeleton-button {
   width: 100%;
   min-height: 4.5em;
   max-height: 4.5em;
+}
+
+.skeleton.skeleton-image {
+  aspect-ratio: 1;
 }
 
 .order-totals-skeleton {
@@ -13694,6 +13702,7 @@ figcaption {
 
 .skeleton-wrapper {
   z-index: 99999999;
+  background-color: #fff;
   position: fixed;
   inset: 0%;
 }
@@ -16004,6 +16013,10 @@ figcaption {
 
   .skeleton-line__item-description {
     flex: 1;
+  }
+
+  .skeleton.skeleton-text.skeleton-text--large.skeleton-height--large {
+    width: 68ch;
   }
 
   .order-totals-skeleton {
@@ -18691,6 +18704,14 @@ figcaption {
   .skeleton-line__item-content {
     width: 100%;
     display: flex;
+  }
+
+  .skeleton.skeleton-text.skeleton-text--large {
+    width: 26ch;
+  }
+
+  .skeleton.skeleton-text.skeleton-text--large.skeleton-height--large {
+    width: 36ch;
   }
 
   .receipt-check {

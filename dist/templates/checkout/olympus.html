@@ -111,6 +111,87 @@
             </div>
           </div>
         </div>
+        <div data-next-skeleton="" class="skeleton-wrapper">
+          <nav class="checkout__header-top">
+            <div class="container cc-medium">
+              <div class="checkout__header-brand"><img src="../../images/next-logo.png" loading="lazy" alt="" class="brand-logo">
+                <div class="mg-section tablet-spacer"><img loading="lazy" src="../../images/icon.svg" alt="" class="mg-image">
+                  <div class="mg-text hide-tablet">30-Day 100%<br>Money Back Guarantee</div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <div class="security-banner">
+            <div class="container cc-small">
+              <div class="scarcity-banner__content">
+                <div class="security-banner__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"></path>
+                  </svg></div>
+                <div class="security-banner__text">100% Encrypted &amp; Secure Checkout</div>
+              </div>
+            </div>
+          </div>
+          <div class="section-checkout">
+            <div class="container cc-medium">
+              <div class="olympus-wrapper">
+                <div class="progress-container">
+                  <div class="step">
+                    <div class="step-label active">Checkout</div>
+                  </div>
+                  <div class="line line-active arrow-active"></div>
+                  <div class="step">
+                    <div class="step-label">Bonus Deals</div>
+                  </div>
+                  <div class="line line-inactive arrow-inactive"></div>
+                  <div class="step">
+                    <div class="step-label">Summary</div>
+                  </div>
+
+                </div>
+                <div class="show-tablet">
+                  <div class="heading-box">
+                    <div class="skeleton skeleton-text skeleton-text--large"></div>
+                    <div class="skeleton skeleton-text skeleton-text--large skeleton-height--large"></div>
+                    <div class="skeleton skeleton-text skeleton-text--large"></div>
+                  </div>
+                </div>
+                <div class="checkout-wrapper new-size">
+                  <div class="olympus-checkout__left">
+                    <div class="skeleton skeleton-image"></div>
+                  </div>
+                  <div class="olympus-checkout__right">
+                    <div class="checkout__form-container">
+                      <div class="hide-tablet">
+                        <div class="hero_heading-box">
+                          <div class="heading-box">
+                            <div class="skeleton skeleton-text skeleton-text--large"></div>
+                            <div class="skeleton skeleton-text skeleton-text--large skeleton-height--large"></div>
+                            <div class="skeleton skeleton-text skeleton-text--large"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="skeleton skeleton-box skeleton-box--xs"></div>
+                      <div class="checkout-form">
+                        <form>
+                          <div class="form-content">
+                            <div class="form-sections">
+                              <div class="form-section form-section--first">
+                                <div class="skeleton skeleton-text skeleton-text--large"></div>
+                                <div class="skeleton skeleton-box skeleton-box-card"></div>
+                                <div class="skeleton skeleton-box skeleton-box-card"></div>
+                                <div class="skeleton skeleton-box skeleton-box-card"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="section-checkout">
           <div class="container cc-medium">
             <div class="olympus-wrapper">
@@ -555,79 +636,83 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="form-section form-section--first">
-                              <h2 class="form-section__title">Step 2: Customer Information</h2>
-                              <div class="form-grid">
-                                <div class="form-grid__row">
-                                  <div class="form-group">
-                                    <div class="form-input"><label for="shipping_fname" class="label-checkout">First Name</label><input autocomplete="given-name" os-checkout-validate="required" placeholder="First Name*" maxlength="256" name="shipping_fname" data-name="Shipping First Name" type="text" id="shipping_fname" data-next-checkout-field="fname" class="input-flds"></div>
+                            <div data-next-component="shipping-form" class="form-sections">
+                              <div class="form-section form-section--first">
+                                <h2 class="form-section__title">Step 2: Customer Information</h2>
+                                <div class="form-grid">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input"><label for="shipping_fname" class="label-checkout">First Name</label><input autocomplete="given-name" os-checkout-validate="required" placeholder="First Name*" maxlength="256" name="shipping_fname" data-name="Shipping First Name" type="text" id="shipping_fname" data-next-checkout-field="fname" class="input-flds"></div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-input"><label for="shipping_lname" class="label-checkout">Last Name</label><input autocomplete="family-name" os-checkout-validate="required" placeholder="Last Name*" maxlength="256" name="shipping_lname" data-name="Shipping Lirst Name" type="text" id="shipping_lname" data-next-checkout-field="lname" class="input-flds"></div>
+                                    </div>
                                   </div>
-                                  <div class="form-group">
-                                    <div class="form-input"><label for="shipping_lname" class="label-checkout">Last Name</label><input autocomplete="family-name" os-checkout-validate="required" placeholder="Last Name*" maxlength="256" name="shipping_lname" data-name="Shipping Lirst Name" type="text" id="shipping_lname" data-next-checkout-field="lname" class="input-flds"></div>
+                                  <div class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
+                                    </div>
                                   </div>
-                                </div>
-                                <div class="form-grid__row">
-                                  <div class="form-group">
-                                    <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
-                                  </div>
-                                </div>
-                                <div class="form-grid__row">
-                                  <div class="form-group">
-                                    <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
+                                    <div class="form-group">
+                                      <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
 
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div pb-checkout-section="shipping" class="form-section">
-                              <h1 class="form-section__title">Step 3: Shipping Information</h1>
-                              <div os-checkout-component="shipping-form">
-                                <div class="form-grid">
-                                  <div class="form-grid__row">
-                                    <div class="form-group">
-                                      <div class="form-input"><label for="shipping_country" class="label-checkout">Country</label>
-                                        <div class="select-form-wrapper"><select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" class="input-flds select-field">
-                                            <option value="">Select Country</option>
-                                          </select>
-                                          <div class="caret-down">
-                                            <div class="select-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="2 4.75 7 9.25 12 4.75"></polyline>
-                                              </svg></div>
+                              <div pb-checkout-section="shipping" class="form-section">
+                                <h1 class="form-section__title">Step 3: Shipping Information</h1>
+                                <div>
+                                  <div class="form-grid">
+                                    <div data-next-component="shipping-field-row" class="form-grid__row">
+                                      <div class="form-group">
+                                        <div class="form-input"><label for="shipping_country" class="label-checkout">Country</label>
+                                          <div class="select-form-wrapper"><select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" class="input-flds select-field">
+                                              <option value="">Select Country</option>
+                                            </select>
+                                            <div class="caret-down">
+                                              <div class="select-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                  <polyline points="2 4.75 7 9.25 12 4.75"></polyline>
+                                                </svg></div>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
-                                  <div class="form-grid__row">
-                                    <div class="form-group">
-                                      <div class="form-input"><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds"></div>
-                                    </div>
-                                  </div>
-                                  <div class="form-grid__row">
-                                    <div class="form-group">
-                                      <div class="form-input"><label for="shipping_address2" class="label-checkout">Apartment, suite, etc. (optional)</label><input autocomplete="address-line2" name="shipping_address2" data-name="Shipping Address 2" type="text" id="shipping_addres2" placeholder="Apartment, suite, etc. (optional)" maxlength="256" data-next-checkout-field="address2" class="input-flds"></div>
-                                    </div>
-                                  </div>
-                                  <div data-os-component="location" class="form-grid__row">
-                                    <div class="form-group">
-                                      <div class="form-input"><label for="shipping_city" class="label-checkout">City</label><input autocomplete="address-level2" os-checkout-validate="required" placeholder="City*" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" pattern="^[A-Za-z\s]+$" data-next-checkout-field="city" class="input-flds"></div>
-                                    </div>
-                                    <div class="form-group">
-                                      <div class="form-input"><label for="shipping_province" class="label-checkout">State</label>
-                                        <div class="select-form-wrapper"><select autocomplete="address-level1" os-checkout-validate="required" name="shipping_province" data-name="Shipping Province" type="select" id="shipping_province" data-next-checkout-field="province" class="input-flds select-field">
-                                            <option value="">Select State</option>
-                                          </select>
-                                          <div class="caret-down">
-                                            <div class="select-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <polyline points="2 4.75 7 9.25 12 4.75"></polyline>
-                                              </svg></div>
-                                          </div>
-                                        </div>
+                                    <div data-next-component="shipping-field-row" class="form-grid__row">
+                                      <div class="form-group">
+                                        <div class="form-input"><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds"></div>
                                       </div>
                                     </div>
-                                    <div class="form-group">
-                                      <div class="form-input"><label for="shipping_postal_code" class="label-checkout">ZIP Code</label><input autocomplete="postal-code" os-checkout-validate="required" placeholder="ZIP Code*" maxlength="10" name="shipping_postal_code" data-name="Shipping Postal Code" type="text" id="shipping_postal_code" inputmode="numeric" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" data-next-checkout-field="postal" class="input-flds"></div>
+                                    <div data-next-component="shipping-field-row" class="form-grid__row">
+                                      <div class="form-group">
+                                        <div class="form-input"><label for="shipping_address2" class="label-checkout">Apartment, suite, etc. (optional)</label><input autocomplete="address-line2" name="shipping_address2" data-name="Shipping Address 2" type="text" id="shipping_addres2" placeholder="Apartment, suite, etc. (optional)" maxlength="256" data-next-checkout-field="address2" class="input-flds"></div>
+                                      </div>
+                                    </div>
+                                    <div data-next-component="location" class="next-hidden">
+                                      <div data-next-component="shipping-field-row" class="form-grid__row">
+                                        <div class="form-group">
+                                          <div class="form-input"><label for="shipping_city" class="label-checkout">City</label><input autocomplete="address-level2" os-checkout-validate="required" placeholder="City*" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" pattern="^[A-Za-z\s]+$" data-next-checkout-field="city" class="input-flds"></div>
+                                        </div>
+                                        <div class="form-group">
+                                          <div class="form-input"><label for="shipping_province" class="label-checkout">State</label>
+                                            <div class="select-form-wrapper"><select autocomplete="address-level1" os-checkout-validate="required" name="shipping_province" data-name="Shipping Province" type="select" id="shipping_province" data-next-checkout-field="province" class="input-flds select-field">
+                                                <option value="">Select State</option>
+                                              </select>
+                                              <div class="caret-down">
+                                                <div class="select-arrow w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                                    <polyline points="2 4.75 7 9.25 12 4.75"></polyline>
+                                                  </svg></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <div class="form-input"><label for="shipping_postal_code" class="label-checkout">ZIP Code</label><input autocomplete="postal-code" os-checkout-validate="required" placeholder="ZIP Code*" maxlength="10" name="shipping_postal_code" data-name="Shipping Postal Code" type="text" id="shipping_postal_code" inputmode="numeric" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" data-next-checkout-field="postal" class="input-flds"></div>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -867,7 +952,7 @@
                                           </label></div>
                                         <div os-checkout-element="different-billing-address" class="billing-address__form">
                                           <h1 class="form-section__title">Billing Address</h1>
-                                          <div os-checkout-component="billing-form" class="billing-form"></div>
+                                          <div os-checkout-component="billing-form" class="form-grid"></div>
                                         </div>
                                       </div>
                                     </div>
@@ -1093,6 +1178,28 @@
 
     <!-- Consolidated Custom CSS -->
     <style>
+      /* Arrows */
+      .arrow-active::after,
+      .arrow-inactive::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .arrow-active::after {
+        border-color: #000;
+      }
+
+      .arrow-inactive::after {
+        border-color: #dadada;
+      }
+
       /* Arrows */
       .arrow-active::after,
       .arrow-inactive::after {

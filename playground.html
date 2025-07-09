@@ -80,7 +80,6 @@
     </style>
 
 
-
   </head>
   <body>
     <div class="page-wrapper is-styleguide">
@@ -135,9 +134,9 @@
                         <div>Attributes</div>
                       </div>
                     </a>
-                    <a href="#" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <a href="#sg-utilities" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
                       <div class="sidebar_link-text">
-                        <div>Conditional Display</div>
+                        <div>Utilities</div>
                       </div>
                     </a>
                   </div>
@@ -239,7 +238,7 @@
                     <div class="code-block__content--wrapper cc-flex">
                       <div data-pb-component="code-area" class="code_piece">
                         <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#d4d0ab">&lt;!-- Load SDK --&gt;</span><span class="xml">
-                            </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">src</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"https://cdn.nextcommerce.com/v0.1/sdk.js"</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">type</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"text/javascript"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
+                            </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">src</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"https://campaign-cart-v2.pages.dev/loader.js"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
                             </span><span class="xml"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span>
                             </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml"></span><span class="xml" style="color:#d4d0ab">&lt;!-- Campaign API Key --&gt;</span><span class="xml">
                             </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">meta</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">name</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"next-api-key"</span><span class="xml" style="color:#ffa07a"> </span><span class="xml hljs-attr" style="color:#ffa07a">content</span><span class="xml" style="color:#ffa07a">=</span><span class="xml" style="color:#abe338">"kLGpgEfCX3iUZG16hpI5zrCH9qxcOdahDY1im6ud"</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
@@ -1846,6 +1845,27 @@
                           </div>
                           <div data-next-display="package.unitRetailPrice" class="attr-value">----------</div>
                         </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.finalPrice"</div>
+                            <div>Unit price after discounts</div>
+                          </div>
+                          <div data-next-display="package.finalPrice" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.finalPriceTotal"</div>
+                            <div>Total price after discounts</div>
+                          </div>
+                          <div data-next-display="package.finalPriceTotal" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="package.discountAmount"</div>
+                            <div>&nbsp;Amount saved from discount codes</div>
+                          </div>
+                          <div data-next-display="package.discountAmount" class="attr-value">----------</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2057,41 +2077,6 @@
                     </div>
                   </div>
                   <div class="sg__parent">
-                    <h1 class="display-sm-copy">📊 Advanced Selection Calculations<br></h1>
-                    <div class="sg-container">
-                      <div class="display_table">
-                        <div class="display_row">
-                          <div class="flex-attr">
-                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.monthlyPrice"</div>
-                            <div>Monthly cost calculation</div>
-                          </div>
-                          <div data-next-display="ATTR" class="attr-value">----------</div>
-                        </div>
-                        <div class="display_row">
-                          <div class="flex-attr">
-                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.yearlyPrice"</div>
-                            <div>&nbsp;Yearly cost calculation</div>
-                          </div>
-                          <div data-next-display="ATTR" class="attr-value">----------</div>
-                        </div>
-                        <div class="display_row">
-                          <div class="flex-attr">
-                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.pricePerDay"</div>
-                            <div>Daily cost calculation</div>
-                          </div>
-                          <div data-next-display="ATTR" class="attr-value">----------</div>
-                        </div>
-                        <div class="display_row">
-                          <div class="flex-attr">
-                            <div class="sg-attribute-tag">data-next-display="selection.{selectorId}.savingsPerUnit"</div>
-                            <div>Savings per unit</div>
-                          </div>
-                          <div data-next-display="ATTR" class="attr-value">----------</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="sg__parent">
                     <h1 class="display-sm-copy">🧮 Mathematical Expressions<br></h1>
                     <div class="sg-container">
                       <div class="display_table">
@@ -2173,6 +2158,27 @@
                           </div>
                           <div data-next-display="cart.count" class="attr-value">----------</div>
                         </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.discountCode"</div>
+                            <div>Display the discount code</div>
+                          </div>
+                          <div data-next-display="cart.discountCode" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.discountCodes"</div>
+                            <div>Display the discount codes</div>
+                          </div>
+                          <div data-next-display="cart.discountCodes" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.couponCount"</div>
+                            <div>Display the discount codes</div>
+                          </div>
+                          <div data-next-display="cart.couponCount" class="attr-value">----------</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -2211,16 +2217,30 @@
                         <div class="display_row">
                           <div class="flex-attr">
                             <div class="sg-attribute-tag">data-next-display="cart.savingsAmount"</div>
-                            <div>Total savings (formatted)</div>
+                            <div>Total savings (formatted - exclude discounts)</div>
                           </div>
                           <div data-next-display="cart.savingsAmount" class="attr-value">----------</div>
                         </div>
                         <div class="display_row">
                           <div class="flex-attr">
                             <div class="sg-attribute-tag">data-next-display="cart.savingsPercentage"</div>
-                            <div>&nbsp;Savings percentage (formatted)</div>
+                            <div>&nbsp;Savings percentage (formatted - exclude discounts)</div>
                           </div>
                           <div data-next-display="cart.savingsPercentage" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.totalSavingsAmount"</div>
+                            <div>Total savings (formatted - include discounts)</div>
+                          </div>
+                          <div data-next-display="cart.totalSavingsAmount" class="attr-value">----------</div>
+                        </div>
+                        <div class="display_row">
+                          <div class="flex-attr">
+                            <div class="sg-attribute-tag">data-next-display="cart.totalSavingsPercentage"</div>
+                            <div>Total savings percentage (formatted - include discounts)</div>
+                          </div>
+                          <div data-next-display="cart.totalSavingsPercentage" class="attr-value">----------</div>
                         </div>
                         <div class="display_row">
                           <div class="flex-attr">
@@ -2263,7 +2283,12 @@
                       </div>
                       <div class="conditional_title">cart.hasSavings</div>
                     </div>
-                    <div class="conditional__wrapper"></div>
+                    <div class="conditional__wrapper">
+                      <div data-next-show="cart.hasCoupon" class="sg-conditional has-package-2">
+                        <div>🚁 <strong>Cart has coupon code: </strong><span data-next-display="cart.discountCode"><strong>-----</strong></span><br></div>
+                      </div>
+                      <div class="conditional_title">cart.hasCoupon</div>
+                    </div>
                   </div>
                 </div>
                 <div class="section_cards">
@@ -2779,8 +2804,8 @@
           <div id="sg-utilities" class="sg_container">
             <div class="container cc-large">
               <div class="full-demo_header">
-                <h2 class="sg_heading">Getting Started</h2>
-                <p class="pb-sg_sub">Add the main script into your page</p>
+                <h2 class="sg_heading">Utilities</h2>
+                <p class="pb-sg_sub">Main utilities</p>
               </div>
               <div class="section_cards">
                 <div class="sg_header">
@@ -3117,13 +3142,13 @@
                                           <div class="order-totals__label">Today You Saved<br></div>
                                           <div class="badge badge--small">
                                             <div class="label__wrapper cc-sm">
-                                              <div class="badge__text"><span data-next-display="cart.savingsPercentage">0%</span> OFF</div>
+                                              <div class="badge__text"><span data-next-display="cart.totalSavingsPercentage">0%</span> OFF</div>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="order-totals__value-group">
                                           <div class="order-totals__label">Discount:<br></div>
-                                          <div data-next-display="cart.savingsAmount" class="order-totals__value">$0.00<br></div>
+                                          <div data-next-display="cart.totalSavingsAmount" class="order-totals__value">$0.00<br></div>
                                         </div>
                                       </div>
                                     </div>
@@ -3284,7 +3309,7 @@
                               <h1 class="form-section__title">Shipping Information</h1>
                               <div os-checkout-component="shipping-form">
                                 <div class="form-grid">
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_country" class="label-checkout">Country</label>
                                         <div class="select-form-wrapper"><select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" class="input-flds select-field">
@@ -3299,7 +3324,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_fname" class="label-checkout">First Name</label><input autocomplete="given-name" os-checkout-validate="required" placeholder="First Name*" maxlength="256" name="shipping_fname" data-name="Shipping First Name" type="text" id="shipping_fname" data-next-checkout-field="fname" class="input-flds"></div>
                                     </div>
@@ -3307,17 +3332,17 @@
                                       <div class="form-input"><label for="shipping_lname" class="label-checkout">Last Name</label><input autocomplete="family-name" os-checkout-validate="required" placeholder="Last Name*" maxlength="256" name="shipping_lname" data-name="Shipping Lirst Name" type="text" id="shipping_lname" data-next-checkout-field="lname" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_address2" class="label-checkout">Apartment, suite, etc. (optional)</label><input autocomplete="address-line2" name="shipping_address2" data-name="Shipping Address 2" type="text" id="shipping_addres2" placeholder="Apartment, suite, etc. (optional)" maxlength="256" data-next-checkout-field="address2" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div data-os-component="location" class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" data-os-component="location" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_city" class="label-checkout">City</label><input autocomplete="address-level2" os-checkout-validate="required" placeholder="City*" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" pattern="^[A-Za-z\s]+$" data-next-checkout-field="city" class="input-flds"></div>
                                     </div>
@@ -3338,7 +3363,7 @@
                                       <div class="form-input"><label for="shipping_postal_code" class="label-checkout">ZIP Code</label><input autocomplete="postal-code" os-checkout-validate="required" placeholder="ZIP Code*" maxlength="10" name="shipping_postal_code" data-name="Shipping Postal Code" type="text" id="shipping_postal_code" inputmode="numeric" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" data-next-checkout-field="postal" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
 
@@ -3519,7 +3544,7 @@
                                           </label></div>
                                         <div os-checkout-element="different-billing-address" class="billing-address__form">
                                           <h1 class="form-section__title">Billing Address</h1>
-                                          <div os-checkout-component="billing-form" class="billing-form"></div>
+                                          <div os-checkout-component="billing-form" class="form-grid"></div>
                                         </div>
                                       </div>
                                     </div>
@@ -3706,13 +3731,13 @@
                                         <div class="order-totals__label">Today You Saved<br></div>
                                         <div class="badge badge--small">
                                           <div class="label__wrapper cc-sm">
-                                            <div class="badge__text"><span data-next-display="cart.savingsPercentage">0%</span> OFF</div>
+                                            <div class="badge__text"><span data-next-display="cart.totalSavingsPercentage">0%</span> OFF</div>
                                           </div>
                                         </div>
                                       </div>
                                       <div class="order-totals__value-group">
                                         <div class="order-totals__label">Discount:<br></div>
-                                        <div data-next-display="cart.savingsAmount" class="order-totals__value">$0.00<br></div>
+                                        <div data-next-display="cart.totalSavingsAmount" class="order-totals__value">$0.00<br></div>
                                       </div>
                                     </div>
                                   </div>

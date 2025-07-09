@@ -352,7 +352,7 @@
                               <h1 class="form-section__title">Shipping Information</h1>
                               <div os-checkout-component="shipping-form">
                                 <div class="form-grid">
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_country" class="label-checkout">Country</label>
                                         <div class="select-form-wrapper"><select autocomplete="country-name" os-checkout-validate="required" data-next-checkout-field="country" class="input-flds select-field">
@@ -367,7 +367,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_fname" class="label-checkout">First Name</label><input autocomplete="given-name" os-checkout-validate="required" placeholder="First Name*" maxlength="256" name="shipping_fname" data-name="Shipping First Name" type="text" id="shipping_fname" data-next-checkout-field="fname" class="input-flds"></div>
                                     </div>
@@ -375,17 +375,17 @@
                                       <div class="form-input"><label for="shipping_lname" class="label-checkout">Last Name</label><input autocomplete="family-name" os-checkout-validate="required" placeholder="Last Name*" maxlength="256" name="shipping_lname" data-name="Shipping Lirst Name" type="text" id="shipping_lname" data-next-checkout-field="lname" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_address2" class="label-checkout">Apartment, suite, etc. (optional)</label><input autocomplete="address-line2" name="shipping_address2" data-name="Shipping Address 2" type="text" id="shipping_addres2" placeholder="Apartment, suite, etc. (optional)" maxlength="256" data-next-checkout-field="address2" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div data-os-component="location" class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" data-os-component="location" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="shipping_city" class="label-checkout">City</label><input autocomplete="address-level2" os-checkout-validate="required" placeholder="City*" maxlength="256" name="shipping_city" data-name="Shipping City" type="text" id="shipping_city" pattern="^[A-Za-z\s]+$" data-next-checkout-field="city" class="input-flds"></div>
                                     </div>
@@ -406,7 +406,7 @@
                                       <div class="form-input"><label for="shipping_postal_code" class="label-checkout">ZIP Code</label><input autocomplete="postal-code" os-checkout-validate="required" placeholder="ZIP Code*" maxlength="10" name="shipping_postal_code" data-name="Shipping Postal Code" type="text" id="shipping_postal_code" inputmode="numeric" pattern="(^\d{5}$)|(^\d{5}-\d{4}$)" data-next-checkout-field="postal" class="input-flds"></div>
                                     </div>
                                   </div>
-                                  <div class="form-grid__row">
+                                  <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
                                       <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
 
@@ -587,7 +587,7 @@
                                           </label></div>
                                         <div os-checkout-element="different-billing-address" class="billing-address__form">
                                           <h1 class="form-section__title">Billing Address</h1>
-                                          <div os-checkout-component="billing-form" class="billing-form"></div>
+                                          <div os-checkout-component="billing-form" class="form-grid"></div>
                                         </div>
                                       </div>
                                     </div>
@@ -718,7 +718,7 @@
                               </div>
                             </div>
                             <div data-next-hide="cart.isEmpty" class="order-totals">
-                              <div class="order-totals__section">
+                              <div data-next-show="cart.hasShipping" class="order-totals__section">
                                 <div class="order-totals__line">
                                   <div class="accordion__right">
                                     <div class="order-totals__label">Shipping<br></div>
@@ -729,7 +729,6 @@
                                       </svg></div>
                                   </div>
                                   <div class="accordion__right">
-                                    <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>
                                     <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
                                   </div>
                                 </div>

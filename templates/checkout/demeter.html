@@ -281,6 +281,11 @@
                             </div>
                             <div data-next-express-checkout="container" class="exp-checkout">
                               <div class="express-checkout__title">Express Checkout</div>
+                              <div data-next-component="express-error" class="next-toast-handler">
+                                <div class="tip1_bar is-warning">
+                                  <div data-next-component="express-error-text" class="text-sm">Error message</div>
+                                </div>
+                              </div>
                               <div data-next-express-checkout="buttons" class="express-checkout__buttons"><button data-next-express-checkout="paypal" data-action="submit" class="payment-btn cc-paypal">
                                   <div class="w-embed">
                                     <!--?xml version="1.0" encoding="UTF-8"?-->
@@ -465,15 +470,18 @@
                                     </label></div>
                                   <div data-next-payment-form="credit" os-checkout-element="credit-form" os-shipping-method-same="true" class="payment-method__form payment-method__form--expanded">
                                     <div class="payment-method__content">
-                                      <div next-checkout-element="spreedly-error" class="next-toast-handler">
+                                      <div data-next-component="credit-error" class="next-toast-handler">
                                         <div class="tip1_bar is-warning">
-                                          <div data-os-message="error" class="text-sm">Error message</div>
+                                          <div data-next-component="credit-error-text" class="text-sm">Error message</div>
                                         </div>
                                       </div>
                                       <div class="form-grid">
                                         <div class="form-grid__row">
                                           <div class="form-group">
                                             <div class="form-input">
+                                              <div data-next-tooltip="All transactions are secure and encrypted." class="form-input-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="a8x1wuy a8x1wux *1fragem32 *1fragempm *1fragemlo *1fragemle _1fragemot">
+                                                  <path fill="none" stroke="currentColor" stroke-width="1" d="M2.5 7c0-.966.784-1.75 1.75-1.75h5.5c.966 0 1.75.784 1.75 1.75v3.5a1.75 1.75 0 0 1-1.75 1.75h-5.5A1.75 1.75 0 0 1 2.5 10.5zm7-1.75V4.22c0-1.364-1.12-2.47-2.5-2.47S4.5 2.856 4.5 4.22v1.03"></path>
+                                                </svg></div>
                                               <div data-next-checkout-field="cc-number" class="input-flds spreedly-field"></div>
                                             </div>
                                           </div>
@@ -507,76 +515,19 @@
                                           </div>
                                           <div class="form-group">
                                             <div class="form-input">
+                                              <div data-next-tooltip="A 3-digit code on the back of your card" class="form-input-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="100%" height="100%" focusable="false" aria-hidden="true" class="a8x1wuy a8x1wux *1fragem32 *1fragempm *1fragemlo *1fragemle _1fragemot">
+                                                  <g clip-path="url(#a)">
+                                                    <circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1"></circle>
+                                                    <path stroke-linejoin="round" fill="none" stroke="currentColor" stroke-width="1" d="M6.99 10.24h.02v.02h-.02z"></path>
+                                                    <path stroke-linecap="round" fill="none" stroke="currentColor" stroke-width="1" d="M5.5 5.25a1.5 1.5 0 1 1 2.428 1.179C7.494 6.77 7 7.198 7 7.75"></path>
+                                                  </g>
+                                                  <defs>
+                                                    <clipPath id="a">
+                                                      <path fill="#fff" d="M0 0h14v14H0z"></path>
+                                                    </clipPath>
+                                                  </defs>
+                                                </svg></div>
                                               <div data-next-checkout-field="cvv" class="input-flds spreedly-field"></div>
-                                              <div data-os-tooltip="A 3-digit code on the back of your card" class="form-input-icon w-embed">
-                                                <style>
-                                                  .Icon--xs {
-                                                    height: 8px
-                                                  }
-
-                                                  .Icon--xs.Icon--square {
-                                                    width: 8px
-                                                  }
-
-                                                  .Icon--sm {
-                                                    height: 12px
-                                                  }
-
-                                                  .Icon--sm.Icon--square {
-                                                    width: 12px
-                                                  }
-
-                                                  .Icon--md {
-                                                    height: 16px
-                                                  }
-
-                                                  .Icon--md.Icon--square {
-                                                    width: 16px
-                                                  }
-
-                                                  .Icon--lg {
-                                                    height: 24px
-                                                  }
-
-                                                  .Icon--lg.Icon--square {
-                                                    width: 24px
-                                                  }
-
-                                                  .Icon--gray300 {
-                                                    fill: rgba(26, 26, 26, .4)
-                                                  }
-
-                                                  .Icon--gray400 {
-                                                    fill: rgba(26, 26, 26, .5)
-                                                  }
-
-                                                  .Icon--white {
-                                                    fill: #fff
-                                                  }
-
-                                                  .Icon--red {
-                                                    fill: #dc2727
-                                                  }
-
-                                                  .Icon .Icon-fill {
-                                                    fill: #565656
-                                                  }
-
-                                                </style>
-                                                <div class="FormFieldInput-Icon is-loaded"><svg class="Icon Icon--md" focusable="false" viewBox="0 0 32 21">
-                                                    <g fill="none" fill-rule="evenodd">
-                                                      <g class="Icon-fill">
-                                                        <g transform="translate(0 2)">
-                                                          <path d="M21.68 0H2c-.92 0-2 1.06-2 2v15c0 .94 1.08 2 2 2h25c.92 0 2-1.06 2-2V9.47a5.98 5.98 0 0 1-3 1.45V11c0 .66-.36 1-1 1H3c-.64 0-1-.34-1-1v-1c0-.66.36-1 1-1h17.53a5.98 5.98 0 0 1 1.15-9z" opacity=".2"></path>
-                                                          <path d="M19.34 3H0v3h19.08a6.04 6.04 0 0 1 .26-3z" opacity=".3"></path>
-                                                        </g>
-                                                        <g transform="translate(18)">
-                                                          <path d="M7 14A7 7 0 1 1 7 0a7 7 0 0 1 0 14zM4.22 4.1h-.79l-1.93.98v1l1.53-.8V9.9h1.2V4.1zm2.3.8c.57 0 .97.32.97.78 0 .5-.47.85-1.15.85h-.3v.85h.36c.72 0 1.21.36 1.21.88 0 .5-.48.84-1.16.84-.5 0-1-.16-1.52-.47v1c.56.24 1.12.37 1.67.37 1.31 0 2.21-.67 2.21-1.64 0-.68-.42-1.23-1.12-1.45.6-.2.99-.73.99-1.33C8.68 4.64 7.85 4 6.65 4a4 4 0 0 0-1.57.34v.98c.48-.27.97-.42 1.44-.42zm4.32 2.18c.73 0 1.24.43 1.24.99 0 .59-.51 1-1.24 1-.44 0-.9-.14-1.37-.43v1.03c.49.22.99.33 1.48.33.26 0 .5-.04.73-.1.52-.85.82-1.83.82-2.88l-.02-.42a2.3 2.3 0 0 0-1.23-.32c-.18 0-.37.01-.57.04v-1.3h1.44a5.62 5.62 0 0 0-.46-.92H9.64v3.15c.4-.1.8-.17 1.2-.17z"></path>
-                                                        </g>
-                                                      </g>
-                                                    </g>
-                                                  </svg></div>
-                                              </div>
                                             </div>
                                           </div>
                                         </div>

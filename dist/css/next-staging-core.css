@@ -4421,13 +4421,6 @@ figcaption {
   height: 1.5rem;
 }
 
-.checkout-stack {
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-  flex-flow: column;
-  display: flex;
-}
-
 .form-section__title {
   letter-spacing: -.01em;
   font-size: 1.125rem;
@@ -5233,6 +5226,7 @@ figcaption {
 .form-input {
   z-index: 1;
   flex-flow: column;
+  justify-content: center;
   align-items: stretch;
   width: 100%;
   font-size: .85rem;
@@ -5384,8 +5378,11 @@ figcaption {
 
 .form-input-icon {
   z-index: 10;
+  pointer-events: auto;
+  color: #919191;
+  cursor: pointer;
   align-items: center;
-  height: 3rem;
+  height: 1.25rem;
   display: flex;
   position: absolute;
   inset: auto 15px auto auto;
@@ -7441,14 +7438,6 @@ figcaption {
   display: flex;
 }
 
-.adv-icon-list.cc-alert {
-  background-color: #fff7f7;
-}
-
-.adv-icon-list.cc-green {
-  background-color: #f7fff0;
-}
-
 .adv-icon-list.cc-problem {
   background-color: #fff7f7;
 }
@@ -7461,18 +7450,6 @@ figcaption {
   grid-column-gap: .25rem;
   grid-row-gap: .25rem;
   padding: 0;
-}
-
-.list-new {
-  grid-column-gap: 12px;
-  grid-row-gap: 12px;
-  color: #4a4a4a;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0;
-  font-weight: 700;
-  line-height: 26px;
-  display: flex;
 }
 
 .what-makes-it-different {
@@ -7520,22 +7497,6 @@ figcaption {
   font-size: 18px;
   font-weight: 700;
   line-height: 30px;
-}
-
-.div-block-1632 {
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  color: #4a4a4a;
-  border-bottom: 1px solid #33333326;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 26px;
-  display: flex;
 }
 
 .icon-lsit-3 {
@@ -14519,11 +14480,13 @@ figcaption {
   display: flex;
 }
 
-@media screen and (min-width: 1920px) {
-  .list-new {
-    align-self: flex-start;
-  }
+.webflow-overrides {
+  display: block;
+  position: fixed;
+  inset: 0% auto auto 0%;
+}
 
+@media screen and (min-width: 1920px) {
   .hero_quote-inner {
     justify-content: flex-start;
     align-items: stretch;
@@ -16291,10 +16254,6 @@ figcaption {
     flex-flow: column;
   }
 
-  .form-input-icon {
-    height: 50px;
-  }
-
   .checkout-form-secure {
     line-height: 14px;
   }
@@ -17221,10 +17180,6 @@ figcaption {
     width: 100%;
   }
 
-  .form-input-icon {
-    height: 50px;
-  }
-
   .protection-block {
     margin-top: 0;
   }
@@ -17430,11 +17385,6 @@ figcaption {
     line-height: 16px;
   }
 
-  .list-new {
-    font-size: 14px;
-    line-height: 24px;
-  }
-
   .what-makes-it-different {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
@@ -17454,7 +17404,7 @@ figcaption {
     line-height: 26px;
   }
 
-  .div-block-1632, .new-list {
+  .new-list {
     font-size: 16px;
   }
 

@@ -450,6 +450,15 @@
     </div>
 
 
+    <script>
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout(preventBack, 0);
+      window.onunload = function() {};
+    </script>
+
+
     <!-- Consolidated Custom CSS -->
     <style>
       [swiper="sw12"] .swiper-slide_image-wrap {

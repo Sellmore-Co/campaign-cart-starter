@@ -217,24 +217,23 @@ export class HtmlProcessor {
       
       // Add script tags with comments
       config.scripts.forEach(script => {
-        if (script.external) {
-          // Add comment for loader.js
-          campaignBlock += `  <!-- Campaign Loader Script -->\n`;
-          campaignBlock += `  <script src="${script.src}"></script>\n`;
-        } else {
-          // For local config.js, calculate relative path
-          const htmlDepth = $('link[href*="/css/"]').first().attr('href');
-          let relativePath = '';
-          
-          if (htmlDepth) {
-            const depth = (htmlDepth.match(/\.\.\//g) || []).length;
-            relativePath = '../'.repeat(depth);
-          }
-          
-          // Add comment for config.js
-          campaignBlock += `  <!-- Campaign Configuration -->\n`;
-          campaignBlock += `  <script src="${relativePath}${script.src}"></script>\n`;
+        // For local files, calculate relative path
+        const htmlDepth = $('link[href*="/css/"]').first().attr('href');
+        let relativePath = '';
+        
+        if (htmlDepth) {
+          const depth = (htmlDepth.match(/\.\.\//g) || []).length;
+          relativePath = '../'.repeat(depth);
         }
+        
+        // Add appropriate comment
+        if (script.src.includes('loader.js')) {
+          campaignBlock += `  <!-- Campaign Loader Script -->\n`;
+        } else if (script.src.includes('config.js')) {
+          campaignBlock += `  <!-- Campaign Configuration -->\n`;
+        }
+        
+        campaignBlock += `  <script src="${relativePath}${script.src}"></script>\n`;
       });
       
       campaignBlock += '\n';
@@ -260,7 +259,7 @@ export class HtmlProcessor {
       });
       
       // Find the last campaign script (loader.js)
-      const loaderScript = $('script[src*="campaign-cart-v2.pages.dev/loader.js"]').last();
+      const loaderScript = $('script[src*="loader.js"]').last();
       
       if (loaderScript.length > 0) {
         // Add empty line, comment, then meta tags (no empty line between comment and tags)

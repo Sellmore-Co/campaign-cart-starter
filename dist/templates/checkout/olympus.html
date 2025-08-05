@@ -13,7 +13,7 @@
     <!-- Campaign Configuration -->
     <script src="../../config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://campaign-cart-v2.pages.dev/loader.js"></script>
+    <script src="../../loader.js"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-next-url" content="/demo/upsell">
@@ -880,7 +880,7 @@
                                           </div>
                                           <div class="form-group">
                                             <div class="form-input">
-                                              <div data-next-tooltip="A 3-digit code on the back of your card" class="form-input-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="100%" height="100%" focusable="false" aria-hidden="true" class="a8x1wuy a8x1wux *1fragem32 *1fragempm *1fragemlo *1fragemle _1fragemot">
+                                              <div data-next-tooltip="3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front." class="form-input-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" width="100%" height="100%" focusable="false" aria-hidden="true" class="a8x1wuy a8x1wux *1fragem32 *1fragempm *1fragemlo *1fragemle _1fragemot">
                                                   <g clip-path="url(#a)">
                                                     <circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1"></circle>
                                                     <path stroke-linejoin="round" fill="none" stroke="currentColor" stroke-width="1" d="M6.99 10.24h.02v.02h-.02z"></path>
@@ -911,11 +911,16 @@
                                 </div>
                                 <div data-next-payment-method="paypal" class="payment-method">
                                   <div class="payment-method__header"><label id="combo_mode_paypal" combo_mode="paypal" class="payment-method__label"><input type="radio" name="payment_method" id="combo_mode_paypal" data-name="Combo Mode" class="payment-method__input" value="paypal">
-                                      <div class="payment-method__title">Paypal</div>
+                                      <div class="payment-method__title">PayPal</div>
                                       <div class="payment-method__icons"><img loading="lazy" src="https://uploads-ssl.webflow.com/6143e22a819db6854e8347a4/6143e22a819db6767c8347c0_paypal-logo.svg" alt="" class="image-5"><img loading="lazy" src="https://uploads-ssl.webflow.com/6143e22a819db6854e8347a4/6143e22a819db66ebb8347c5_paypal-txt.svg" alt="" class="image-4"></div>
                                     </label></div>
                                   <div data-next-payment-form="paypal" os-checkout-element="credit-form" class="payment-method__form payment-method__form--collapsed">
                                     <div class="payment-method__content">
+                                      <div data-next-component="paypal-error" class="next-toast-handler">
+                                        <div class="tip1_bar is-warning">
+                                          <div data-next-component="paypal-error-text" class="text-sm">Error message</div>
+                                        </div>
+                                      </div>
                                       <div class="payment-method__info"><img loading="lazy" src="https://uploads-ssl.webflow.com/6143e22a819db6854e8347a4/6143e22a819db641438347c6_paypal.svg" alt="" class="payment-method__info-image">
                                         <h4 class="payment-method__info-title">Complete your transaction via Paypal</h4>
                                         <div class="payment-method__info-text">
@@ -973,7 +978,7 @@
                                       </div>
                                       <div data-next-hide="cart.isEmpty" class="order-totals">
                                         <div class="order-totals__line">
-                                          <div class="order-totals__label">Subtotal · 4 items</div>
+                                          <div class="order-totals__label">Subtotal</div>
                                           <div data-next-display="cart.subtotal" class="order-totals__value">$138.30<br></div>
                                         </div>
                                         <div data-next-show="cart.hasSavings" class="order-totals__section cc-olympus">
@@ -992,11 +997,6 @@
                                           <div class="order-totals__line">
                                             <div class="accordion__right">
                                               <div class="order-totals__label">Shipping<br></div>
-                                              <div data-checkout-tooltip-position="top" data-checkout-tooltip="Shipping tooltip" class="info-icons w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
-                                                  <circle cx="7" cy="7" r="5.6" stroke="currentColor"></circle>
-                                                  <path stroke-linecap="round" stroke-linejoin="round" d="M5.6 5.1c.2-1.3 2.6-1.3 2.8 0S6.95 6.4 6.95 7.45m.055 2.35H7v.005h.005z"></path>
-                                                  <circle cx="7" cy="9.7" r="0.1" fill="currentColor"></circle>
-                                                </svg></div>
                                             </div>
                                             <div class="accordion__right">
                                               <div data-next-display="cart.shipping" class="order-totals__value">$7.99<br></div>

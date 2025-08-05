@@ -26,7 +26,7 @@ export const config = {
       ],
       scripts: [
         { src: 'config.js', external: false },
-        { src: 'https://campaign-cart-v2.pages.dev/loader.js', external: true }
+        { src: 'loader.js', external: false }
       ]
     },
     relocateNextMetaTags: {
@@ -54,7 +54,8 @@ export const config = {
     customFiles: [
       { from: 'src/static/custom.css', to: 'css/custom.css' },
       { from: 'src/static/components.css', to: 'css/components.css' },
-      { from: 'src/static/config.js', to: 'config.js' }
+      { from: 'src/static/config.js', to: 'config.js' },
+      { from: 'src/static/loader.js', to: 'loader.js' }
     ]
   }
 };

@@ -3,7 +3,8 @@ window.nextReady = window.nextReady || [];
 
 window.nextConfig = {
     apiKey: "kLGpgEfCX3iUZG16hpI5zrCH9qxcOdahDY1im6ud",
-    debug: true,
+    storeName: "my-store-12345",
+    debug: false,
     paymentConfig: {
         expressCheckout: {
             enabled: true,

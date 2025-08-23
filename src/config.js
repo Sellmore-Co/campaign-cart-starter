@@ -22,11 +22,12 @@ export const config = {
       enabled: true,
       dnsPrefetch: [
         '//campaigns.apps.29next.com',
-        '//cdn-countries.muddy-wind-c7ca.workers.dev'
+        '//cdn-countries.muddy-wind-c7ca.workers.dev',
+        '//cdn.jsdelivr.net'
       ],
       scripts: [
         { src: 'config.js', external: false },
-        { src: 'loader.js', external: false }
+        { src: 'https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js', external: true, type: 'module' }
       ]
     },
     relocateNextMetaTags: {
@@ -55,7 +56,7 @@ export const config = {
       { from: 'src/static/custom.css', to: 'css/custom.css' },
       { from: 'src/static/components.css', to: 'css/components.css' },
       { from: 'src/static/config.js', to: 'config.js' },
-      { from: 'src/static/loader.js', to: 'loader.js' }
+      // { from: 'src/static/loader.js', to: 'loader.js' }
     ]
   }
 };

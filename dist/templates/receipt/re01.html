@@ -9,11 +9,12 @@
 
     <link rel="dns-prefetch" href="//campaigns.apps.29next.com">
     <link rel="dns-prefetch" href="//cdn-countries.muddy-wind-c7ca.workers.dev">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 
     <!-- Campaign Configuration -->
     <script src="../../config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="../../loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-page-type" content="receipt">
@@ -92,7 +93,7 @@
                 <div class="checkout__column checkout__column--left">
                   <div class="receipt__form-container">
                     <div class="checkout__header">
-                      <div class="checkout__header-brand cc-shop"><img src="../../images/next-logo.png" loading="lazy" alt="" class="brand-logo"></div>
+                      <div class="checkout__header-brand cc-shop"><img src="../../images/next-logo.png" loading="eager" alt="" class="brand-logo"></div>
                       <div class="order-summary-mobile">
                         <div class="order-summary-mobile__accordion">
                           <div class="accordion__trigger">
@@ -275,7 +276,7 @@
               <div class="checkout__column checkout__column--left">
                 <div class="receipt__form-container">
                   <div class="checkout__header">
-                    <div class="checkout__header-brand cc-shop"><img src="../../images/next-logo.png" loading="lazy" alt="" class="brand-logo"></div>
+                    <div class="checkout__header-brand cc-shop"><img src="../../images/next-logo.png" loading="eager" alt="" class="brand-logo"></div>
                     <div class="order-summary-mobile">
                       <div data-initial-state="closed" data-next-accordion="order-summary" data-open-text="Hide Order Summary" data-close-text="Show Order Summary" data-toggle-class="next-expanded" class="order-summary-mobile__accordion">
                         <div data-next-accordion-trigger="order-summary" class="accordion__trigger">

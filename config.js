@@ -1,23 +1,29 @@
 window.dataLayer = window.dataLayer || [];
 window.nextReady = window.nextReady || [];
 
+// Auto-generated from src/config.ts
+// For production, use your own configuration
 window.nextConfig = {
     apiKey: "kLGpgEfCX3iUZG16hpI5zrCH9qxcOdahDY1im6ud",
-    storeName: "my-store-12345",
-    debug: false,
+    debug: false, // Always true since this file only loads in debug mode
     paymentConfig: {
         expressCheckout: {
-            enabled: true,
-            methods: {
-                paypal: true,
-                applePay: true,
-                googlePay: false
-            }
+            // enabled: false,         DEPRECATED: FETCHED FROM CAMPAIGN API
+            // methods: {              DEPRECATED: FETCHED FROM CAMPAIGN API
+            //   paypal: true,         DEPRECATED: FETCHED FROM CAMPAIGN API
+            //   applePay: true,       DEPRECATED: FETCHED FROM CAMPAIGN API
+            //   googlePay: true       DEPRECATED: FETCHED FROM CAMPAIGN API
+            // },                      DEPRECATED: FETCHED FROM CAMPAIGN API
+            // Optional: Require form validation for express payment methods in combo form
+            // By default (false), express payments skip all validation for quick checkout
+            // Set to true if you need to collect customer information before express checkout
+            requireValidation: true,
+            requiredFields: ['email', 'fname', 'lname']
         }
     },
     addressConfig: {
         defaultCountry: "US",
-        showCountries: ["US", "CA", "GB"],
+        showCountries: ["US", "CA", "GB", "BR"],
         dontShowStates: ["AS", "GU", "PR", "VI"]
     },
     discounts: {
@@ -56,20 +62,28 @@ window.nextConfig = {
                     pixelId: "286865669194576"
                 }
             },
-            // custom: {
-            //   enabled: false,
-            //   settings: {
-            //     endpoint: "https://your-analytics.com/track",
-            //     apiKey: "your-api-key"
-            //   }
-            // }
+            rudderstack: {
+                enabled: true,
+                settings: {
+                    // RudderStack configuration is handled by the RudderStack SDK itself
+                    // This just enables the adapter
+                }
+            },
+            custom: {
+                enabled: false,
+                settings: {
+                    endpoint: "https://your-analytics.com/track",
+                    apiKey: "your-api-key"
+                }
+            }
         }
     },
+    // Error monitoring removed - add externally via HTML/scripts if needed,
     utmTransfer: {
-        enabled: true,                    // Enable/disable feature
-        applyToExternalLinks: false,      // Apply to external domains
-        excludedDomains: ['example.com'], // Domains to exclude
-        paramsToCopy: []                  // Specific params (empty = all)
+        enabled: true,
+        applyToExternalLinks: false,
+        debug: true,
+        // excludedDomains: ['example.com', 'test.org'],
+        // paramsToCopy: ['utm_source', 'utm_medium']
     }
-
 };

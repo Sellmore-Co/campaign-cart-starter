@@ -9,11 +9,12 @@
 
     <link rel="dns-prefetch" href="//campaigns.apps.29next.com">
     <link rel="dns-prefetch" href="//cdn-countries.muddy-wind-c7ca.workers.dev">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 
     <!-- Campaign Configuration -->
     <script src="../config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="../loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-success-url" content="/demo/upsell1">
@@ -117,7 +118,7 @@
                 <div class="checkout__column checkout__column--left">
                   <div class="checkout__form-container">
                     <div class="checkout__header">
-                      <div class="checkout__header-brand cc-shop"><img src="../images/next-logo.png" loading="lazy" alt="" class="brand-logo">
+                      <div class="checkout__header-brand cc-shop"><img src="../images/next-logo.png" loading="eager" alt="" class="brand-logo">
                         <div class="secure-checkout"><img loading="lazy" src="../images/locker.svg" alt="" class="secure-checkout__icon">
                           <div class="secure-checkout__text">CHECKOUT</div>
                         </div>
@@ -345,7 +346,7 @@
               <div class="checkout__column checkout__column--left">
                 <div class="checkout__form-container cc-checkout">
                   <div class="checkout__header">
-                    <div class="checkout__header-brand cc-shop"><img src="../images/next-logo.png" loading="lazy" alt="" class="brand-logo">
+                    <div class="checkout__header-brand cc-shop"><img src="../images/next-logo.png" loading="eager" alt="" class="brand-logo">
                       <div class="secure-checkout"><img loading="lazy" src="../images/locker.svg" alt="" class="secure-checkout__icon">
                         <div class="secure-checkout__text">CHECKOUT</div>
                       </div>
@@ -443,15 +444,10 @@
                                       <div data-next-display="cart.subtotal" class="order-totals__value">$0.00<br></div>
                                     </div>
                                   </div>
-                                  <div data-next-show="cart.hasShipping" class="order-totals__section">
+                                  <div class="order-totals__section">
                                     <div class="order-totals__line">
                                       <div class="order-totals__label-group">
                                         <div class="order-totals__label">Shipping<br></div>
-                                        <div data-checkout-tooltip-position="top" data-checkout-tooltip="Shipping tooltip" class="info-icons w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
-                                            <circle cx="7" cy="7" r="5.6" stroke="currentColor"></circle>
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.6 5.1c.2-1.3 2.6-1.3 2.8 0S6.95 6.4 6.95 7.45m.055 2.35H7v.005h.005z"></path>
-                                            <circle cx="7" cy="9.7" r="0.1" fill="currentColor"></circle>
-                                          </svg></div>
                                       </div>
                                       <div class="order-totals__value-group">
                                         <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
@@ -480,15 +476,15 @@
                                     <div class="order-totals__line">
                                       <div class="order-totals__label-group">
                                         <div class="order-totals__label">Today You Saved<br></div>
+                                      </div>
+                                      <div class="order-totals__value-group">
+                                        <div class="order-totals__label">Discount:<br></div>
+                                        <div data-next-display="cart.totalSavingsAmount" class="order-totals__value">$0.00<br></div>
                                         <div class="badge badge--small">
                                           <div class="label__wrapper cc-sm">
                                             <div class="badge__text"><span data-next-display="cart.totalSavingsPercentage">0%</span> OFF</div>
                                           </div>
                                         </div>
-                                      </div>
-                                      <div class="order-totals__value-group">
-                                        <div class="order-totals__label">Discount:<br></div>
-                                        <div data-next-display="cart.totalSavingsAmount" class="order-totals__value">$0.00<br></div>
                                       </div>
                                     </div>
                                   </div>
@@ -674,7 +670,12 @@
                                 </div>
                                 <div data-next-component="shipping-field-row" class="form-grid__row">
                                   <div class="form-group">
-                                    <div class="form-input"><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds"></div>
+                                    <div class="form-input">
+                                      <div class="form-input-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="a8x1wuy a8x1wux *1fragem32 *1fragempz *1fragemly *1fragemlo _1fragemp6">
+                                          <circle cx="6" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="1"></circle>
+                                          <path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" d="m9.25 9.25 2.5 2.5"></path>
+                                        </svg></div><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds">
+                                    </div>
                                   </div>
                                 </div>
                                 <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -754,7 +755,7 @@
                               <div class="form-section__subtitle">All transactions are secure and encrypted.<br></div>
 
                             </div>
-                            <div os-payment-mode="credit" class="payment-methods">
+                            <div class="payment-methods">
                               <div data-next-payment-method="credit" class="payment-method next-selected">
                                 <div class="payment-method__header"><label id="combo_mode_credit" combo_mode="credit" class="payment-method__label"><input type="radio" name="payment_method" id="combo_mode_credit" data-name="Combo Mode" class="payment-method__input" checked="" value="credit">
                                     <div class="payment-method__title">Credit Card</div>
@@ -829,7 +830,7 @@
                                           <div class="checkbox__label">Use shiping address as billing address</div>
                                         </label></div>
                                       <div os-checkout-element="different-billing-address" class="billing-address__form">
-                                        <h1 class="form-section__title">Billing Address</h1>
+                                        <h1 class="form-section__title cc-billing">Billing Address</h1>
                                         <div os-checkout-component="billing-form" class="form-grid"></div>
                                       </div>
                                     </div>
@@ -983,15 +984,10 @@
                                     <div data-next-display="cart.subtotal" class="order-totals__value">$0.00<br></div>
                                   </div>
                                 </div>
-                                <div data-next-show="cart.hasShipping" class="order-totals__section">
+                                <div class="order-totals__section">
                                   <div class="order-totals__line">
                                     <div class="order-totals__label-group">
                                       <div class="order-totals__label">Shipping<br></div>
-                                      <div data-checkout-tooltip-position="top" data-checkout-tooltip="Shipping tooltip" class="info-icons w-embed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="a8x1wu10 a8x1wuz _1fragem1y _1fragemof _1fragemkk _1fragemka _1fragemnm" fill="none" stroke="currentColor">
-                                          <circle cx="7" cy="7" r="5.6" stroke="currentColor"></circle>
-                                          <path stroke-linecap="round" stroke-linejoin="round" d="M5.6 5.1c.2-1.3 2.6-1.3 2.8 0S6.95 6.4 6.95 7.45m.055 2.35H7v.005h.005z"></path>
-                                          <circle cx="7" cy="9.7" r="0.1" fill="currentColor"></circle>
-                                        </svg></div>
                                     </div>
                                     <div class="order-totals__value-group">
                                       <div data-next-display="cart.shipping" class="order-totals__value">FREE<br></div>
@@ -1020,15 +1016,15 @@
                                   <div class="order-totals__line">
                                     <div class="order-totals__label-group">
                                       <div class="order-totals__label">Today You Saved<br></div>
+                                    </div>
+                                    <div class="order-totals__value-group">
+                                      <div class="order-totals__label">Discount:<br></div>
+                                      <div data-next-display="cart.totalSavingsAmount" class="order-totals__value">$0.00<br></div>
                                       <div class="badge badge--small">
                                         <div class="label__wrapper cc-sm">
                                           <div class="badge__text"><span data-next-display="cart.totalSavingsPercentage">0%</span> OFF</div>
                                         </div>
                                       </div>
-                                    </div>
-                                    <div class="order-totals__value-group">
-                                      <div class="order-totals__label">Discount:<br></div>
-                                      <div data-next-display="cart.totalSavingsAmount" class="order-totals__value">$0.00<br></div>
                                     </div>
                                   </div>
                                 </div>

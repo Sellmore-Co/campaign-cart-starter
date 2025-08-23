@@ -217,13 +217,21 @@ export class HtmlProcessor {
       
       // Add script tags with comments
       config.scripts.forEach(script => {
-        // For local files, calculate relative path
-        const htmlDepth = $('link[href*="/css/"]').first().attr('href');
-        let relativePath = '';
+        let scriptSrc = '';
         
-        if (htmlDepth) {
-          const depth = (htmlDepth.match(/\.\.\//g) || []).length;
-          relativePath = '../'.repeat(depth);
+        // Check if it's an external script (absolute URL) or local
+        if (script.external) {
+          scriptSrc = script.src;
+        } else {
+          // For local files, calculate relative path
+          const htmlDepth = $('link[href*="/css/"]').first().attr('href');
+          let relativePath = '';
+          
+          if (htmlDepth) {
+            const depth = (htmlDepth.match(/\.\.\//g) || []).length;
+            relativePath = '../'.repeat(depth);
+          }
+          scriptSrc = `${relativePath}${script.src}`;
         }
         
         // Add appropriate comment
@@ -233,7 +241,14 @@ export class HtmlProcessor {
           campaignBlock += `  <!-- Campaign Configuration -->\n`;
         }
         
-        campaignBlock += `  <script src="${relativePath}${script.src}"></script>\n`;
+        // Build script tag with optional type attribute
+        let scriptTag = `  <script src="${scriptSrc}"`;
+        if (script.type) {
+          scriptTag += ` type="${script.type}"`;
+        }
+        scriptTag += `></script>\n`;
+        
+        campaignBlock += scriptTag;
       });
       
       campaignBlock += '\n';

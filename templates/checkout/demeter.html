@@ -9,25 +9,27 @@
 
     <link rel="dns-prefetch" href="//campaigns.apps.29next.com">
     <link rel="dns-prefetch" href="//cdn-countries.muddy-wind-c7ca.workers.dev">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 
     <!-- Campaign Configuration -->
-    <script src="../../config.js"></script>
+    <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="../../loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-next-url" content="/demo/upsell">
     <meta name="next-page-type" content="checkout">
 
 
-    <link href="../../css/normalize.css" rel="stylesheet" type="text/css">
-    <link href="../../css/components.css" rel="stylesheet" type="text/css">
-    <link href="../../css/next-staging-core.css" rel="stylesheet" type="text/css">
-    <link href="../../css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="/css/components.css" rel="stylesheet" type="text/css">
+    <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css">
 
 
     <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon">
+    <link href="../../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
+
 
 
     <style>
@@ -94,8 +96,8 @@
       <div class="main-wrapper">
         <nav class="checkout__header-top">
           <div class="container cc-medium">
-            <div class="checkout__header-brand"><img src="../../images/next-logo.png" loading="lazy" alt="" class="brand-logo">
-              <div class="mg-section tablet-spacer"><img loading="lazy" src="../../images/icon.svg" alt="" class="mg-image">
+            <div class="checkout__header-brand"><img src="/images/next-logo.png" loading="eager" alt="" class="brand-logo">
+              <div class="mg-section tablet-spacer"><img loading="lazy" src="/images/icon.svg" alt="" class="mg-image">
                 <div class="mg-text hide-tablet">30-Day 100%<br>Money Back Guarantee</div>
               </div>
             </div>
@@ -143,7 +145,7 @@
                         <div class="scarcity_subtitle">PROMO APPLIED</div>
                       </div>
                       <div class="scarcity-banner__right">
-                        <div data-os-timer-replace-entire-content="true" data-os-element="timer-text" data-os-timer-expiry-text="Almost Gone" data-os-timer-duration="600" data-os-timer-persistence-id="lem-checkout" class="scarcity-sale">Your unit has been reserved for: <span data-os-element="timer" class="scarcity-counter">09:55</span></div>
+                        <div data-os-timer-replace-entire-content="true" data-os-element="timer-text" data-os-timer-expiry-text="Almost Gone" data-os-timer-duration="600" data-os-timer-persistence-id="lem-checkout" class="scarcity-sale">Your order is reserved for: <span data-os-element="timer" class="scarcity-counter">09:55</span>. Stay on this page.</div>
                       </div>
                     </div>
                     <div class="checkout-form">
@@ -382,7 +384,12 @@
                                   </div>
                                   <div data-next-component="shipping-field-row" class="form-grid__row">
                                     <div class="form-group">
-                                      <div class="form-input"><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds"></div>
+                                      <div class="form-input">
+                                        <div class="form-input-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 14" focusable="false" aria-hidden="true" class="a8x1wuy a8x1wux *1fragem32 *1fragempz *1fragemly *1fragemlo _1fragemp6">
+                                            <circle cx="6" cy="6" r="4" fill="none" stroke="currentColor" stroke-width="1"></circle>
+                                            <path fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" d="m9.25 9.25 2.5 2.5"></path>
+                                          </svg></div><label for="shipping_address1" class="label-checkout">Address</label><input autocomplete="address-line1" os-checkout-validate="required" placeholder="Address*" data-next-checkout-field="address1" class="input-flds">
+                                      </div>
                                     </div>
                                   </div>
                                   <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -462,7 +469,7 @@
                                 <div class="form-section__subtitle">All transactions are secure and encrypted.<br></div>
 
                               </div>
-                              <div os-payment-mode="credit" class="payment-methods">
+                              <div class="payment-methods">
                                 <div data-next-payment-method="credit" class="payment-method next-selected">
                                   <div class="payment-method__header"><label id="combo_mode_credit" combo_mode="credit" class="payment-method__label"><input type="radio" name="payment_method" id="combo_mode_credit" data-name="Combo Mode" class="payment-method__input" checked="" value="credit">
                                       <div class="payment-method__title">Credit Card</div>
@@ -537,7 +544,7 @@
                                             <div class="checkbox__label">Use shiping address as billing address</div>
                                           </label></div>
                                         <div os-checkout-element="different-billing-address" class="billing-address__form">
-                                          <h1 class="form-section__title">Billing Address</h1>
+                                          <h1 class="form-section__title cc-billing">Billing Address</h1>
                                           <div os-checkout-component="billing-form" class="form-grid"></div>
                                         </div>
                                       </div>
@@ -603,7 +610,7 @@
                         </div>
                       </div><img loading="lazy" src="https://cdn.prod.website-files.com/67ec42fd75dae41c564624c5/67ec42fd75dae41c56462e31_67e1aef91560b7501b1fa583_Group%20469529.svg" alt="" class="card-flags">
                     </div>
-                    <div class="guarantee-section"><img loading="lazy" src="../../images/1x1_2.svg" alt="" class="image-10">
+                    <div class="guarantee-section"><img loading="lazy" src="/images/1x1_2.svg" alt="" class="image-10">
                       <div class="text-xs"><strong>30 Day Money-Back Guarantee:</strong> Feel safe knowing you're protected. Try it risk-free and return it within 30 days for a full refund or replacement—no questions asked.</div>
                     </div>
                   </div>
@@ -721,7 +728,7 @@
                     </div>
                     <div>
                       <div class="hide-tablet">
-                        <div class="guarantee-checkout__v2"><img loading="lazy" src="../../images/icon.svg" alt="" class="checkout_mbg cc-lg">
+                        <div class="guarantee-checkout__v2"><img loading="lazy" src="/images/icon.svg" alt="" class="checkout_mbg cc-lg">
                           <div class="cart-guarantee_headline">Unconditional <span class="u-text-break">Money Back Guarantee</span></div>
                           <div>Love Hanacure or get your money back with our 1 year "bottom of the bottle" money-back guarantee. If you're not WOW'ed by the results you can get a full refund even if you use the entire bottle!</div>
                         </div>

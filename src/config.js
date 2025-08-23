@@ -15,6 +15,9 @@ export const config = {
     removeFontSmoothingStyles: {
       enabled: true
     },
+    convertToRootRelativePaths: {
+      enabled: true
+    },
     injectCustomCSS: {
       enabled: true
     },

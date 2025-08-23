@@ -24,6 +24,9 @@ export class HtmlProcessor {
     if (this.config.processors.removeFontSmoothingStyles?.enabled) {
       this.processors.push(this.removeFontSmoothingStyles.bind(this));
     }
+    if (this.config.processors.convertToRootRelativePaths?.enabled) {
+      this.processors.push(this.convertToRootRelativePaths.bind(this));
+    }
     if (this.config.processors.injectCustomCSS?.enabled) {
       this.processors.push(this.injectCustomCSS.bind(this));
     }
@@ -163,19 +166,55 @@ export class HtmlProcessor {
     return $;
   }
 
+  convertToRootRelativePaths($) {
+    // Convert all CSS links to use root-relative paths
+    $('link[rel="stylesheet"]').each((i, elem) => {
+      const $link = $(elem);
+      const href = $link.attr('href');
+      
+      // Skip if already absolute or root-relative
+      if (!href || href.startsWith('http') || href.startsWith('//') || href.startsWith('/')) {
+        return;
+      }
+      
+      // Extract the filename from the path
+      const filename = href.split('/').pop();
+      
+      // Convert to root-relative path
+      if (filename.includes('.css')) {
+        $link.attr('href', `/css/${filename}`);
+      }
+    });
+    
+    // Convert all image sources to use root-relative paths
+    $('img').each((i, elem) => {
+      const $img = $(elem);
+      const src = $img.attr('src');
+      
+      // Skip if already absolute or root-relative
+      if (!src || src.startsWith('http') || src.startsWith('//') || src.startsWith('/') || src.startsWith('data:')) {
+        return;
+      }
+      
+      // Extract the filename from the path
+      const filename = src.split('/').pop();
+      
+      // Convert to root-relative path
+      $img.attr('src', `/images/${filename}`);
+    });
+    
+    return $;
+  }
+
   injectCustomCSS($) {
     // Find the next-staging-core.css link (handles both relative and absolute paths)
     const nextStagingCoreLinks = $('link[href$="next-staging-core.css"]');
     
     nextStagingCoreLinks.each((i, elem) => {
       const $link = $(elem);
-      const href = $link.attr('href');
       
-      // Extract the path prefix (e.g., '../css/', 'css/', '../../css/')
-      const pathPrefix = href.substring(0, href.lastIndexOf('next-staging-core.css'));
-      
-      // Create the custom.css link with the same path prefix
-      const customCSSLink = `<link href="${pathPrefix}custom.css" rel="stylesheet" type="text/css">`;
+      // Create the custom.css link with root-relative path
+      const customCSSLink = `<link href="/css/custom.css" rel="stylesheet" type="text/css">`;
       
       // Insert it after next-staging-core.css
       $link.after('\n  ' + customCSSLink);
@@ -223,15 +262,8 @@ export class HtmlProcessor {
         if (script.external) {
           scriptSrc = script.src;
         } else {
-          // For local files, calculate relative path
-          const htmlDepth = $('link[href*="/css/"]').first().attr('href');
-          let relativePath = '';
-          
-          if (htmlDepth) {
-            const depth = (htmlDepth.match(/\.\.\//g) || []).length;
-            relativePath = '../'.repeat(depth);
-          }
-          scriptSrc = `${relativePath}${script.src}`;
+          // For local files, use root-relative path
+          scriptSrc = `/${script.src}`;
         }
         
         // Add appropriate comment

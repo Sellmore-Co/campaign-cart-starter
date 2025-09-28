@@ -42,6 +42,9 @@ export class HtmlProcessor {
     if (this.config.processors.removeTrackingScripts?.enabled) {
       this.processors.push(this.removeTrackingScripts.bind(this));
     }
+    if (this.config.processors.updateNextProcessScript?.enabled) {
+      this.processors.push(this.updateNextProcessScript.bind(this));
+    }
   }
 
   async process(html) {
@@ -405,6 +408,24 @@ export class HtmlProcessor {
       }
     });
     
+    return $;
+  }
+
+  updateNextProcessScript($) {
+    // Find the script with id="next-process"
+    const nextProcessScript = $('#next-process');
+
+    if (nextProcessScript.length > 0) {
+      // Always use olympus-mv-selection.js for production
+      // The local parameter check was only for testing
+      const scriptSrc = '/js/olympus-mv-selection.js';
+
+      // Replace with a simple static script tag
+      const newScript = `<script defer src="${scriptSrc}"></script>`;
+
+      nextProcessScript.replaceWith(newScript);
+    }
+
     return $;
   }
 

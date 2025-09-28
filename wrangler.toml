@@ -14,7 +14,7 @@ directory = "./dist"
 
 # Build configuration
 [build]
-command = "npm run build"
+command = "node bin/build.js"
 
 # Environment variables (add as needed)
 [vars]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>UP04</title>
@@ -18,6 +18,8 @@
 
     <!-- NEXT Metatags -->
     <meta name="next-page-type" content="upsell">
+    <meta name="next-upsell-accept-url" content="/demo/upsell2">
+    <meta name="next-upsell-decline-url" content="/demo/upsell2">
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
@@ -27,8 +29,7 @@
 
 
     <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
+    <link href="../../images/webclip.png" rel="apple-touch-icon">
 
 
     <style>
@@ -314,16 +315,16 @@
                         <div class="prices-text-wrapper">
                           <div class="price-wrapper">
                             <div class="price_upsell4-title">Retail Price</div>
-                            <div id="originalPrice" data-next-multiply-quantity="" data-next-display="package.8.price_retail" class="price_upsell4 diagonal-strike">$49.99</div>
+                            <div id="originalPrice" data-next-multiply-quantity="" data-next-display="package.price_retail" class="price_upsell4 diagonal-strike">$49.99</div>
                             <div class="price_upsell4-subtitle">+$4.95 SHIPPING</div>
                           </div>
                           <div class="center-divider cc-upsell4"></div>
                           <div class="price-wrapper">
                             <div class="title_upsell4-wrap">
                               <div class="price_upsell4-title">Offer Price</div>
-                              <div class="price_upsell4-title cc-savings">(<span data-next-display="package.8.savingsPercentage">56%</span> OFF)</div>
+                              <div class="price_upsell4-title cc-savings">(<span data-next-display="package.savingsPercentage">56%</span> OFF)</div>
                             </div>
-                            <div id="currentPrice" data-next-multiply-quantity="true" data-next-display="package.8.price_total" class="price_upsell4">$21.25</div>
+                            <div id="currentPrice" data-next-multiply-quantity="true" data-next-display="package.price_total" class="price_upsell4">$21.25</div>
                             <div class="price_upsell4-subtitle cc-shipping">+ FREE SHIPPING</div>
                           </div>
                         </div>
@@ -339,7 +340,7 @@
                         <div class="payment-img-wrapper">
                           <div class="trust-badge invert"><img loading="lazy" src="/images/icons8-lock-24_1icons8-lock-24.png" alt="" class="trust-badge__icon">
                             <div class="badge-text-black">100% Encrypted &amp; Secure Checkout</div>
-                          </div><img loading="lazy" src="https://cdn.prod.website-files.com/67ec42fd75dae41c564624c5/67ec42fd75dae41c56462e31_67e1aef91560b7501b1fa583_Group%20469529.svg" alt="" class="card-flags">
+                          </div><img loading="lazy" src="https://cdn.prod.website-files.com/67ec42fd75dae41c564624c5/67ec42fd75dae41c56462e31_67e1aef91560b7501b1fa583_Group%20469529.svg" alt="" class="credit-card__flags">
                         </div>
                       </div>
                     </div>
@@ -491,20 +492,20 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="cc-decline-wrapper">
-              <a data-next-upsell-action="skip" href="#" class="upsell-link cc-decline cc-upsell4 w-inline-block">
-                <div class="next-icon cc-1-25em w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--carbon" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
-                    <path fill="currentColor" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12"></path>
-                    <path fill="currentColor" d="M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z"></path>
-                  </svg></div>
-                <div class="text-sm tw-600 cc-upsell4">No thank you, I don’t want this one-time offer</div>
-              </a>
+              <div class="cc-decline-wrapper">
+                <a data-next-upsell-action="skip" href="#" class="upsell-link cc-decline cc-upsell4 w-inline-block">
+                  <div class="next-icon cc-1-25em w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--carbon" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+                      <path fill="currentColor" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12"></path>
+                      <path fill="currentColor" d="M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z"></path>
+                    </svg></div>
+                  <div class="text-sm tw-600 cc-upsell4">No thank you, I don’t want this one-time offer</div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
         <footer class="footer_section">
-          <div class="container">
+          <div class="container cc-medium">
             <div class="footer_layout">
               <div class="footer_copy-info">
                 <div class="footer_link-wrapper">

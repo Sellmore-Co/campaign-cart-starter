@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Checkout Forms</title>
@@ -22,8 +22,7 @@
 
 
     <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
+    <link href="../images/webclip.png" rel="apple-touch-icon">
 
 
     <style>
@@ -95,13 +94,13 @@
                     <div class="form-content">
                       <div class="form-sections">
                         <div class="form-section form-section--first">
-                          <h2 class="form-section__title">Contact Information</h2>
+                          <h2 class="form-section__title">Contact</h2>
                           <div class="form-group">
                             <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
                           </div>
                         </div>
                         <div pb-checkout-section="shipping" class="form-section">
-                          <h1 class="form-section__title">Shipping Information</h1>
+                          <h1 class="form-section__title">Shipping</h1>
                           <div os-checkout-component="shipping-form">
                             <div class="form-grid">
                               <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -165,7 +164,7 @@
                               </div>
                               <div data-next-component="shipping-field-row" class="form-grid__row">
                                 <div class="form-group">
-                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
+                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
 
                                   </div>
                                 </div>
@@ -210,7 +209,7 @@
                         </div>
                         <div class="form-section form-section--last">
                           <div class="form-section__header">
-                            <h1 class="form-section__title">Payment Details</h1>
+                            <h1 class="form-section__title">Payment</h1>
                             <div class="form-section__subtitle">All transactions are secure and encrypted.<br></div>
 
                           </div>
@@ -488,7 +487,7 @@
                             </div>
                           </div>
                           <div data-next-express-checkout="buttons" class="express-checkout__buttons"><button data-next-express-checkout="paypal" data-action="submit" class="payment-btn cc-paypal">
-                              <div class="w-embed">
+                              <div class="paypal-btn w-embed">
                                 <!--?xml version="1.0" encoding="UTF-8"?-->
                                 <svg width="86px" height="22px" viewBox="0 0 86 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                   <title>paypal</title>
@@ -543,19 +542,19 @@
                               </div>
                             </button></div>
                           <div class="divider-section">
-                            <div class="divider-section__line"></div>
-                            <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
-                            <div class="divider-section__line"></div>
+                            <div class="divider-section__line-v2"></div>
+                            <div data-i18n="pay_cc" class="divider-section__text-v2">OR</div>
+                            <div class="divider-section__line-v2"></div>
                           </div>
                         </div>
                         <div class="form-section form-section--first">
-                          <h2 class="form-section__title">Contact Information</h2>
+                          <h2 class="form-section__title">Contact</h2>
                           <div class="form-group">
                             <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
                           </div>
                         </div>
                         <div pb-checkout-section="shipping" class="form-section">
-                          <h1 class="form-section__title">Shipping Information</h1>
+                          <h1 class="form-section__title">Shipping</h1>
                           <div os-checkout-component="shipping-form">
                             <div class="form-grid">
                               <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -619,7 +618,7 @@
                               </div>
                               <div data-next-component="shipping-field-row" class="form-grid__row">
                                 <div class="form-group">
-                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
+                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
 
                                   </div>
                                 </div>
@@ -664,7 +663,7 @@
                         </div>
                         <div class="form-section form-section--last">
                           <div class="form-section__header">
-                            <h1 class="form-section__title">Payment Details</h1>
+                            <h1 class="form-section__title">Payment</h1>
                             <div class="form-section__subtitle">All transactions are secure and encrypted.<br></div>
 
                           </div>
@@ -1065,7 +1064,7 @@
                               </div>
                             </div>
                             <div data-next-express-checkout="buttons" class="express-checkout__buttons"><button data-next-express-checkout="paypal" data-action="submit" class="payment-btn cc-paypal">
-                                <div class="w-embed">
+                                <div class="paypal-btn w-embed">
                                   <!--?xml version="1.0" encoding="UTF-8"?-->
                                   <svg width="86px" height="22px" viewBox="0 0 86 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>paypal</title>
@@ -1120,9 +1119,9 @@
                                 </div>
                               </button></div>
                             <div class="divider-section">
-                              <div class="divider-section__line"></div>
-                              <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
-                              <div class="divider-section__line"></div>
+                              <div class="divider-section__line-v2"></div>
+                              <div data-i18n="pay_cc" class="divider-section__text-v2">OR</div>
+                              <div class="divider-section__line-v2"></div>
                             </div>
                           </div>
                           <div class="payment-methods">
@@ -1250,7 +1249,7 @@
                                           <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z"></path>
                                         </svg></div>
                                     </div>
-                                    <div data-next-cart-items="" class="cart-items__list">
+                                    <div data-group-items="" data-next-cart-items="" class="cart-items__list">
                                       <div data-cart-item-id="{item.id}" class="cart-item">
                                         <div class="cart-item__wrapper">
                                           <div class="cart-item__details cc-left-0">

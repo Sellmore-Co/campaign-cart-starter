@@ -44,6 +44,9 @@ export const config = {
     },
     removeTrackingScripts: {
       enabled: true
+    },
+    updateNextProcessScript: {
+      enabled: true
     }
   },
   beautify: {

@@ -215,17 +215,35 @@ export class HtmlProcessor {
     $('img').each((i, elem) => {
       const $img = $(elem);
       const src = $img.attr('src');
+      const srcset = $img.attr('srcset');
 
-      // Skip if already absolute or root-relative
-      if (!src || src.startsWith('http') || src.startsWith('//') || src.startsWith('/') || src.startsWith('data:')) {
-        return;
+      // Process src attribute
+      if (src && !src.startsWith('http') && !src.startsWith('//') && !src.startsWith('/') && !src.startsWith('data:')) {
+        // Extract the filename from the path
+        const filename = src.split('/').pop();
+        // Convert to root-relative path
+        $img.attr('src', `/images/${filename}`);
       }
 
-      // Extract the filename from the path
-      const filename = src.split('/').pop();
+      // Process srcset attribute if present
+      if (srcset) {
+        const updatedSrcset = srcset.split(',').map(srcItem => {
+          const parts = srcItem.trim().split(/\s+/);
+          const url = parts[0];
 
-      // Convert to root-relative path
-      $img.attr('src', `/images/${filename}`);
+          // Skip if already absolute or root-relative
+          if (url.startsWith('http') || url.startsWith('//') || url.startsWith('/') || url.startsWith('data:')) {
+            return srcItem.trim();
+          }
+
+          // Extract filename and convert to root-relative
+          const filename = url.split('/').pop();
+          parts[0] = `/images/${filename}`;
+          return parts.join(' ');
+        }).join(', ');
+
+        $img.attr('srcset', updatedSrcset);
+      }
     });
 
     // Convert background images in inline styles
@@ -631,10 +649,9 @@ export class HtmlProcessor {
 
         fs.writeFileSync(outputJsPath, jsContent, 'utf8');
 
-        // Add script tag to HTML
+        // Don't add script tag here - it will be added when replacing #next-process
+        // or at the end if there's no #next-process element
         const jsPath = `/js/${jsFileName}`;
-        $('head').append(`\n  <script defer src="${jsPath}"></script>`);
-
         console.log(`✅ Created ${jsPath}`);
       } catch (error) {
         console.error(`❌ Failed to create JS file: ${error.message}`);
@@ -654,9 +671,17 @@ export class HtmlProcessor {
         const cssContent = `/* CSS extracted from ${relativePath} */\n\n${inlineStyles.join('\n\n')}`;
         fs.writeFileSync(outputCssPath, cssContent, 'utf8');
 
-        // Add link tag to HTML
+        // Add link tag to HTML right after custom.css
         const cssPath = `/css/${cssFileName}`;
-        $('head').append(`\n  <link href="${cssPath}" rel="stylesheet" type="text/css">`);
+        const customCssLink = $('link[href="/css/custom.css"]');
+
+        if (customCssLink.length > 0) {
+          // Insert the template CSS right after custom.css
+          customCssLink.after(`\n  <link href="${cssPath}" rel="stylesheet" type="text/css">`);
+        } else {
+          // Fallback: append to head if custom.css is not found
+          $('head').append(`\n  <link href="${cssPath}" rel="stylesheet" type="text/css">`);
+        }
 
         console.log(`✅ Created ${cssPath}`);
       } catch (error) {
@@ -669,15 +694,15 @@ export class HtmlProcessor {
     if ($nextProcessElement.length > 0) {
       let scriptSrc;
 
-      // If we have a target file from the next-process script, use it
-      if (nextProcessScript && nextProcessScript.targetFile) {
+      // If we created a combined JS file with both static and inline content, use that
+      if ((inlineScripts.length > 0 || nextProcessScript) && fs.existsSync(outputJsPath)) {
+        scriptSrc = `/js/${jsFileName}`;
+        console.log(`✅ Using combined JS file: ${scriptSrc}`);
+      }
+      // Otherwise, if we have just a target file from the next-process script, use it
+      else if (nextProcessScript && nextProcessScript.targetFile) {
         scriptSrc = `/js/${nextProcessScript.targetFile}`;
         console.log(`✅ Using static JS file from next-process: ${scriptSrc}`);
-      }
-      // Otherwise, if we created a JS file with extracted content, use that
-      else if (inlineScripts.length > 0 || nextProcessScript) {
-        scriptSrc = `/js/${jsFileName}`;
-        console.log(`✅ Using generated JS file: ${scriptSrc}`);
       }
       // Default fallback
       else {
@@ -687,6 +712,11 @@ export class HtmlProcessor {
 
       const newScript = `<script defer src="${scriptSrc}"></script>`;
       $nextProcessElement.replaceWith(newScript);
+    } else if ((inlineScripts.length > 0 || nextProcessScript) && fs.existsSync(outputJsPath)) {
+      // No #next-process element, but we created a JS file - add it to the end of body
+      const jsPath = `/js/${jsFileName}`;
+      $('body').append(`\n  <script defer src="${jsPath}"></script>`);
+      console.log(`✅ Added generated JS file to body: ${jsPath}`);
     }
 
     return $;

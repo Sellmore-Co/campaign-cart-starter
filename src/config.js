@@ -72,7 +72,7 @@ export const config = {
     html: '**/*.html'
   },
   excludePatterns: {
-    folders: ['style-guide'], // Folders to exclude
+    folders: ['style-guide', 'demo'], // Folders to exclude
     files: ['playground.html', 'index.html', 'detail_category.html', 'detail_template.html', 'gallery.html', 'page-template.html', 'sale-banners.html', '401.html', '404.html'] // Specific files to exclude
   },
   copyAssets: {

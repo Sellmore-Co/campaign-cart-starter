@@ -1,0 +1,25 @@
+name = "campaign-cart-starter-cdn"
+account_id = "625032477330ef0377469eee37bb62ad"
+compatibility_date = "2025-01-17"
+
+# Enable preview URLs for non-production builds
+preview_urls = true
+
+# Use custom domain instead of workers.dev
+workers_dev = true
+
+# Static assets configuration
+[assets]
+directory = "./dist"
+
+# Build configuration
+[build]
+command = "npm run build"
+
+# Environment variables (add as needed)
+[vars]
+ENVIRONMENT = "production"
+
+# Development configuration
+[env.development]
+vars = { ENVIRONMENT = "development" }

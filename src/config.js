@@ -1,4 +1,18 @@
 export const config = {
+  // Source mode: 'local' for import folder, 'sitemap' for live Webflow site
+  sourceMode: 'local', // 'local' or 'sitemap'
+
+  // Configuration for sitemap mode
+  sitemap: {
+    url: 'https://next-staging-core.webflow.io/sitemap',
+    baseUrl: 'https://next-staging-core.webflow.io',
+    // Optional: Add authentication headers if needed
+    headers: {},
+    // Optional: Delay between requests (in ms) to avoid rate limiting
+    requestDelay: 100
+  },
+
+  // Configuration for local mode
   inputDir: 'import',
   outputDir: 'dist',
   processors: {
@@ -30,7 +44,7 @@ export const config = {
       ],
       scripts: [
         { src: 'config.js', external: false },
-        { src: 'https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js', external: true, type: 'module' }
+        { src: 'https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js', external: true, type: 'module' }
       ]
     },
     relocateNextMetaTags: {
@@ -46,7 +60,9 @@ export const config = {
       enabled: true
     },
     updateNextProcessScript: {
-      enabled: true
+      enabled: true,
+      extractInlineContent: true,  // Enable inline script and style extraction
+      removeExtractedContent: true // Remove scripts/styles from HTML after extraction
     }
   },
   beautify: {
@@ -54,6 +70,10 @@ export const config = {
   },
   filePatterns: {
     html: '**/*.html'
+  },
+  excludePatterns: {
+    folders: ['style-guide'], // Folders to exclude
+    files: ['playground.html', 'index.html', 'detail_category.html', 'detail_template.html', 'gallery.html', 'page-template.html', 'sale-banners.html', '401.html', '404.html'] // Specific files to exclude
   },
   copyAssets: {
     enabled: true,

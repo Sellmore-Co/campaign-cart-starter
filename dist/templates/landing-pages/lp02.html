@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
@@ -23,63 +23,15 @@
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon">
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script defer="" src="/js/templates-landing-pages-lp02.js"></script>
+    <link href="/css/templates-landing-pages-lp02.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="page-wrapper">
@@ -1342,42 +1294,7 @@
                   </div>
                 </div>
                 <div class="custom-code w-embed w-script">
-                  <script>
-                    /* START: Swiper features - Swiper Simple Starter 2 */
-                    document.querySelectorAll('[swiper="sw07"]').forEach((sliderComponent) => {
-                      const sliderEl = sliderComponent.querySelector('[swiper="slider"]');
-                      const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                      const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                      const paginationEl = sliderComponent.querySelector('[swiper="pagination"]');
-                      new Swiper(sliderEl, {
-                        slidesPerView: 3,
-                        spaceBetween: 16,
-                        direction: 'horizontal',
-                        centeredSlides: true,
-                        loop: true,
-                        rewind: true,
-                        effect: 'slide',
-                        pagination: {
-                          el: paginationEl,
-                        },
-                        navigation: {
-                          nextEl: buttonNextEl,
-                          prevEl: buttonPrevEl,
-                        },
-                        breakpoints: {
-                          768: {
-                            slidesPerView: 3,
-                            spaceBetween: 24,
-                          },
-                          0: {
-                            slidesPerView: 1,
-                            spaceBetween: 24,
-                          },
-                        },
-                      });
-                    });
-                    /* END: Swiper features - Swiper Simple Starter 2 */
-                  </script>
+
                 </div>
               </div>
             </div>
@@ -1548,124 +1465,7 @@
                 </div>
               </div>
               <div class="custom-code w-embed w-script">
-                <script>
-                  class PBAccordion {
-                    constructor() {
-                      this.cleanupInitialState();
-                      this.init();
-                    }
-                    cleanupInitialState() {
-                      document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                        const group = accordion.querySelector('[pb-accordion-element="group"]');
-                        if (!group) return;
-                        const items = group.querySelectorAll('[pb-accordion-element="accordion"]');
-                        items.forEach(item => {
-                          const content = item.querySelector('[pb-accordion-element="content"]');
-                          const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                          const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                          const plus = item.querySelector('[pb-accordion-element="plus"]');
-                          if (content) {
-                            content.style.maxHeight = '0';
-                            content.style.opacity = '0';
-                            content.style.visibility = 'hidden';
-                            content.style.display = 'none';
-                          }
-                          if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                          item.classList.remove('is-active-accordion');
-                          content?.classList.remove('is-active-accordion');
-                          if (arrow) arrow.classList.remove('is-active-accordion');
-                          if (plus) plus.classList.remove('is-active-accordion');
-                        });
-                        const initial = group.getAttribute('pb-accordion-initial');
-                        if (initial && initial !== 'none') {
-                          const initialItem = items[parseInt(initial) - 1];
-                          if (initialItem) {
-                            this.openAccordion(initialItem);
-                          }
-                        }
-                      });
-                    }
-                    init() {
-                      document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                        const group = accordion.querySelector('[pb-accordion-element="group"]');
-                        if (!group) return;
-                        group.addEventListener('click', (e) => this.handleClick(e, group));
-                      });
-                    }
-                    handleClick(event, group) {
-                      const accordionItem = event.target.closest('[pb-accordion-element="accordion"]');
-                      if (!accordionItem) return;
-                      const isOpen = accordionItem.classList.contains('is-active-accordion');
-                      const isSingle = group.getAttribute('pb-accordion-single') === 'true';
-                      if (isSingle) {
-                        group.querySelectorAll('[pb-accordion-element="accordion"]').forEach(item => {
-                          if (item !== accordionItem && item.classList.contains('is-active-accordion')) {
-                            this.closeAccordion(item);
-                          }
-                        });
-                      }
-                      if (isOpen) {
-                        this.closeAccordion(accordionItem);
-                      } else {
-                        this.openAccordion(accordionItem);
-                      }
-                    }
-                    openAccordion(item) {
-                      const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                      const content = item.querySelector('[pb-accordion-element="content"]');
-                      const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                      const plus = item.querySelector('[pb-accordion-element="plus"]');
-                      content.style.visibility = 'visible';
-                      content.style.display = 'block';
-                      content.offsetHeight;
-                      const contentHeight = content.scrollHeight;
-                      requestAnimationFrame(() => {
-                        content.style.maxHeight = `${contentHeight}px`;
-                        content.style.opacity = '1';
-                        trigger.setAttribute('aria-expanded', 'true');
-                        item.classList.add('is-active-accordion');
-                        content.classList.add('is-active-accordion');
-                        if (arrow) arrow.classList.add('is-active-accordion');
-                        if (plus) plus.classList.add('is-active-accordion');
-                      });
-                      content.addEventListener('transitionend', () => {
-                        if (item.classList.contains('is-active-accordion')) {
-                          content.style.maxHeight = 'none';
-                        }
-                      }, {
-                        once: true
-                      });
-                    }
-                    closeAccordion(item) {
-                      const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                      const content = item.querySelector('[pb-accordion-element="content"]');
-                      const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                      const plus = item.querySelector('[pb-accordion-element="plus"]');
-                      content.style.maxHeight = `${content.scrollHeight}px`;
-                      content.style.display = 'block';
-                      content.offsetHeight;
-                      requestAnimationFrame(() => {
-                        content.style.maxHeight = '0';
-                        content.style.opacity = '0';
-                        trigger.setAttribute('aria-expanded', 'false');
-                        item.classList.remove('is-active-accordion');
-                        content.classList.remove('is-active-accordion');
-                        if (arrow) arrow.classList.remove('is-active-accordion');
-                        if (plus) plus.classList.remove('is-active-accordion');
-                      });
-                      content.addEventListener('transitionend', () => {
-                        if (!item.classList.contains('is-active-accordion')) {
-                          content.style.visibility = 'hidden';
-                          content.style.display = 'none';
-                        }
-                      }, {
-                        once: true
-                      });
-                    }
-                  }
-                  // Initialize
-                  new PBAccordion();
-                </script>
+
               </div>
             </div>
           </div>
@@ -1792,11 +1592,6 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      [swiper="sw07"] .swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background-color: #000;
-      }
 
-    </style>
   </body>
 </html>

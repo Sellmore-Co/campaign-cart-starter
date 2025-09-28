@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-next-url" content="/demo/upsell">
@@ -27,59 +27,8 @@
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon">
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,6 +37,8 @@
     <!--  SWIPERJS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link href="/css/templates-checkout-demeter.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="page-wrapper">
@@ -580,12 +531,7 @@
                               <div class="submit-section__button"><button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
                                   <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
                                     <div class="w-embed">
-                                      <style>
-                                        .three-quarter-spinner {
-                                          animation: spin .9s linear 0s infinite;
-                                        }
 
-                                      </style>
                                     </div>
                                     <div class="three-quarter-spinner black"></div>
                                   </div>
@@ -782,56 +728,6 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      /* Arrows */
-      .arrow-active::after,
-      .arrow-inactive::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 7px;
-        height: 7px;
-        border-top: 1px solid;
-        border-right: 1px solid;
-        transform: translateY(-50%) rotate(45deg);
-      }
 
-      .arrow-active::after {
-        border-color: #000;
-      }
-
-      .arrow-inactive::after {
-        border-color: #dadada;
-      }
-
-      .iti__flag-container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 3rem !important;
-        right: 0 !important;
-        left: auto !important;
-        padding: 1px;
-      }
-
-      .iti--allow-dropdown input,
-      .iti--allow-dropdown input[type=text],
-      .iti--allow-dropdown input[type=tel],
-      .iti--separate-dial-code input,
-      .iti--separate-dial-code input[type=text],
-      .iti--separate-dial-code input[type=tel] {
-        padding-right: 52px !important;
-        padding-left: 12px !important;
-        margin-left: 0 !important;
-      }
-
-      /* Remove the divider on the very last payment-method block */
-      .payment-methods>.payment-method:last-child {
-        border-bottom: 0 !important;
-        /* kill the bottom border */
-      }
-
-    </style>
   </body>
 </html>

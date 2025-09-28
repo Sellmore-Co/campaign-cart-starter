@@ -1,5 +1,7 @@
 import * as cheerio from 'cheerio';
 import beautify from 'js-beautify';
+import fs from 'fs';
+import path from 'path';
 
 export class HtmlProcessor {
   constructor(config) {
@@ -47,12 +49,15 @@ export class HtmlProcessor {
     }
   }
 
-  async process(html) {
+  async process(html, filePath = null) {
+    // Store the current file being processed
+    this.currentFile = filePath;
+
     // Remove the Webflow comment before loading into cheerio
     if (this.config.processors.removeWebflowComment?.enabled) {
       html = html.replace(/<!--\s*Last Published:.*?-->\s*/i, '');
     }
-    
+
     let $ = cheerio.load(html, {
       xmlMode: false,
       decodeEntities: false
@@ -63,7 +68,7 @@ export class HtmlProcessor {
     }
 
     const processedHtml = $.html();
-    
+
     // Beautify the HTML if enabled
     if (this.config.beautify?.enabled !== false) {
       return beautify.html(processedHtml, {
@@ -174,38 +179,89 @@ export class HtmlProcessor {
     $('link[rel="stylesheet"]').each((i, elem) => {
       const $link = $(elem);
       const href = $link.attr('href');
-      
+
       // Skip if already absolute or root-relative
       if (!href || href.startsWith('http') || href.startsWith('//') || href.startsWith('/')) {
         return;
       }
-      
+
       // Extract the filename from the path
       const filename = href.split('/').pop();
-      
+
       // Convert to root-relative path
       if (filename.includes('.css')) {
         $link.attr('href', `/css/${filename}`);
       }
     });
-    
+
+    // Convert favicon and apple-touch-icon links
+    $('link[rel="shortcut icon"], link[rel="icon"], link[rel="apple-touch-icon"]').each((i, elem) => {
+      const $link = $(elem);
+      const href = $link.attr('href');
+
+      // Skip if already absolute or root-relative
+      if (!href || href.startsWith('http') || href.startsWith('//') || href.startsWith('/')) {
+        return;
+      }
+
+      // Extract the filename from the path
+      const filename = href.split('/').pop();
+
+      // Convert to root-relative path
+      $link.attr('href', `/images/${filename}`);
+    });
+
     // Convert all image sources to use root-relative paths
     $('img').each((i, elem) => {
       const $img = $(elem);
       const src = $img.attr('src');
-      
+
       // Skip if already absolute or root-relative
       if (!src || src.startsWith('http') || src.startsWith('//') || src.startsWith('/') || src.startsWith('data:')) {
         return;
       }
-      
+
       // Extract the filename from the path
       const filename = src.split('/').pop();
-      
+
       // Convert to root-relative path
       $img.attr('src', `/images/${filename}`);
     });
-    
+
+    // Convert background images in inline styles
+    $('[style*="background-image"]').each((i, elem) => {
+      const $elem = $(elem);
+      const style = $elem.attr('style');
+
+      if (style) {
+        // Replace relative URLs in background-image with absolute paths
+        const updatedStyle = style.replace(/background-image:\s*url\(['"]?(?!http|\/\/|\/|data:)([^'")]+)['"]?\)/gi,
+          (match, url) => {
+            const filename = url.split('/').pop();
+            return `background-image: url('/images/${filename}')`;
+          });
+
+        $elem.attr('style', updatedStyle);
+      }
+    });
+
+    // Convert any other relative URLs in href attributes (like anchors with images)
+    $('a[href*=".png"], a[href*=".jpg"], a[href*=".jpeg"], a[href*=".gif"], a[href*=".svg"], a[href*=".webp"]').each((i, elem) => {
+      const $a = $(elem);
+      const href = $a.attr('href');
+
+      // Skip if already absolute or root-relative
+      if (!href || href.startsWith('http') || href.startsWith('//') || href.startsWith('/') || href.startsWith('#')) {
+        return;
+      }
+
+      // Extract the filename from the path
+      const filename = href.split('/').pop();
+
+      // Convert to root-relative path
+      $a.attr('href', `/images/${filename}`);
+    });
+
     return $;
   }
 
@@ -412,18 +468,225 @@ export class HtmlProcessor {
   }
 
   updateNextProcessScript($) {
-    // Find the script with id="next-process"
-    const nextProcessScript = $('#next-process');
+    if (!this.currentFile) return $;
 
-    if (nextProcessScript.length > 0) {
-      // Always use olympus-mv-selection.js for production
-      // The local parameter check was only for testing
-      const scriptSrc = '/js/olympus-mv-selection.js';
+    // Get the base filename without extension and path
+    const basename = path.basename(this.currentFile, path.extname(this.currentFile));
+    const relativePath = path.relative(this.config.inputDir, this.currentFile);
+    const dirPath = path.dirname(relativePath);
 
-      // Replace with a simple static script tag
+    // Extract inline scripts and styles
+    const inlineScripts = [];
+    const inlineStyles = [];
+    let nextProcessScript = null;
+
+    // First, extract the next-process script if it exists
+    const $nextProcess = $('#next-process');
+    if ($nextProcess.length > 0) {
+      const scriptContent = $nextProcess.html();
+      if (scriptContent && scriptContent.trim()) {
+        // Extract the URLs from the script to determine which file is being loaded
+        const localMatch = scriptContent.match(/['"]([^'"]*localhost[^'"]*\.js)['"]/);
+        const prodMatch = scriptContent.match(/['"]([^'"]*(?:workers\.dev|cdn)[^'"]*\.js)['"]/);
+
+        let targetFile = null;
+
+        // Try to get filename from local match first (more specific)
+        if (localMatch) {
+          const localUrl = localMatch[1];
+          const parts = localUrl.split('/');
+          targetFile = parts[parts.length - 1]; // e.g., 'olympus-mv-full.js'
+        }
+        // Fallback to production URL
+        else if (prodMatch) {
+          const prodUrl = prodMatch[1];
+          const parts = prodUrl.split('/');
+          targetFile = parts[parts.length - 1]; // e.g., 'olympus-mv-selection.js'
+        }
+
+        if (targetFile) {
+          // Try to read the content from the static file
+          const staticFilePath = path.join('src', 'static', targetFile);
+          try {
+            if (fs.existsSync(staticFilePath)) {
+              const staticContent = fs.readFileSync(staticFilePath, 'utf8');
+              nextProcessScript = {
+                content: staticContent, // Use the actual file content
+                targetFile: targetFile
+              };
+              console.log(`📖 Read static JS content from ${staticFilePath}`);
+            } else {
+              console.log(`⚠️ Static file not found: ${staticFilePath}`);
+              nextProcessScript = {
+                content: null,
+                targetFile: targetFile
+              };
+            }
+          } catch (error) {
+            console.error(`❌ Error reading static file: ${error.message}`);
+            nextProcessScript = {
+              content: null,
+              targetFile: targetFile
+            };
+          }
+        }
+      }
+    }
+
+    // Extract inline styles
+    $('style').each((i, elem) => {
+      const $style = $(elem);
+      const styleContent = $style.html();
+
+      if (styleContent && styleContent.trim()) {
+        // Beautify the CSS content before adding
+        const beautifiedCSS = beautify.css(styleContent.trim(), {
+          indent_size: 2,
+          indent_char: ' ',
+          selector_separator_newline: true,
+          newline_between_rules: true,
+          space_around_combinator: true,
+          preserve_newlines: false,
+          max_preserve_newlines: 2
+        });
+
+        inlineStyles.push(`/* Inline style ${i + 1} from ${basename}.html */\n${beautifiedCSS}`);
+
+        if (this.config.processors.updateNextProcessScript?.removeExtractedContent) {
+          $style.remove();
+        }
+      }
+    });
+
+    // Extract inline scripts
+    const excludeIds = ['next-process', 'next-config'];
+    $('script').each((i, elem) => {
+      const $script = $(elem);
+
+      // Skip external scripts and excluded IDs
+      if ($script.attr('src') || excludeIds.includes($script.attr('id'))) {
+        return;
+      }
+
+      // Skip scripts that are part of templates or should stay inline
+      if ($script.attr('type') === 'application/json' ||
+          $script.attr('type') === 'text/template') {
+        return;
+      }
+
+      const scriptContent = $script.html();
+      if (scriptContent && scriptContent.trim()) {
+        // Beautify the script content before adding
+        const beautifiedScript = beautify.js(scriptContent.trim(), {
+          indent_size: 2,
+          indent_char: ' ',
+          preserve_newlines: true,
+          max_preserve_newlines: 2,
+          keep_array_indentation: false,
+          break_chained_methods: false,
+          indent_scripts: 'normal',
+          brace_style: 'collapse',
+          space_before_conditional: true,
+          unescape_strings: false,
+          jslint_happy: false,
+          wrap_line_length: 0
+        });
+
+        inlineScripts.push(`// Inline script ${i + 1} from ${basename}.html\n${beautifiedScript}`);
+
+        if (this.config.processors.updateNextProcessScript?.removeExtractedContent) {
+          $script.remove();
+        }
+      }
+    });
+
+    // Create file paths with folder structure in filename for uniqueness
+    const filePrefix = dirPath !== '.' ? dirPath.replace(/[\\\/]/g, '-') + '-' : '';
+    const jsFileName = `${filePrefix}${basename}.js`;
+    const cssFileName = `${filePrefix}${basename}.css`;
+
+    // Use flat structure - all JS in js/, all CSS in css/
+    const outputJsPath = path.join(this.config.outputDir, 'js', jsFileName);
+    const outputCssPath = path.join(this.config.outputDir, 'css', cssFileName);
+
+    // Write JS file if we have scripts or next-process content
+    if (inlineScripts.length > 0 || nextProcessScript) {
+      try {
+        // Ensure directory exists
+        const jsDir = path.dirname(outputJsPath);
+        if (!fs.existsSync(jsDir)) {
+          fs.mkdirSync(jsDir, { recursive: true });
+        }
+
+        // Build the JS content with static file content at the top if it exists
+        let jsContent = `// JavaScript extracted from ${relativePath}\n\n`;
+
+        if (nextProcessScript && nextProcessScript.content) {
+          jsContent += `// Content from static file: ${nextProcessScript.targetFile}\n${nextProcessScript.content}\n\n`;
+        }
+
+        if (inlineScripts.length > 0) {
+          jsContent += inlineScripts.join('\n\n');
+        }
+
+        fs.writeFileSync(outputJsPath, jsContent, 'utf8');
+
+        // Add script tag to HTML
+        const jsPath = `/js/${jsFileName}`;
+        $('head').append(`\n  <script defer src="${jsPath}"></script>`);
+
+        console.log(`✅ Created ${jsPath}`);
+      } catch (error) {
+        console.error(`❌ Failed to create JS file: ${error.message}`);
+      }
+    }
+
+    // Write CSS file if we have styles
+    if (inlineStyles.length > 0) {
+      try {
+        // Ensure directory exists
+        const cssDir = path.dirname(outputCssPath);
+        if (!fs.existsSync(cssDir)) {
+          fs.mkdirSync(cssDir, { recursive: true });
+        }
+
+        // Write the CSS file
+        const cssContent = `/* CSS extracted from ${relativePath} */\n\n${inlineStyles.join('\n\n')}`;
+        fs.writeFileSync(outputCssPath, cssContent, 'utf8');
+
+        // Add link tag to HTML
+        const cssPath = `/css/${cssFileName}`;
+        $('head').append(`\n  <link href="${cssPath}" rel="stylesheet" type="text/css">`);
+
+        console.log(`✅ Created ${cssPath}`);
+      } catch (error) {
+        console.error(`❌ Failed to create CSS file: ${error.message}`);
+      }
+    }
+
+    // Handle the next-process script replacement
+    const $nextProcessElement = $('#next-process');
+    if ($nextProcessElement.length > 0) {
+      let scriptSrc;
+
+      // If we have a target file from the next-process script, use it
+      if (nextProcessScript && nextProcessScript.targetFile) {
+        scriptSrc = `/js/${nextProcessScript.targetFile}`;
+        console.log(`✅ Using static JS file from next-process: ${scriptSrc}`);
+      }
+      // Otherwise, if we created a JS file with extracted content, use that
+      else if (inlineScripts.length > 0 || nextProcessScript) {
+        scriptSrc = `/js/${jsFileName}`;
+        console.log(`✅ Using generated JS file: ${scriptSrc}`);
+      }
+      // Default fallback
+      else {
+        scriptSrc = '/js/olympus-mv-selection.js';
+        console.log(`✅ Using default JS file: ${scriptSrc}`);
+      }
+
       const newScript = `<script defer src="${scriptSrc}"></script>`;
-
-      nextProcessScript.replaceWith(newScript);
+      $nextProcessElement.replaceWith(newScript);
     }
 
     return $;

@@ -7,6 +7,9 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "node src/index.js",
+    "build:static": "node bin/build-cloudflare.js",
+    "deploy:static": "wrangler deploy -c wrangler-static.toml",
+    "dev:static": "wrangler dev -c wrangler-static.toml",
     "report:div-blocks": "node src/utils/divBlockScanner.js dist",
     "test": "jest",
     "test:watch": "jest --watch",

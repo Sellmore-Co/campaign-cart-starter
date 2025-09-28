@@ -42,15 +42,14 @@ class WebflowProcessor {
 
       for (const file of htmlFiles) {
         try {
-          // Check if file is in root and should be filtered
           const relativePath = path.relative(inputPath, file);
-          const isRootFile = !relativePath.includes(path.sep);
-          
-          if (isRootFile && relativePath !== 'index.html' && relativePath !== 'playground.html') {
-            console.log(`⏭️  Skipping root file: ${relativePath}`);
+
+          // Check if file should be excluded
+          if (this.shouldExcludeFile(relativePath)) {
+            console.log(`⏭️  Skipping excluded: ${relativePath}`);
             continue;
           }
-          
+
           await this.processFile(file, inputPath, outputPath);
           processedCount++;
           console.log(`✅ Processed: ${relativePath}`);
@@ -87,9 +86,37 @@ class WebflowProcessor {
     }
   }
 
+  shouldExcludeFile(relativePath) {
+    const { excludePatterns } = this.config;
+
+    if (!excludePatterns) return false;
+
+    // Normalize path separators for comparison
+    const normalizedPath = relativePath.replace(/\\/g, '/');
+
+    // Check if file is in an excluded folder
+    if (excludePatterns.folders) {
+      for (const folder of excludePatterns.folders) {
+        if (normalizedPath.startsWith(folder + '/') || normalizedPath.split('/')[0] === folder) {
+          return true;
+        }
+      }
+    }
+
+    // Check if file is in the excluded files list
+    if (excludePatterns.files) {
+      const filename = path.basename(normalizedPath);
+      if (excludePatterns.files.includes(filename)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   async processFile(filePath, inputDir, outputDir) {
     const content = await readFile(filePath);
-    const processedContent = await this.htmlProcessor.process(content);
+    const processedContent = await this.htmlProcessor.process(content, filePath);
     const outputPath = getOutputPath(filePath, inputDir, outputDir);
     await writeFile(outputPath, processedContent);
   }

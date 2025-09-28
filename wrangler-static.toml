@@ -1,0 +1,25 @@
+name = "campaign-cart-static-cdn"
+account_id = "625032477330ef0377469eee37bb62ad"
+compatibility_date = "2025-01-17"
+
+# Enable preview URLs for non-production builds
+preview_urls = true
+
+# Use custom domain instead of workers.dev
+workers_dev = true
+
+# Static assets configuration - only serve static files
+[assets]
+directory = "./dist-cloudflare"
+
+# Build configuration
+[build]
+command = "node bin/build-cloudflare.js"
+
+# Environment variables (add as needed)
+[vars]
+ENVIRONMENT = "production"
+
+# Development configuration
+[env.development]
+vars = { ENVIRONMENT = "development" }

@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-api-key" content="FQqAM3Qj3ijsq3tSR5cC6NaS8u6NFO95Xq3rIQhO">
@@ -28,59 +28,8 @@
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon">
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <link rel="stylesheet" href="http://localhost:3000/css/olympus-mv.css" type="text/css">
@@ -90,6 +39,9 @@
     <!--  SWIPERJS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script defer="" src="/js/templates-checkout-olympus-mv-billing.js"></script>
+    <link href="/css/templates-checkout-olympus-mv-billing.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="page-wrapper">
@@ -480,12 +432,7 @@
                           <div class="submit-section__button"><button os-checkout-payment="combo" data-action="submit" type="submit" class="button cc-gold">
                               <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
                                 <div class="w-embed">
-                                  <style>
-                                    .three-quarter-spinner {
-                                      animation: spin .9s linear 0s infinite;
-                                    }
 
-                                  </style>
                                 </div>
                                 <div class="three-quarter-spinner black"></div>
                               </div>
@@ -699,74 +646,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
     <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
-    <script>
-      document.querySelectorAll('[data-next-element="timer"]').forEach(timer => {
-        let [minutes, seconds] = timer.textContent.split(':').map(Number);
-        let total = minutes * 60 + seconds;
-        setInterval(() => {
-          if (total <= 0) return;
-          total--;
-          const m = Math.floor(total / 60);
-          const s = total % 60;
-          timer.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-          if (total === 0) timer.style.color = '#ff4444';
-          else if (total <= 60) timer.style.color = '#ff9800';
-        }, 1000);
-      });
-    </script>
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      /* Arrows */
-      .arrow-active::after,
-      .arrow-inactive::after {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 50%;
-        width: 7px;
-        height: 7px;
-        border-top: 1px solid;
-        border-right: 1px solid;
-        transform: translateY(-50%) rotate(45deg);
-      }
 
-      .arrow-active::after {
-        border-color: #000;
-      }
-
-      .arrow-inactive::after {
-        border-color: #dadada;
-      }
-
-      /* Remove the divider on the very last payment-method block */
-      .payment-methods>.payment-method:last-child {
-        border-bottom: 0 !important;
-        /* kill the bottom border */
-      }
-
-      .iti__flag-container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 3rem !important;
-        right: 0 !important;
-        left: auto !important;
-        padding: 1px;
-      }
-
-      .iti--allow-dropdown input,
-      .iti--allow-dropdown input[type=text],
-      .iti--allow-dropdown input[type=tel],
-      .iti--separate-dial-code input,
-      .iti--separate-dial-code input[type=text],
-      .iti--separate-dial-code input[type=tel] {
-        padding-right: 52px !important;
-        padding-left: 12px !important;
-        margin-left: 0 !important;
-      }
-
-    </style>
   </body>
 </html>

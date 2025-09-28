@@ -66,7 +66,6 @@ const CONFIG = {
 
   // Button Text Configuration
   buttonText: {
-    selectVariants: 'Select Variants',
     checkout: {
       complete: 'Next',
       incomplete: 'Complete All Selections'
@@ -76,7 +75,6 @@ const CONFIG = {
 
   // Animation Timings (in milliseconds)
   timings: {
-    stepTransition: 1000, // Time to show spinner before revealing step 2
     notificationDuration: 5000, // How long notifications stay visible
     errorNotificationDuration: 3000,
     scrollOffset: 100, // Pixels from top when scrolling to elements
@@ -282,6 +280,7 @@ class TierController {
     this.baseProductId = null;
     this.exitDiscountActive = false;
     this._cartTimer = null;
+    this._cartUpdateTimer = null;
     this.init();
   }
 
@@ -375,14 +374,7 @@ class TierController {
     });
     document.addEventListener('variantSelected', e => this._handleVariant(e.detail));
 
-    // Handle step navigation buttons
-    const selectVariantsBtn = document.querySelector('[data-next-action="select-variants"]');
-    if (selectVariantsBtn) {
-      selectVariantsBtn.onclick = e => {
-        e.preventDefault();
-        this._handleStepTransition();
-      };
-    }
+    // Step navigation button removed - both steps always visible
 
     // Handle checkout button
     const checkoutBtn = document.querySelector('[data-next-action="checkout"]');
@@ -450,6 +442,9 @@ class TierController {
 
     this._updateCTA();
     this._updateCheckoutButton(); // Update checkout button state
+
+    // Auto-update cart when tier changes
+    this._updateCartDebounced();
   }
 
   _copySelectionsToNewSlots(fromTier, toTier) {
@@ -598,6 +593,9 @@ class TierController {
 
     this._updateCTA();
     this._updateCheckoutButton(); // Update button state on selection change
+
+    // Auto-update cart whenever selections change
+    this._updateCartDebounced();
   }
 
   _updateSwatch(dropdown, color) {
@@ -981,7 +979,6 @@ class TierController {
       if (event.persisted) {
         // Page was restored from bfcache
         this._resetCheckoutButtonSpinner();
-        this._resetSelectVariantsButtonSpinner();
       }
     });
   }
@@ -997,16 +994,6 @@ class TierController {
     }
   }
 
-  _resetSelectVariantsButtonSpinner() {
-    const selectVariantsBtn = document.querySelector('[data-next-action="select-variants"]');
-    const loader = selectVariantsBtn?.querySelector('[data-next-component="loader"]');
-    const buttonContent = selectVariantsBtn?.querySelector('[data-next-component="button-info"]');
-
-    if (loader && buttonContent) {
-      loader.style.display = 'none';
-      buttonContent.style.display = 'block';
-    }
-  }
 
   _onProfileChanged(eventData) {
     // Mark pending update and refresh data
@@ -1038,52 +1025,6 @@ class TierController {
     this._updatePrices();
   }
 
-  _handleStepTransition() {
-    const button = document.querySelector('[data-next-action="select-variants"]');
-    const loader = button?.querySelector('[data-next-component="loader"]');
-    const buttonContent = button?.querySelector('[data-next-component="button-info"]');
-
-    // Show spinner, hide content
-    if (loader && buttonContent) {
-      loader.style.display = 'flex';
-      loader.style.alignItems = 'center';
-      loader.style.justifyContent = 'center';
-      buttonContent.style.display = 'none';
-    }
-
-    // Wait configured time then show step two
-    setTimeout(() => {
-      // Hide spinner, show content again
-      if (loader && buttonContent) {
-        loader.style.display = 'none';
-        buttonContent.style.display = 'block';
-      }
-
-      const stepTwo = document.querySelector('[data-next-component="step-two"]');
-      if (stepTwo) {
-        // Remove inactive class and add animation class to show step two
-        stepTwo.classList.remove('is-inactive');
-        stepTwo.classList.add('step-revealed');
-
-        // Hide the first step's CTA wrapper
-        const quantityCTA = document.querySelector('[data-next-component="quantity-cta"]');
-        if (quantityCTA) {
-          quantityCTA.style.display = 'none';
-        }
-
-        // Smooth scroll to step two with configured offset
-        setTimeout(() => {
-          const elementPosition = stepTwo.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - CONFIG.timings.scrollOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
-    }, CONFIG.timings.stepTransition);
-  }
 
   _updateCheckoutButton() {
     const checkoutBtn = document.querySelector('[data-next-action="checkout"]');
@@ -1164,18 +1105,18 @@ class TierController {
   _findAvailableAlternative(slotNum, changedType, newValue) {
     const pid = (slotNum === 1 && this.baseProductId) || this.productId;
     const slotVariants = this.selectedVariants.get(slotNum);
-    const options = window.next.getAvailableVariantAttributes(pid, 
+    const options = window.next.getAvailableVariantAttributes(pid,
       changedType === 'color' ? 'size' : 'color');
-    
+
     const current = changedType === 'color' ? slotVariants.size : slotVariants.color;
-    
+
     // Try to keep current value
-    const test = changedType === 'color' 
+    const test = changedType === 'color'
       ? { color: newValue, size: current }
       : { color: current, size: newValue };
-    
+
     if (!this._isVariantOOS(slotNum, test)) return current;
-    
+
     // Find alternative
     for (const opt of options) {
       const variant = changedType === 'color'
@@ -1183,8 +1124,49 @@ class TierController {
         : { color: opt, size: newValue };
       if (!this._isVariantOOS(slotNum, variant)) return opt;
     }
-    
+
     return null;
+  }
+
+  _updateCartDebounced() {
+    // Clear existing timer
+    if (this._cartUpdateTimer) {
+      clearTimeout(this._cartUpdateTimer);
+    }
+
+    // Set new timer to update cart after 500ms of no changes
+    this._cartUpdateTimer = setTimeout(() => {
+      this._updateCart();
+    }, 500);
+  }
+
+  async _updateCart() {
+    // Build cart items for selected slots
+    const items = [];
+    let hasValidItems = false;
+
+    for (let i = 1; i <= this.currentTier; i++) {
+      const v = this.selectedVariants.get(i);
+      if (v?.color && v?.size) {
+        const pkg = window.next.getPackageByVariantSelection(
+          this.baseProductId || this.productId,
+          { color: v.color, size: v.size }
+        );
+        if (pkg) {
+          items.push({ packageId: pkg.ref_id, quantity: 1 });
+          hasValidItems = true;
+        }
+      }
+    }
+
+    // Only update cart if we have valid items
+    if (hasValidItems) {
+      try {
+        await window.next.swapCart(items);
+      } catch (error) {
+        console.error('Error updating cart:', error);
+      }
+    }
   }
 }
 
@@ -1269,7 +1251,7 @@ window.addEventListener('next:initialized', () => {
   }
 });
 
-// Add CSS for step animations
+// Add CSS for animations
 const style = document.createElement('style');
 style.textContent = `
   @keyframes slideDown {
@@ -1280,21 +1262,6 @@ style.textContent = `
     to {
       transform: translateX(-50%) translateY(0);
       opacity: 1;
-    }
-  }
-
-  [data-next-component="step-two"].step-revealed {
-    animation: fadeInUp 0.4s ease;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 

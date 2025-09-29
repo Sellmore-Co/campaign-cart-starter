@@ -5,11 +5,6 @@
 // CONFIGURATION SECTION - EASY TO MODIFY
 // ============================================
 const CONFIG = {
-  // Navigation URLs
-  urls: {
-    checkoutStep2: '2step-billing', // URL for the checkout 2nd step
-  },
-
   // Product Images by Color
   colors: {
     images: {
@@ -24,6 +19,10 @@ const CONFIG = {
     }
   },
 
+  // Profile Configuration
+  profiles: { 1: 'default', 2: '2_pack', 3: '3_pack' },
+  exitProfiles: { 1: 'exit_10', 2: 'exit_10_2pack', 3: 'exit_10_3pack' },
+
   // Discount Configuration
   discounts: {
     base: { 1: 50, 2: 55, 3: 60 }, // Base discount percentages per tier
@@ -32,6 +31,69 @@ const CONFIG = {
       1: { base: '50%', withExit: '55%' },
       2: { base: '55%', withExit: '60%' },
       3: { base: '60%', withExit: '65%' }
+    }
+  },
+
+  // Profile Definitions with Package Mappings
+  profileDefinitions: {
+    '2_pack': {
+      name: '2-Pack Bundle',
+      packageMappings: {
+        // White/S:1->10, Gray/S:2->11, Black/S:3->12
+        1: 10, 2: 11, 3: 12,
+        // White/M:4->13, Gray/M:5->14, Black/M:6->15
+        4: 13, 5: 14, 6: 15,
+        // White/L:7->16, Gray/L:8->17, Black/L:9->18
+        7: 16, 8: 17, 9: 18
+      }
+    },
+    '3_pack': {
+      name: '3-Pack Bundle',
+      packageMappings: {
+        // White/S:1->19, Gray/S:2->20, Black/S:3->21
+        1: 19, 2: 20, 3: 21,
+        // White/M:4->22, Gray/M:5->23, Black/M:6->24
+        4: 22, 5: 23, 6: 24,
+        // White/L:7->25, Gray/L:8->26, Black/L:9->27
+        7: 25, 8: 26, 9: 27
+      }
+    },
+    'exit_10': {
+      name: 'Exit 10% Discount',
+      packageMappings: {
+        // White/S:1->28, Gray/S:2->29, Black/S:3->30
+        1: 28, 2: 29, 3: 30,
+        // White/M:4->31, Gray/M:5->32, Black/M:6->33
+        4: 31, 5: 32, 6: 33,
+        // White/L:7->34, Gray/L:8->35, Black/L:9->36
+        7: 34, 8: 35, 9: 36
+      }
+    },
+    'exit_10_2pack': {
+      name: 'Exit 10% - 2 Pack',
+      packageMappings: {
+        // Map base packages to exit 2-pack packages
+        1: 37, 2: 38, 3: 39,
+        4: 40, 5: 41, 6: 42,
+        7: 43, 8: 44, 9: 45,
+        // Also map 2-pack base to exit 2-pack
+        10: 37, 11: 38, 12: 39,
+        13: 40, 14: 41, 15: 42,
+        16: 43, 17: 44, 18: 45
+      }
+    },
+    'exit_10_3pack': {
+      name: 'Exit 10% - 3 Pack',
+      packageMappings: {
+        // Map base packages to exit 3-pack packages
+        1: 46, 2: 47, 3: 48,
+        4: 49, 5: 50, 6: 51,
+        7: 52, 8: 53, 9: 54,
+        // Also map 3-pack base to exit 3-pack
+        19: 46, 20: 47, 21: 48,
+        22: 49, 23: 50, 24: 51,
+        25: 52, 26: 53, 27: 54
+      }
     }
   },
 
@@ -57,24 +119,14 @@ const CONFIG = {
   // Exit Intent Configuration
   exitIntent: {
     enabled: true,
-    image: '../../images/tshirts/exit-intent.png',
+    image: 'https://placehold.co/600x400',
     discountText: '🎉 Extra 10% OFF Applied!',
-  },
-
-  // Button Text Configuration
-  buttonText: {
-    checkout: {
-      complete: 'Next',
-      incomplete: 'Complete All Selections'
-    },
-    loading: 'Loading...'
   },
 
   // Animation Timings (in milliseconds)
   timings: {
     notificationDuration: 5000, // How long notifications stay visible
     errorNotificationDuration: 3000,
-    scrollOffset: 100, // Pixels from top when scrolling to elements
   },
 
   // Notification Styles
@@ -283,8 +335,8 @@ class TierController {
 
   async init() {
     await this._waitForSDK();
+    this._registerProfiles();
     this._setupListeners();
-    this._setupBFCacheHandler();
 
     // Get initial data
     this._getProductId();
@@ -293,22 +345,38 @@ class TierController {
     // Check for forceTier parameter
     this._checkForceTierParam();
 
-    // Always initialize with default state
-    this._initState();
+    // Check if we should restore from cart (edit mode)
+    const urlParams = new URLSearchParams(window.location.search);
+    const showSelection = urlParams.get('showSelection') === 'true';
+    const cartData = window.next.getCartData();
+    const hasCartItems = cartData?.cartLines && cartData.cartLines.length > 0;
 
-    // No session storage - always start fresh
-    this.exitDiscountActive = false;
+    if (showSelection && hasCartItems) {
+      // Restore from cart
+      this._initStateFromCart(cartData);
+    } else {
+      // Always initialize with default state
+      this._initState();
 
-    // Defer heavy operations
-    requestAnimationFrame(() => {
-      this._setupDropdowns();
+      // Check for active profile from the Zustand store (in localStorage)
+      this._checkActiveProfile();
 
-      // Always set defaults since we're not checking cart
-      this._setDefaultsWithoutCart();
+      // Defer heavy operations
+      requestAnimationFrame(() => {
+        this._setupDropdowns();
 
-      this._updatePrices();
-      this._updateSavings();
-    });
+        // Always set defaults since we're not checking cart
+        this._setDefaultsWithoutCart();
+
+        this._updatePrices();
+        this._updateSavings();
+
+        // Update cart with default selections
+        setTimeout(() => {
+          this._updateCart();
+        }, 100);
+      });
+    }
   }
 
   _waitForSDK() {
@@ -316,6 +384,61 @@ class TierController {
       const check = () => window.next?.getCampaignData ? r() : setTimeout(check, 50);
       check();
     });
+  }
+
+  _registerProfiles() {
+    if (!window.next.registerProfile) return;
+
+    try {
+      Object.entries(CONFIG.profileDefinitions).forEach(([id, profile]) => {
+        window.next.registerProfile({
+          id,
+          name: profile.name,
+          packageMappings: profile.packageMappings
+        });
+      });
+    } catch (err) {
+      console.error('Error registering profiles:', err);
+    }
+  }
+
+  _getActiveProfileFromStore() {
+    try {
+      const storeData = localStorage.getItem('next-profile-store');
+      if (storeData) {
+        const parsed = JSON.parse(storeData);
+        return parsed?.state?.activeProfileId || null;
+      }
+    } catch (err) {
+      console.error('Error reading profile store:', err);
+    }
+    return null;
+  }
+
+  _checkActiveProfile() {
+    const activeProfileId = this._getActiveProfileFromStore();
+    if (!activeProfileId) return;
+
+    // Check if it's an exit discount profile
+    if (activeProfileId.includes('exit_10')) {
+      this.exitDiscountActive = true;
+    }
+
+    // Determine tier from profile name
+    this._detectTierFromProfile(activeProfileId);
+
+    // Update UI if not tier 1
+    if (this.currentTier !== 1) {
+      this._updateTierUI(this.currentTier);
+    }
+  }
+
+  _detectTierFromProfile(profileId) {
+    if (profileId.includes('3pack') || profileId.includes('3_pack')) {
+      this.currentTier = 3;
+    } else if (profileId.includes('2pack') || profileId.includes('2_pack')) {
+      this.currentTier = 2;
+    }
   }
 
   _updateTierUI(tier) {
@@ -382,27 +505,6 @@ class TierController {
       card.onclick = () => this.selectTier(+card.getAttribute('data-next-tier'));
     });
     document.addEventListener('variantSelected', e => this._handleVariant(e.detail));
-
-    // Step navigation button removed - both steps always visible
-
-    // Handle checkout button
-    const checkoutBtn = document.querySelector('[data-next-action="checkout"]');
-    if (checkoutBtn) {
-      // Set initial state
-      this._updateCheckoutButton();
-
-      checkoutBtn.onclick = async e => {
-        e.preventDefault();
-        if (!this._isComplete()) {
-          e.stopPropagation();
-          // Optionally highlight incomplete slots
-          this._highlightIncompleteSlots();
-        } else {
-          // Add to cart and redirect
-          await this._addToCartAndCheckout();
-        }
-      };
-    }
   }
 
   _initState() {
@@ -412,7 +514,110 @@ class TierController {
     this._updateSlots(tier);
   }
 
-  _checkForceTierParam() {
+  _initStateFromCart(cartData) {
+    // Synchronously initialize state from cart without async operations
+    if (!cartData?.cartLines || cartData.cartLines.length === 0) {
+      this._initState();
+      return;
+    }
+
+    // Detect tier based on cart items count
+    const detectedTier = Math.min(cartData.cartLines.length, 3);
+    this.currentTier = detectedTier;
+
+    // Update UI for tier selection
+    this._updateTierUI(detectedTier);
+
+    // Extract variants from cart items
+    cartData.cartLines.forEach((item, index) => {
+      const slotNum = index + 1;
+      if (slotNum <= 3) {
+        const variants = this._extractVariantsFromCartItem(item);
+        if (variants.color && variants.size) {
+          this.selectedVariants.set(slotNum, variants);
+        }
+      }
+    });
+
+    // Update slots
+    this._updateSlots(detectedTier);
+
+    // Batch update UI after slots are created
+    requestAnimationFrame(() => {
+      this._setupDropdowns();
+
+      for (let i = 1; i <= detectedTier; i++) {
+        const variants = this.selectedVariants.get(i);
+        if (variants) {
+          this._updateSlot(i, variants);
+          this._updateSlotPrice(i);
+          this._updateStock(document.querySelector(`[next-tier-slot="${i}"]`), i);
+        }
+      }
+
+      this._updatePrices();
+      this._updateSavings();
+
+      // Update cart to sync with restored state
+      setTimeout(() => {
+        this._updateCart();
+      }, 100);
+    });
+  }
+
+  _extractVariantsFromCartItem(item) {
+    const variants = {};
+
+    // Method 1: Parse from item.product.title
+    if (item.product?.title) {
+      const title = item.product.title;
+
+      // Try to extract color
+      const colorMatch = title.match(/(White|Gray|Black)/i);
+      if (colorMatch) {
+        variants.color = colorMatch[1];
+      }
+
+      // Try to extract size
+      const sizeMatch = title.match(/(Small|Medium|Large)/i);
+      if (sizeMatch) {
+        variants.size = sizeMatch[1];
+      }
+    }
+
+    // Method 2: Try to get from package details using packageId
+    if (!variants.color || !variants.size) {
+      const pkg = window.next.getPackage(item.packageId);
+      if (pkg?.product_variant_attribute_values) {
+        pkg.product_variant_attribute_values.forEach(attr => {
+          if (attr.code === 'color' && attr.value) {
+            variants.color = attr.value;
+          }
+          if (attr.code === 'size' && attr.value) {
+            variants.size = attr.value;
+          }
+        });
+      }
+    }
+
+    // Method 3: Check if item has variant_attributes directly (fallback)
+    if (!variants.color || !variants.size) {
+      if (item.variant_attributes) {
+        item.variant_attributes.forEach(attr => {
+          if (attr.code === 'color' && attr.value) {
+            variants.color = attr.value;
+          }
+          if (attr.code === 'size' && attr.value) {
+            variants.size = attr.value;
+          }
+        });
+      }
+    }
+
+    return variants;
+  }
+
+  async _checkForceTierParam() {
     // Check URL for forceTier parameter
     const urlParams = new URLSearchParams(window.location.search);
     const forceTier = urlParams.get('forceTier');
@@ -427,6 +632,9 @@ class TierController {
 
         // Update UI to show selected tier
         this._updateTierUI(tierNum);
+
+        // Apply the appropriate profile
+        await this._applyProfile(tierNum);
 
         // Update slots
         this._updateSlots(tierNum);
@@ -444,16 +652,20 @@ class TierController {
     this._updateTierUI(tier);
     this._updateSlots(tier);
 
+    // Apply profile for the new tier
+    await this._applyProfile(tier);
+
     // Copy selections from slot 1 to new slots
     if (tier > prev) {
       this._copySelectionsToNewSlots(prev, tier);
     }
 
     this._updateCTA();
-    this._updateCheckoutButton(); // Update checkout button state
 
-    // Auto-update cart when tier changes
-    this._updateCartDebounced();
+    // Update cart in real-time (if not skipped)
+    if (!skipCartUpdate) {
+      this._updateCartDebounced();
+    }
   }
 
   _copySelectionsToNewSlots(fromTier, toTier) {
@@ -544,12 +756,32 @@ class TierController {
     });
   }
 
+  async _applyProfile(tier) {
+    const profiles = this.exitDiscountActive ? CONFIG.exitProfiles : CONFIG.profiles;
+    const profile = profiles[tier];
+
+    try {
+      if (profile && profile !== 'default') {
+        await window.next.setProfile(profile);
+      } else {
+        await window.next.revertProfile();
+      }
+      // Give SDK time to update and refresh product ID
+      await new Promise(resolve => setTimeout(resolve, 100));
+      this._getProductId();
+    } catch (err) {
+      console.error('Error applying profile:', err);
+    }
+  }
+
   async activateExitDiscount() {
     if (!CONFIG.exitIntent.enabled) return;
-    
+
     this.exitDiscountActive = true;
     // No session storage - exit discount only active for current session
 
+    // Apply the exit profile and update prices
+    await this._applyProfile(this.currentTier);
     this._updateAllPrices();
 
     // Show success notification
@@ -607,9 +839,8 @@ class TierController {
     this._updateSlotPrice(slotNum);
 
     this._updateCTA();
-    this._updateCheckoutButton(); // Update button state on selection change
 
-    // Auto-update cart whenever selections change
+    // Update cart in real-time
     this._updateCartDebounced();
   }
 
@@ -656,22 +887,38 @@ class TierController {
     }
   }
 
-  async _addToCartAndCheckout() {
-    const checkoutBtn = document.querySelector('[data-next-action="checkout"]');
-    const loader = checkoutBtn?.querySelector('[data-pb-element="checkout-button-spinner"]');
-    const buttonContent = checkoutBtn?.querySelector('[data-pb-element="checkout-button-info"]');
+  _updateCartDebounced() {
+    // Clear existing timer
+    if (this._cartUpdateTimer) {
+      clearTimeout(this._cartUpdateTimer);
+    }
 
-    // Show spinner
-    if (loader && buttonContent) {
-      loader.style.display = 'flex';
-      loader.style.alignItems = 'center';
-      loader.style.justifyContent = 'center';
-      buttonContent.style.display = 'none';
+    // Set new timer - wait 500ms after last change before updating cart
+    this._cartUpdateTimer = setTimeout(() => {
+      this._updateCart();
+    }, 500);
+  }
+
+  async _updateCart() {
+    // Only update if we have at least one complete selection
+    const hasCompleteSelection = Array.from(this.selectedVariants.values()).some(
+      v => v?.color && v?.size
+    );
+
+    if (!hasCompleteSelection) {
+      // Clear cart if no complete selections
+      try {
+        await window.next.swapCart([]);
+      } catch (err) {
+        console.error('Error clearing cart:', err);
+      }
+      return;
     }
 
     try {
-      // Build cart items
       const items = [];
+
+      // Build cart items for all complete selections
       for (let i = 1; i <= this.currentTier; i++) {
         const v = this.selectedVariants.get(i);
         if (v?.color && v?.size) {
@@ -685,26 +932,12 @@ class TierController {
         }
       }
 
-      // Add to cart
+      // Swap cart with new items
       if (items.length > 0) {
         await window.next.swapCart(items);
-        // Small delay to ensure cart is updated
-        await new Promise(resolve => setTimeout(resolve, 300));
       }
-
-      // Redirect to configured checkout URL
-      window.location.href = CONFIG.urls.checkoutStep2;
-    } catch (error) {
-      console.error('Error adding to cart:', error);
-
-      // Hide spinner on error
-      if (loader && buttonContent) {
-        loader.style.display = 'none';
-        buttonContent.style.display = 'block';
-      }
-
-      // Show error message
-      this._showNotification('Error adding items to cart. Please try again.', 'error');
+    } catch (err) {
+      console.error('Error updating cart:', err);
     }
   }
 
@@ -858,13 +1091,31 @@ class TierController {
       return;
     }
 
-    // For t-shirts demo, no profile mapping needed
-    this._displayPrice(slot, basePkg);
+    // Get mapped package if needed
+    const finalPkg = this._getMappedPackage(basePkg);
+    this._displayPrice(slot, finalPkg);
   }
 
   _getMappedPackage(basePkg) {
-    // For t-shirts demo, just return the base package
-    return basePkg;
+    // Return base package if no mapping needed
+    if (this.currentTier === 1 && !this.exitDiscountActive) {
+      return basePkg;
+    }
+
+    // Determine profile to use
+    const profileName = this.exitDiscountActive
+      ? CONFIG.exitProfiles[this.currentTier]
+      : CONFIG.profiles[this.currentTier];
+
+    // Get mapped package ID
+    const mappedId = CONFIG.profileDefinitions[profileName]?.packageMappings[basePkg.ref_id];
+
+    if (mappedId) {
+      const mappedPkg = window.next.getPackage(mappedId);
+      if (mappedPkg) return mappedPkg;
+    }
+
+    return basePkg; // Fallback to base
   }
 
   _displayPrice(slot, pkg) {
@@ -979,6 +1230,10 @@ class TierController {
   }
 
   _setupListeners() {
+    // Listen for profile changes
+    window.next.on('profile:applied', data => this._onProfileChanged(data));
+    window.next.on('profile:reverted', data => this._onProfileChanged(data));
+
     // Listen for cart changes that might be profile-related
     window.next.on('cart:updated', () => {
       if (this.profileUpdatePending) {
@@ -988,27 +1243,17 @@ class TierController {
     });
   }
 
-  _setupBFCacheHandler() {
-    // Reset spinner state when page is restored from bfcache (back/forward navigation)
-    window.addEventListener('pageshow', (event) => {
-      if (event.persisted) {
-        // Page was restored from bfcache
-        this._resetCheckoutButtonSpinner();
-      }
-    });
+  _onProfileChanged(eventData) {
+    // Mark pending update and refresh data
+    this.profileUpdatePending = true;
+    this._getProductId();
+
+    // Force price updates after a delay
+    setTimeout(() => {
+      this._updateAllPrices();
+      this.profileUpdatePending = false;
+    }, 200);
   }
-
-  _resetCheckoutButtonSpinner() {
-    const checkoutBtn = document.querySelector('[data-next-action="checkout"]');
-    const loader = checkoutBtn?.querySelector('[data-pb-element="checkout-button-spinner"]');
-    const buttonContent = checkoutBtn?.querySelector('[data-pb-element="checkout-button-info"]');
-
-    if (loader && buttonContent) {
-      loader.style.display = 'none';
-      buttonContent.style.display = 'block';
-    }
-  }
-
 
   _onProfileChanged(eventData) {
     // Mark pending update and refresh data
@@ -1038,55 +1283,6 @@ class TierController {
 
     // Update all prices and savings
     this._updatePrices();
-  }
-
-
-  _updateCheckoutButton() {
-    const checkoutBtn = document.querySelector('[data-next-action="checkout"]');
-    const buttonText = checkoutBtn?.querySelector('.form-step__button--text');
-
-    if (!checkoutBtn) return;
-
-    if (this._isComplete()) {
-      checkoutBtn.classList.remove('next-disabled');
-      if (buttonText) {
-        buttonText.textContent = CONFIG.buttonText.checkout.complete;
-      }
-    } else {
-      checkoutBtn.classList.add('next-disabled');
-      if (buttonText) {
-        buttonText.textContent = CONFIG.buttonText.checkout.incomplete;
-      }
-    }
-  }
-
-  _highlightIncompleteSlots() {
-    let firstIncomplete = null;
-
-    for (let i = 1; i <= this.currentTier; i++) {
-      const v = this.selectedVariants.get(i);
-      const slot = document.querySelector(`[next-tier-slot="${i}"]`);
-
-      if (!v?.color || !v?.size) {
-        if (!firstIncomplete) firstIncomplete = slot;
-
-        if (slot) {
-          // Add visual feedback
-          slot.classList.add('error-highlight');
-          setTimeout(() => {
-            slot.classList.remove('error-highlight');
-          }, 2000);
-        }
-      }
-    }
-
-    // Scroll to first incomplete slot
-    if (firstIncomplete) {
-      firstIncomplete.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-    }
   }
 
   handleVerifyClick() {
@@ -1120,18 +1316,18 @@ class TierController {
   _findAvailableAlternative(slotNum, changedType, newValue) {
     const pid = (slotNum === 1 && this.baseProductId) || this.productId;
     const slotVariants = this.selectedVariants.get(slotNum);
-    const options = window.next.getAvailableVariantAttributes(pid,
+    const options = window.next.getAvailableVariantAttributes(pid, 
       changedType === 'color' ? 'size' : 'color');
-
+    
     const current = changedType === 'color' ? slotVariants.size : slotVariants.color;
-
+    
     // Try to keep current value
-    const test = changedType === 'color'
+    const test = changedType === 'color' 
       ? { color: newValue, size: current }
       : { color: current, size: newValue };
-
+    
     if (!this._isVariantOOS(slotNum, test)) return current;
-
+    
     // Find alternative
     for (const opt of options) {
       const variant = changedType === 'color'
@@ -1139,49 +1335,8 @@ class TierController {
         : { color: opt, size: newValue };
       if (!this._isVariantOOS(slotNum, variant)) return opt;
     }
-
+    
     return null;
-  }
-
-  _updateCartDebounced() {
-    // Clear existing timer
-    if (this._cartUpdateTimer) {
-      clearTimeout(this._cartUpdateTimer);
-    }
-
-    // Set new timer to update cart after 500ms of no changes
-    this._cartUpdateTimer = setTimeout(() => {
-      this._updateCart();
-    }, 500);
-  }
-
-  async _updateCart() {
-    // Build cart items for selected slots
-    const items = [];
-    let hasValidItems = false;
-
-    for (let i = 1; i <= this.currentTier; i++) {
-      const v = this.selectedVariants.get(i);
-      if (v?.color && v?.size) {
-        const pkg = window.next.getPackageByVariantSelection(
-          this.baseProductId || this.productId,
-          { color: v.color, size: v.size }
-        );
-        if (pkg) {
-          items.push({ packageId: pkg.ref_id, quantity: 1 });
-          hasValidItems = true;
-        }
-      }
-    }
-
-    // Only update cart if we have valid items
-    if (hasValidItems) {
-      try {
-        await window.next.swapCart(items);
-      } catch (error) {
-        console.error('Error updating cart:', error);
-      }
-    }
   }
 }
 
@@ -1283,25 +1438,6 @@ style.textContent = `
   .three-quarter-spinner.black {
     border-color: #000;
     border-top-color: transparent;
-  }
-
-  .next-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-
-  .error-highlight {
-    animation: errorPulse 0.5s ease-in-out 2;
-    border: 2px solid #ff4444 !important;
-    background-color: rgba(255, 68, 68, 0.05) !important;
-  }
-
-  @keyframes errorPulse {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
   }
 `;
 document.head.appendChild(style);

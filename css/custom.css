@@ -787,3 +787,8 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  // LIMOS Accordion Fix
+  .next-expanded [data-next-accordion-trigger] img, .next-expanded [data-next-accordion-trigger] svg, .next-expanded .limos-summary-icon {
+    transform: rotate(0deg)!important;
+}

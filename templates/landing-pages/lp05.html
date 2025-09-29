@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>LP05</title>
@@ -14,69 +14,18 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="/css/components.css" rel="stylesheet" type="text/css">
     <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/templates-landing-pages-lp05.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -86,8 +35,21 @@
     <div class="page-wrapper">
 
       <div class="main-wrapper">
+        <div class="section_header">
+          <div class="announcement">
+            <div class="announcement__block">
+              <div class="announcement__text">GET UP TO 40% OFF NOW! <span class="text-span-53">USE PROMO CODE:</span></div>
+              <div class="announcement__right">
+                <div class="announcement__code-wrapper">
+                  <div class="announcement__code">SPRINGSAVE</div>
+                </div>
+                <div class="announcement__text">- &nbsp;&nbsp;LIMITED TIME OFFER</div>
+              </div>
+            </div>
+          </div>
+        </div>
         <section class="section cc-custom he01">
-          <div class="container-18 cc-medium">
+          <div class="container">
             <div class="hero__wrapper">
               <div class="hero__left cc-55">
                 <div pb-component="swiper" class="component">
@@ -98,19 +60,19 @@
                         <div swiper="slider" class="swiper">
                           <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_jar-p-500.webp 500w, ../../images/3x2_jar-p-800.webp 800w, ../../images/3x2_jar-p-1080.webp 1080w, ../../images/3x2_jar.webp 1200w" alt="" src="/images/3x2_jar.webp" loading="eager" class="swiper__image"></div>
+                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_jar-p-500.webp 500w, /images/3x2_jar-p-800.webp 800w, /images/3x2_jar-p-1080.webp 1080w, /images/3x2_jar.webp 1200w" alt="" src="/images/3x2_jar.webp" loading="eager" class="swiper__image"></div>
                             </div>
                             <div class="swiper-slide">
-                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_quote_benefit-p-500.webp 500w, ../../images/3x2_quote_benefit-p-800.webp 800w, ../../images/3x2_quote_benefit-p-1080.webp 1080w, ../../images/3x2_quote_benefit.webp 1200w" alt="" src="/images/3x2_quote_benefit.webp" loading="eager" class="swiper__image"></div>
+                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_quote_benefit-p-500.webp 500w, /images/3x2_quote_benefit-p-800.webp 800w, /images/3x2_quote_benefit-p-1080.webp 1080w, /images/3x2_quote_benefit.webp 1200w" alt="" src="/images/3x2_quote_benefit.webp" loading="eager" class="swiper__image"></div>
                             </div>
                             <div class="swiper-slide">
                               <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img loading="eager" src="/images/3x2_cap-text.webp" alt="" class="swiper__image"></div>
                             </div>
                             <div class="swiper-slide">
-                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_person-p-500.webp 500w, ../../images/3x2_person-p-800.webp 800w, ../../images/3x2_person-p-1080.webp 1080w, ../../images/3x2_person.webp 1200w" alt="" src="/images/3x2_person.webp" loading="eager" class="swiper__image"></div>
+                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_person-p-500.webp 500w, /images/3x2_person-p-800.webp 800w, /images/3x2_person-p-1080.webp 1080w, /images/3x2_person.webp 1200w" alt="" src="/images/3x2_person.webp" loading="eager" class="swiper__image"></div>
                             </div>
                             <div class="swiper-slide">
-                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_nutrition-p-500.webp 500w, ../../images/3x2_nutrition-p-800.webp 800w, ../../images/3x2_nutrition-p-1080.webp 1080w, ../../images/3x2_nutrition.webp 1200w" alt="" src="/images/3x2_nutrition.webp" loading="eager" class="swiper__image"></div>
+                              <div class="swiper-slide__image-wrap cc-landscape cc-brm-0"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_nutrition-p-500.webp 500w, /images/3x2_nutrition-p-800.webp 800w, /images/3x2_nutrition-p-1080.webp 1080w, /images/3x2_nutrition.webp 1200w" alt="" src="/images/3x2_nutrition.webp" loading="eager" class="swiper__image"></div>
                             </div>
                           </div>
                           <div role="button" swiper="prev-button" class="swiper__button swiper__button--prev">
@@ -131,95 +93,15 @@
                       </div>
                     </div>
                     <div swiper="thumbnails-holder" class="product-thumbnails-holder">
-                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail is-current"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_jar-p-500.webp 500w, ../../images/3x2_jar-p-800.webp 800w, ../../images/3x2_jar-p-1080.webp 1080w, ../../images/3x2_jar.webp 1200w" alt="" src="/images/3x2_jar.webp" loading="eager" class="swiper8__thumbnail-image"></div>
-                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_quote_benefit-p-500.webp 500w, ../../images/3x2_quote_benefit-p-800.webp 800w, ../../images/3x2_quote_benefit-p-1080.webp 1080w, ../../images/3x2_quote_benefit.webp 1200w" alt="" src="/images/3x2_quote_benefit.webp" loading="eager" class="swiper8__thumbnail-image"></div>
-                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_cap-text-p-500.webp 500w, ../../images/3x2_cap-text-p-800.webp 800w, ../../images/3x2_cap-text-p-1080.webp 1080w, ../../images/3x2_cap-text.webp 1200w" alt="" src="/images/3x2_cap-text.webp" loading="eager" class="swiper8__thumbnail-image"></div>
-                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_person-p-500.webp 500w, ../../images/3x2_person-p-800.webp 800w, ../../images/3x2_person-p-1080.webp 1080w, ../../images/3x2_person.webp 1200w" alt="" src="/images/3x2_person.webp" loading="eager" class="swiper8__thumbnail-image"></div>
-                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="../../images/3x2_nutrition-p-500.webp 500w, ../../images/3x2_nutrition-p-800.webp 800w, ../../images/3x2_nutrition-p-1080.webp 1080w, ../../images/3x2_nutrition.webp 1200w" alt="" src="/images/3x2_nutrition.webp" loading="eager" class="swiper8__thumbnail-image"></div>
+                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail is-current"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_jar-p-500.webp 500w, /images/3x2_jar-p-800.webp 800w, /images/3x2_jar-p-1080.webp 1080w, /images/3x2_jar.webp 1200w" alt="" src="/images/3x2_jar.webp" loading="eager" class="swiper8__thumbnail-image"></div>
+                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_quote_benefit-p-500.webp 500w, /images/3x2_quote_benefit-p-800.webp 800w, /images/3x2_quote_benefit-p-1080.webp 1080w, /images/3x2_quote_benefit.webp 1200w" alt="" src="/images/3x2_quote_benefit.webp" loading="eager" class="swiper8__thumbnail-image"></div>
+                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_cap-text-p-500.webp 500w, /images/3x2_cap-text-p-800.webp 800w, /images/3x2_cap-text-p-1080.webp 1080w, /images/3x2_cap-text.webp 1200w" alt="" src="/images/3x2_cap-text.webp" loading="eager" class="swiper8__thumbnail-image"></div>
+                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_person-p-500.webp 500w, /images/3x2_person-p-800.webp 800w, /images/3x2_person-p-1080.webp 1080w, /images/3x2_person.webp 1200w" alt="" src="/images/3x2_person.webp" loading="eager" class="swiper8__thumbnail-image"></div>
+                      <div swiper="gallery-thumbnail" class="swiper8__thumbnail"><img sizes="(max-width: 1200px) 100vw, 1200px" srcset="/images/3x2_nutrition-p-500.webp 500w, /images/3x2_nutrition-p-800.webp 800w, /images/3x2_nutrition-p-1080.webp 1080w, /images/3x2_nutrition.webp 1200w" alt="" src="/images/3x2_nutrition.webp" loading="eager" class="swiper8__thumbnail-image"></div>
                     </div>
                   </div>
                   <div class="custom-code w-embed w-script">
-                    <script>
-                      function initiateSlider() {
-                        document.querySelectorAll('[swiper="sw08"]').forEach((sliderComponent) => {
-                          let currentSlide = 0;
-                          const swiperStyle = document.createElement('style');
-                          swiperStyle.innerHTML = `.swiper-button-disabled {opacity: 30%!important}`;
-                          document.body.appendChild(swiperStyle);
-                          const numberOfSlides = document
-                            .querySelector('[swiper="thumbnails-holder"]')
-                            .querySelectorAll('[swiper="gallery-thumbnail"]').length - 1;
-                          const sliderEl = sliderComponent.querySelector('[swiper="slider"]');
-                          const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                          const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                          const scrollbarEl = sliderComponent.querySelector('[swiper="scrollbar"]');
-                          const paginationEl = sliderComponent.querySelector('[swiper="pagination"]');
-                          const swiperModule = new Swiper(sliderEl, {
-                            slidesPerView: 1,
-                            spaceBetween: 16,
-                            direction: 'horizontal',
-                            navigation: {
-                              nextEl: buttonNextEl,
-                              prevEl: buttonPrevEl,
-                            },
-                            on: {
-                              slideChange: function() {
-                                currentSlide = this.activeIndex;
-                                updateActiveStates(currentSlide);
-                              },
-                            },
-                            pagination: {
-                              el: paginationEl,
-                            },
-                            breakpoints: {
-                              768: {
-                                spaceBetween: 32,
-                              },
-                            },
-                          });
-                          if (currentSlide == 0) {
-                            buttonPrevEl.classList.add('swiper-button-disabled');
-                          } else {
-                            buttonPrevEl.classList.remove('swiper-button-disabled');
-                          }
-                          document.querySelectorAll('[swiper="thumbnails-holder"]').forEach((container) =>
-                            container.querySelectorAll('[swiper="gallery-thumbnail"]').forEach((el, i) => {
-                              el.style.userSelect = 'none';
-                              el.addEventListener('click', (e) => {
-                                swiperModule.slideTo(i);
-                                currentSlide = i;
-                                updateActiveStates(currentSlide);
-                              });
-                            })
-                          );
-                          // Initial state
-                          updateActiveStates(0);
-                        });
-                      }
-                      function updateActiveStates(activeIndex) {
-                        // Update thumbnails
-                        document.querySelectorAll('[swiper="thumbnails-holder"]').forEach((container) =>
-                          container.querySelectorAll('[swiper="gallery-thumbnail"]').forEach((el, i) => {
-                            if (i === activeIndex) {
-                              el.setAttribute('swiper-state', 'active');
-                              el.classList.add('is-current');
-                            } else {
-                              el.removeAttribute('swiper-state');
-                              el.classList.remove('is-current');
-                            }
-                          })
-                        );
-                        // Update slides
-                        document.querySelectorAll('.swiper-slide').forEach((slide, i) => {
-                          if (i === activeIndex) {
-                            slide.classList.add('is-current');
-                          } else {
-                            slide.classList.remove('is-current');
-                          }
-                        });
-                      }
-                      initiateSlider();
-                    </script>
+
                   </div>
                 </div>
               </div>
@@ -353,13 +235,7 @@
                       </div>
                     </div>
                     <div class="w-embed">
-                      <style>
-                        [pb-component="ba37"] {
-                          font-size: clamp(0.625rem, 3vw, 0.875rem);
-                          /* Min font 12px, responsive to viewport, Max 20px */
-                        }
 
-                      </style>
                     </div>
                   </div>
                 </div>
@@ -368,7 +244,7 @@
           </div>
         </section>
         <section class="section cc-custom so03">
-          <div class="container-18 cc-full">
+          <div class="container cc-full">
             <div class="seenon3__wrapper">
               <div pb-section="seenon3" class="seenon3__track">
                 <div class="seenon3__logo is-smaller w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 595 95">
@@ -530,7 +406,7 @@
           </div>
         </section>
         <section class="section">
-          <div class="container-18">
+          <div class="container">
             <div class="testimonial1_wrapper">
               <div class="testimonial1_header">
                 <div class="review_component cc-sm">
@@ -555,7 +431,7 @@
                     <div class="u-font-bold">5,513+ TRUSTED REVIEWS</div>
                   </div>
                 </div>
-                <a href="https://stamped.io/ReviewForm?type=nps&amp;guid=607f1bb3-fb97-4f36-9569-2e93ddc3aafa" target="_blank" class="button-15 cc-tiny w-button">Write Review</a>
+                <a href="https://stamped.io/ReviewForm?type=nps&amp;guid=607f1bb3-fb97-4f36-9569-2e93ddc3aafa" target="_blank" class="button cc-tiny cc-auto w-button">Write Review</a>
               </div>
               <div class="testimonial1_lit">
                 <div class="testimonial1_item">
@@ -956,7 +832,7 @@
           </div>
         </section>
         <section class="section">
-          <div class="container-18">
+          <div class="container">
             <div class="faq2__grid">
               <div>
                 <div class="desktop-cutoff-30">
@@ -968,13 +844,7 @@
               </div>
               <div fs-accordion-initial="none" fs-accordion-element="group" fs-accordion-single="true" class="faq2__accordion">
                 <div class="custom-code w-embed w-script"><!--  [Finsweet Attributes] Accordion  -->
-                  <script>
-                    (() => {
-                      var t = "https://cdn.jsdelivr.net/npm/@finsweet/attributes-accordion@1/accordion.js",
-                        e = document.querySelector(`script[src="${t}"]`);
-                      e || (e = document.createElement("script"), e.async = !0, e.src = t, document.head.append(e));
-                    })();
-                  </script>
+
                 </div>
                 <div fs-accordion-element="accordion" class="faq2__accordion-item">
                   <div id="accordion-2-header-1" tabindex="0" role="button" aria-controls="accordion-2-content-1" aria-expanded="false" fs-accordion-element="trigger" class="faq2__acordion-item--header">
@@ -1028,7 +898,7 @@
         </section>
       </div>
       <footer class="footer_section">
-        <div class="container">
+        <div class="container cc-medium">
           <div class="footer_layout">
             <div class="footer_copy-info">
               <div class="footer_link-wrapper">
@@ -1046,145 +916,8 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      [swiper="sw08"] .swiper-slide_image-wrap {
-        aspect-ratio: 16 / 9;
-      }
 
-      [swiper="sw08"] [swiper="slider-nav"] .swiper-slide {
-        width: auto;
-      }
 
-      [swiper="sw08"] [swiper="slider-nav"] .swiper-slide.swiper-slide-active {
-        color: #000;
-      }
-
-      [pb-animate="rotate-02"] {
-        animation: 2.5s ease-in-out infinite forwards rotate02;
-      }
-
-      @keyframes rotate02 {
-        0% {
-          transform: rotate(00deg)
-        }
-
-        100% {
-          transform: rotate(360deg)
-        }
-      }
-
-      [data-action="submit"] {
-        position: relative;
-      }
-
-      [data-button="spinner"] {
-        width: 1.2em;
-        display: block;
-        height: 1.2em;
-        opacity: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transform-origin: center;
-        pointer-events: none;
-      }
-
-      [data-button="spinner"] .path {
-        stroke: currentColor;
-        stroke-linecap: round;
-        animation: spinner-dash 1.5s ease-in-out infinite;
-      }
-
-      [data-action="submit"].is-submitting [data-button="content"] {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-action="submit"].is-submitting [data-button="spinner"] {
-        opacity: 1;
-        transition: opacity 0.2s ease;
-        animation: spinner-rotate 2s linear infinite;
-      }
-
-      @keyframes spinner-rotate {
-        100% {
-          transform: translate(-50%, -50%) rotate(360deg);
-        }
-      }
-
-      @keyframes spinner-dash {
-        0% {
-          stroke-dasharray: 1, 150;
-          stroke-dashoffset: 0;
-        }
-
-        50% {
-          stroke-dasharray: 90, 150;
-          stroke-dashoffset: -35;
-        }
-
-        100% {
-          stroke-dasharray: 90, 150;
-          stroke-dashoffset: -124;
-        }
-      }
-
-      [pb-animate="fade-pulse"] {
-        animation: fadePulse 1s ease-in-out infinite;
-      }
-
-      @keyframes fadePulse {
-        0% {
-          opacity: 100%;
-        }
-
-        50% {
-          opacity: 30%;
-        }
-
-        70% {
-          opacity: 100%;
-        }
-
-        100% {
-          opacity: 100%;
-        }
-      }
-
-      [pb-section="seenon3"] {
-        position: absolute;
-        white-space: nowrap;
-        will-change: transform;
-        animation: marquee-horizontal 30s linear infinite;
-      }
-
-      @keyframes marquee-horizontal {
-        from {
-          transform: translateX(0);
-        }
-
-        to {
-          transform: translateX(-70%);
-        }
-      }
-
-      @media screen and (max-width:767px) {
-        [pb-section="seenon3"] {
-          animation: marquee-horizontal 20s linear infinite;
-        }
-
-        @keyframes marquee-horizontal {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-150%);
-          }
-        }
-      }
-
-    </style>
+    <script defer="" src="/js/templates-landing-pages-lp05.js"></script>
   </body>
 </html>

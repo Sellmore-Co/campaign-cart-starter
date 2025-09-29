@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>UP04</title>
@@ -14,72 +14,23 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-page-type" content="upsell">
+    <meta name="next-upsell-accept-url" content="/demo/upsell2">
+    <meta name="next-upsell-decline-url" content="/demo/upsell2">
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="/css/components.css" rel="stylesheet" type="text/css">
     <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/templates-upsells-up04.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -91,34 +42,7 @@
       <div class="main-wrapper">
         <div pb-component="progress-bar1" class="progress-bar">
           <div class="custom-code w-embed">
-            <style>
-              /* Striped Flow */
-              [pb-component="progress-bar1"]::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(135deg,
-                    rgba(255, 255, 255, .15) 25%,
-                    transparent 25%,
-                    transparent 50%,
-                    rgba(255, 255, 255, .15) 50%,
-                    rgba(255, 255, 255, .15) 75%,
-                    transparent 75%,
-                    transparent);
-                background-size: 30px 30px;
-                animation: moveStripes 1.25s linear infinite;
-              }
 
-              @keyframes moveStripes {
-                to {
-                  background-position: 60px 0;
-                }
-              }
-
-            </style>
           </div>
         </div>
         <div class="announcement">
@@ -314,16 +238,16 @@
                         <div class="prices-text-wrapper">
                           <div class="price-wrapper">
                             <div class="price_upsell4-title">Retail Price</div>
-                            <div id="originalPrice" data-next-multiply-quantity="" data-next-display="package.8.price_retail" class="price_upsell4 diagonal-strike">$49.99</div>
+                            <div id="originalPrice" data-next-multiply-quantity="" data-next-display="package.price_retail" class="price_upsell4 diagonal-strike">$49.99</div>
                             <div class="price_upsell4-subtitle">+$4.95 SHIPPING</div>
                           </div>
                           <div class="center-divider cc-upsell4"></div>
                           <div class="price-wrapper">
                             <div class="title_upsell4-wrap">
                               <div class="price_upsell4-title">Offer Price</div>
-                              <div class="price_upsell4-title cc-savings">(<span data-next-display="package.8.savingsPercentage">56%</span> OFF)</div>
+                              <div class="price_upsell4-title cc-savings">(<span data-next-display="package.savingsPercentage">56%</span> OFF)</div>
                             </div>
-                            <div id="currentPrice" data-next-multiply-quantity="true" data-next-display="package.8.price_total" class="price_upsell4">$21.25</div>
+                            <div id="currentPrice" data-next-multiply-quantity="true" data-next-display="package.price_total" class="price_upsell4">$21.25</div>
                             <div class="price_upsell4-subtitle cc-shipping">+ FREE SHIPPING</div>
                           </div>
                         </div>
@@ -339,7 +263,7 @@
                         <div class="payment-img-wrapper">
                           <div class="trust-badge invert"><img loading="lazy" src="/images/icons8-lock-24_1icons8-lock-24.png" alt="" class="trust-badge__icon">
                             <div class="badge-text-black">100% Encrypted &amp; Secure Checkout</div>
-                          </div><img loading="lazy" src="https://cdn.prod.website-files.com/67ec42fd75dae41c564624c5/67ec42fd75dae41c56462e31_67e1aef91560b7501b1fa583_Group%20469529.svg" alt="" class="card-flags">
+                          </div><img loading="lazy" src="https://cdn.prod.website-files.com/67ec42fd75dae41c564624c5/67ec42fd75dae41c56462e31_67e1aef91560b7501b1fa583_Group%20469529.svg" alt="" class="credit-card__flags">
                         </div>
                       </div>
                     </div>
@@ -434,56 +358,7 @@
                             </div>
                           </div>
                           <div class="custom-code w-embed w-script">
-                            <script>
-                              document.querySelectorAll('[swiper="sw12"]').forEach((sliderComponent) => {
-                                const sliderMain = sliderComponent.querySelector('[swiper="slider-main"]');
-                                const sliderThumbs = sliderComponent.querySelector('[swiper="slider-thumbs"]');
-                                const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                                const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                                // Initialize thumbs swiper first
-                                const thumbsSwiper = new Swiper(sliderThumbs, {
-                                  slidesPerView: 5, // Show a fixed number of thumbs
-                                  spaceBetween: 10,
-                                  freeMode: false, // Disable free mode for proper controlled movement
-                                  watchSlidesProgress: true,
-                                  watchOverflow: true, // Prevent extra spacing when fewer slides exist
-                                  centerInsufficientSlides: true, // Prevents misalignment when fewer thumbs exist
-                                  breakpoints: {
-                                    768: {
-                                      slidesPerView: 5, // Adjust for desktop
-                                      spaceBetween: 10,
-                                    },
-                                    480: {
-                                      slidesPerView: 5, // Adjust for mobile
-                                      spaceBetween: 8,
-                                    },
-                                  },
-                                });
-                                // Initialize main swiper with thumbs navigation
-                                new Swiper(sliderMain, {
-                                  slidesPerView: 1,
-                                  spaceBetween: 0,
-                                  navigation: {
-                                    nextEl: buttonNextEl,
-                                    prevEl: buttonPrevEl,
-                                  },
-                                  thumbs: {
-                                    swiper: thumbsSwiper,
-                                  },
-                                });
-                                // Add keyboard accessibility for thumbs
-                                if (sliderThumbs) {
-                                  sliderThumbs.querySelectorAll('.swiper-slide').forEach((slide, index) => {
-                                    slide.addEventListener('keydown', (event) => {
-                                      if (event.key === 'Enter' || event.key === ' ') {
-                                        event.preventDefault();
-                                        thumbsSwiper.slideTo(index, 300);
-                                      }
-                                    });
-                                  });
-                                }
-                              });
-                            </script>
+
                           </div>
                         </div>
                       </div>
@@ -491,20 +366,20 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="cc-decline-wrapper">
-              <a data-next-upsell-action="skip" href="#" class="upsell-link cc-decline cc-upsell4 w-inline-block">
-                <div class="next-icon cc-1-25em w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--carbon" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
-                    <path fill="currentColor" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12"></path>
-                    <path fill="currentColor" d="M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z"></path>
-                  </svg></div>
-                <div class="text-sm tw-600 cc-upsell4">No thank you, I don’t want this one-time offer</div>
-              </a>
+              <div class="cc-decline-wrapper">
+                <a data-next-upsell-action="skip" href="#" class="upsell-link cc-decline cc-upsell4 w-inline-block">
+                  <div class="next-icon cc-1-25em w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--carbon" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+                      <path fill="currentColor" d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m0 26C9.4 28 4 22.6 4 16S9.4 4 16 4s12 5.4 12 12s-5.4 12-12 12"></path>
+                      <path fill="currentColor" d="M21.4 23L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z"></path>
+                    </svg></div>
+                  <div class="text-sm tw-600 cc-upsell4">No thank you, I don’t want this one-time offer</div>
+                </a>
+              </div>
             </div>
           </div>
         </section>
         <footer class="footer_section">
-          <div class="container">
+          <div class="container cc-medium">
             <div class="footer_layout">
               <div class="footer_copy-info">
                 <div class="footer_link-wrapper">
@@ -523,108 +398,8 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      /* Button base state */
-      [data-action="submit"] {
-        position: relative;
-        /* Prevent layout shifts */
-        min-width: 100px;
-        /* Adjust based on your needs */
-        min-height: 40px;
-        /* Adjust based on your needs */
-      }
 
-      /* Spinner container */
-      [data-button="spinner"] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        pointer-events: none;
-        font-size: calc(2 * 1em);
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        color: inherit;
-        transition: opacity 0.2s ease;
-      }
 
-      /* Button content and icon */
-      [data-button="content"],
-      [data-button="icon"] {
-        transition: opacity 0.2s ease;
-      }
-
-      /* Loading state */
-      [data-action="submit"].is-submitting {
-        cursor: not-allowed;
-      }
-
-      [data-action="submit"].is-submitting [data-button="spinner"] {
-        opacity: 1;
-      }
-
-      [data-action="submit"].is-submitting [data-button="content"],
-      [data-action="submit"].is-submitting [data-button="icon"] {
-        opacity: 0;
-      }
-
-      /* Spinner elements */
-      [data-button="spinner"] .line {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        stroke-linecap: round;
-        transform-origin: 50% 50%;
-        animation: spinner-arc 2156ms ease-in-out infinite,
-          spinner-rotate 1829ms linear infinite;
-      }
-
-      [data-button="spinner"] .ring {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        opacity: 0.15;
-      }
-
-      /* Animations */
-      @keyframes spinner-rotate {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spinner-arc {
-        0% {
-          stroke-dasharray: 0 150;
-          stroke-dashoffset: 0;
-        }
-
-        100% {
-          stroke-dasharray: 100 150;
-          stroke-dashoffset: -140;
-        }
-      }
-
-      [swiper="sw12"] .swiper-slide_image-wrap {
-        aspect-ratio: 1 / 1;
-      }
-
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide {
-        filter: grayscale(100%);
-        transition: filter 0.4s ease;
-        cursor: pointer;
-      }
-
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide:focus-visible {
-        border: 2px solid #000;
-      }
-
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide.swiper-slide-thumb-active {
-        filter: grayscale(0);
-      }
-
-    </style>
+    <script defer="" src="/js/templates-upsells-up04.js"></script>
   </body>
 </html>

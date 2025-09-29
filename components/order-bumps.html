@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Order Bumps</title>
@@ -12,69 +12,18 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="/css/components.css" rel="stylesheet" type="text/css">
     <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/components-order-bumps.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
   </head>
@@ -115,18 +64,7 @@
                       </div>
                     </div>
                     <div class="custom-code w-embed">
-                      <style>
-                        /* Hide checkmark by default */
-                        [data-next-bump] [os-component="check"] {
-                          display: none;
-                        }
 
-                        /* Show checkmark if parent has 'os--selected' in its class attribute */
-                        [data-next-bump][class*="next-active"] [os-component="check"] {
-                          display: flex;
-                        }
-
-                      </style>
                     </div>
                   </div>
                 </div>
@@ -139,41 +77,6 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      /* Define the animations */
-      @keyframes moveRightLeft {
 
-        0%,
-        100% {
-          transform: translateX(0);
-        }
-
-        50% {
-          transform: translateX(10px);
-        }
-      }
-
-      @keyframes moveLeftRight {
-
-        0%,
-        100% {
-          transform: translateX(0);
-        }
-
-        50% {
-          transform: translateX(-10px);
-        }
-      }
-
-      /* Apply animations to the elements based on their data-animate attributes */
-      [data-animate="right"] {
-        animation: moveRightLeft 1.5s infinite ease-in-out;
-      }
-
-      [data-animate="left"] {
-        animation: moveLeftRight 1.5s infinite ease-in-out;
-      }
-
-    </style>
   </body>
 </html>

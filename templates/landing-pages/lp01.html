@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Hanacure</title>
@@ -14,69 +14,18 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="/css/components.css" rel="stylesheet" type="text/css">
     <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/templates-landing-pages-lp01.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -86,6 +35,19 @@
     <div class="page-wrapper">
 
       <div class="main-wrapper">
+        <div class="section_header">
+          <div class="announcement">
+            <div class="announcement__block">
+              <div class="announcement__text">GET UP TO 40% OFF NOW! <span class="text-span-53">USE PROMO CODE:</span></div>
+              <div class="announcement__right">
+                <div class="announcement__code-wrapper">
+                  <div class="announcement__code">SPRINGSAVE</div>
+                </div>
+                <div class="announcement__text">- &nbsp;&nbsp;LIMITED TIME OFFER</div>
+              </div>
+            </div>
+          </div>
+        </div>
         <nav class="navbar1__sections">
           <div class="container">
             <div class="navbar1__wrapper">
@@ -191,56 +153,7 @@
                         </div>
                       </div>
                       <div class="custom-code w-embed w-script">
-                        <script>
-                          document.querySelectorAll('[swiper="sw12"]').forEach((sliderComponent) => {
-                            const sliderMain = sliderComponent.querySelector('[swiper="slider-main"]');
-                            const sliderThumbs = sliderComponent.querySelector('[swiper="slider-thumbs"]');
-                            const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                            const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                            // Initialize thumbs swiper first
-                            const thumbsSwiper = new Swiper(sliderThumbs, {
-                              slidesPerView: 6, // Show a fixed number of thumbs
-                              spaceBetween: 10,
-                              freeMode: false, // Disable free mode for proper controlled movement
-                              watchSlidesProgress: true,
-                              watchOverflow: true, // Prevent extra spacing when fewer slides exist
-                              centerInsufficientSlides: true, // Prevents misalignment when fewer thumbs exist
-                              breakpoints: {
-                                768: {
-                                  slidesPerView: 6, // Adjust for desktop
-                                  spaceBetween: 10,
-                                },
-                                480: {
-                                  slidesPerView: 6, // Adjust for mobile
-                                  spaceBetween: 8,
-                                },
-                              },
-                            });
-                            // Initialize main swiper with thumbs navigation
-                            new Swiper(sliderMain, {
-                              slidesPerView: 1,
-                              spaceBetween: 0,
-                              navigation: {
-                                nextEl: buttonNextEl,
-                                prevEl: buttonPrevEl,
-                              },
-                              thumbs: {
-                                swiper: thumbsSwiper,
-                              },
-                            });
-                            // Add keyboard accessibility for thumbs
-                            if (sliderThumbs) {
-                              sliderThumbs.querySelectorAll('.swiper-slide').forEach((slide, index) => {
-                                slide.addEventListener('keydown', (event) => {
-                                  if (event.key === 'Enter' || event.key === ' ') {
-                                    event.preventDefault();
-                                    thumbsSwiper.slideTo(index, 300);
-                                  }
-                                });
-                              });
-                            }
-                          });
-                        </script>
+
                       </div>
                     </div>
                   </div>
@@ -334,13 +247,7 @@
                         </div>
                       </div>
                       <div class="w-embed">
-                        <style>
-                          [pb-component="ba25"] {
-                            font-size: clamp(0.625rem, 3vw, 0.875rem);
-                            /* Min font 12px, responsive to viewport, Max 20px */
-                          }
 
-                        </style>
                       </div>
                     </div>
                   </div>
@@ -426,34 +333,7 @@
                   <div class="animation-wrapper">
                     <div pb-component="progress-bar1" class="progress-bar-2">
                       <div class="custom-code w-embed">
-                        <style>
-                          /* Striped Flow */
-                          [pb-component="progress-bar1"]::after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background-image: linear-gradient(135deg,
-                                rgba(255, 255, 255, .15) 25%,
-                                transparent 25%,
-                                transparent 50%,
-                                rgba(255, 255, 255, .15) 50%,
-                                rgba(255, 255, 255, .15) 75%,
-                                transparent 75%,
-                                transparent);
-                            background-size: 30px 30px;
-                            animation: moveStripes 1.25s linear infinite;
-                          }
 
-                          @keyframes moveStripes {
-                            to {
-                              background-position: 60px 0;
-                            }
-                          }
-
-                        </style>
                       </div>
                     </div>
                   </div>
@@ -701,50 +581,7 @@
                 </div>
               </div>
               <div class="custom-code w-embed w-script">
-                <script>
-                  document.querySelectorAll('[swiper="TEST-013"]').forEach((sliderComponent) => {
-                    const sliderEl = sliderComponent.querySelector('[swiper="slider"]');
-                    const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                    const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                    const paginationEl = sliderComponent.querySelector('[swiper="pagination"]');
-                    new Swiper(sliderEl, {
-                      slidesPerView: 'auto', // This will make slides adapt to their width
-                      spaceBetween: 16,
-                      direction: 'horizontal',
-                      centeredSlides: false, // Changed to false for better auto sizing
-                      loop: true,
-                      effect: 'slide',
-                      pagination: {
-                        el: paginationEl,
-                      },
-                      navigation: {
-                        nextEl: buttonNextEl,
-                        prevEl: buttonPrevEl,
-                      },
-                      breakpoints: {
-                        // Breakpoints configuration
-                        1200: { // Large desktop
-                          slidesPerView: '3',
-                          spaceBetween: 16,
-                        },
-                        992: { // Desktop
-                          slidesPerView: '3',
-                          spaceBetween: 16,
-                        },
-                        768: { // Tablet
-                          slidesPerView: 3,
-                          spaceBetween: 16,
-                          centeredSlides: true,
-                        },
-                        0: { // Mobile
-                          slidesPerView: 1.5,
-                          spaceBetween: 16,
-                          centeredSlides: true,
-                        },
-                      },
-                    });
-                  });
-                </script>
+
               </div>
             </div>
           </div>
@@ -754,34 +591,7 @@
             <div class="cta_content-middle cc-dashed">
               <div pb-component="progress-bar1" class="progress-bar1">
                 <div class="custom-code w-embed">
-                  <style>
-                    /* Striped Flow */
-                    [pb-component="progress-bar1"]::after {
-                      content: '';
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
-                      background-image: linear-gradient(135deg,
-                          rgba(255, 255, 255, .15) 25%,
-                          transparent 25%,
-                          transparent 50%,
-                          rgba(255, 255, 255, .15) 50%,
-                          rgba(255, 255, 255, .15) 75%,
-                          transparent 75%,
-                          transparent);
-                      background-size: 30px 30px;
-                      animation: moveStripes 1.25s linear infinite;
-                    }
 
-                    @keyframes moveStripes {
-                      to {
-                        background-position: 60px 0;
-                      }
-                    }
-
-                  </style>
                 </div>
               </div>
               <div class="content-wrapper">
@@ -844,34 +654,7 @@
                             <div class="animation-wrapper">
                               <div pb-component="progress-bar1" class="progress-bar-2">
                                 <div class="custom-code w-embed">
-                                  <style>
-                                    /* Striped Flow */
-                                    [pb-component="progress-bar1"]::after {
-                                      content: '';
-                                      position: absolute;
-                                      top: 0;
-                                      left: 0;
-                                      width: 100%;
-                                      height: 100%;
-                                      background-image: linear-gradient(135deg,
-                                          rgba(255, 255, 255, .15) 25%,
-                                          transparent 25%,
-                                          transparent 50%,
-                                          rgba(255, 255, 255, .15) 50%,
-                                          rgba(255, 255, 255, .15) 75%,
-                                          transparent 75%,
-                                          transparent);
-                                      background-size: 30px 30px;
-                                      animation: moveStripes 1.25s linear infinite;
-                                    }
 
-                                    @keyframes moveStripes {
-                                      to {
-                                        background-position: 60px 0;
-                                      }
-                                    }
-
-                                  </style>
                                 </div>
                               </div>
                             </div>
@@ -902,13 +685,7 @@
                                 </div>
                               </div>
                               <div class="w-embed">
-                                <style>
-                                  [pb-component="ba25"] {
-                                    font-size: clamp(0.625rem, 3vw, 0.875rem);
-                                    /* Min font 12px, responsive to viewport, Max 20px */
-                                  }
 
-                                </style>
                               </div>
                             </div>
                           </div>
@@ -1056,50 +833,7 @@
                   </div>
                 </div>
                 <div class="custom-code w-embed w-script">
-                  <script>
-                    document.querySelectorAll('[swiper="TEST-013"]').forEach((sliderComponent) => {
-                      const sliderEl = sliderComponent.querySelector('[swiper="slider"]');
-                      const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                      const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                      const paginationEl = sliderComponent.querySelector('[swiper="pagination"]');
-                      new Swiper(sliderEl, {
-                        slidesPerView: 'auto', // This will make slides adapt to their width
-                        spaceBetween: 16,
-                        direction: 'horizontal',
-                        centeredSlides: false, // Changed to false for better auto sizing
-                        loop: true,
-                        effect: 'slide',
-                        pagination: {
-                          el: paginationEl,
-                        },
-                        navigation: {
-                          nextEl: buttonNextEl,
-                          prevEl: buttonPrevEl,
-                        },
-                        breakpoints: {
-                          // Breakpoints configuration
-                          1200: { // Large desktop
-                            slidesPerView: '3',
-                            spaceBetween: 16,
-                          },
-                          992: { // Desktop
-                            slidesPerView: '3',
-                            spaceBetween: 16,
-                          },
-                          768: { // Tablet
-                            slidesPerView: 3,
-                            spaceBetween: 16,
-                            centeredSlides: true,
-                          },
-                          0: { // Mobile
-                            slidesPerView: 1.5,
-                            spaceBetween: 16,
-                            centeredSlides: true,
-                          },
-                        },
-                      });
-                    });
-                  </script>
+
                 </div>
               </div>
             </div>
@@ -1261,124 +995,7 @@
                       </div>
                     </div>
                     <div class="custom-code w-embed w-script">
-                      <script>
-                        class PBAccordion {
-                          constructor() {
-                            this.cleanupInitialState();
-                            this.init();
-                          }
-                          cleanupInitialState() {
-                            document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                              const group = accordion.querySelector('[pb-accordion-element="group"]');
-                              if (!group) return;
-                              const items = group.querySelectorAll('[pb-accordion-element="accordion"]');
-                              items.forEach(item => {
-                                const content = item.querySelector('[pb-accordion-element="content"]');
-                                const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                                const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                                const plus = item.querySelector('[pb-accordion-element="plus"]');
-                                if (content) {
-                                  content.style.maxHeight = '0';
-                                  content.style.opacity = '0';
-                                  content.style.visibility = 'hidden';
-                                  content.style.display = 'none';
-                                }
-                                if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                                item.classList.remove('is-active-accordion');
-                                content?.classList.remove('is-active-accordion');
-                                if (arrow) arrow.classList.remove('is-active-accordion');
-                                if (plus) plus.classList.remove('is-active-accordion');
-                              });
-                              const initial = group.getAttribute('pb-accordion-initial');
-                              if (initial && initial !== 'none') {
-                                const initialItem = items[parseInt(initial) - 1];
-                                if (initialItem) {
-                                  this.openAccordion(initialItem);
-                                }
-                              }
-                            });
-                          }
-                          init() {
-                            document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                              const group = accordion.querySelector('[pb-accordion-element="group"]');
-                              if (!group) return;
-                              group.addEventListener('click', (e) => this.handleClick(e, group));
-                            });
-                          }
-                          handleClick(event, group) {
-                            const accordionItem = event.target.closest('[pb-accordion-element="accordion"]');
-                            if (!accordionItem) return;
-                            const isOpen = accordionItem.classList.contains('is-active-accordion');
-                            const isSingle = group.getAttribute('pb-accordion-single') === 'true';
-                            if (isSingle) {
-                              group.querySelectorAll('[pb-accordion-element="accordion"]').forEach(item => {
-                                if (item !== accordionItem && item.classList.contains('is-active-accordion')) {
-                                  this.closeAccordion(item);
-                                }
-                              });
-                            }
-                            if (isOpen) {
-                              this.closeAccordion(accordionItem);
-                            } else {
-                              this.openAccordion(accordionItem);
-                            }
-                          }
-                          openAccordion(item) {
-                            const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                            const content = item.querySelector('[pb-accordion-element="content"]');
-                            const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                            const plus = item.querySelector('[pb-accordion-element="plus"]');
-                            content.style.visibility = 'visible';
-                            content.style.display = 'block';
-                            content.offsetHeight;
-                            const contentHeight = content.scrollHeight;
-                            requestAnimationFrame(() => {
-                              content.style.maxHeight = `${contentHeight}px`;
-                              content.style.opacity = '1';
-                              trigger.setAttribute('aria-expanded', 'true');
-                              item.classList.add('is-active-accordion');
-                              content.classList.add('is-active-accordion');
-                              if (arrow) arrow.classList.add('is-active-accordion');
-                              if (plus) plus.classList.add('is-active-accordion');
-                            });
-                            content.addEventListener('transitionend', () => {
-                              if (item.classList.contains('is-active-accordion')) {
-                                content.style.maxHeight = 'none';
-                              }
-                            }, {
-                              once: true
-                            });
-                          }
-                          closeAccordion(item) {
-                            const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                            const content = item.querySelector('[pb-accordion-element="content"]');
-                            const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                            const plus = item.querySelector('[pb-accordion-element="plus"]');
-                            content.style.maxHeight = `${content.scrollHeight}px`;
-                            content.style.display = 'block';
-                            content.offsetHeight;
-                            requestAnimationFrame(() => {
-                              content.style.maxHeight = '0';
-                              content.style.opacity = '0';
-                              trigger.setAttribute('aria-expanded', 'false');
-                              item.classList.remove('is-active-accordion');
-                              content.classList.remove('is-active-accordion');
-                              if (arrow) arrow.classList.remove('is-active-accordion');
-                              if (plus) plus.classList.remove('is-active-accordion');
-                            });
-                            content.addEventListener('transitionend', () => {
-                              if (!item.classList.contains('is-active-accordion')) {
-                                content.style.visibility = 'hidden';
-                                content.style.display = 'none';
-                              }
-                            }, {
-                              once: true
-                            });
-                          }
-                        }
-                        // Initialize
-                        new PBAccordion();
-                      </script>
+
                     </div>
                   </div>
                 </div>
@@ -1554,124 +1171,7 @@
                     </div>
                   </div>
                   <div class="custom-code w-embed w-script">
-                    <script>
-                      class PBAccordion {
-                        constructor() {
-                          this.cleanupInitialState();
-                          this.init();
-                        }
-                        cleanupInitialState() {
-                          document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                            const group = accordion.querySelector('[pb-accordion-element="group"]');
-                            if (!group) return;
-                            const items = group.querySelectorAll('[pb-accordion-element="accordion"]');
-                            items.forEach(item => {
-                              const content = item.querySelector('[pb-accordion-element="content"]');
-                              const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                              const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                              const plus = item.querySelector('[pb-accordion-element="plus"]');
-                              if (content) {
-                                content.style.maxHeight = '0';
-                                content.style.opacity = '0';
-                                content.style.visibility = 'hidden';
-                                content.style.display = 'none';
-                              }
-                              if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                              item.classList.remove('is-active-accordion');
-                              content?.classList.remove('is-active-accordion');
-                              if (arrow) arrow.classList.remove('is-active-accordion');
-                              if (plus) plus.classList.remove('is-active-accordion');
-                            });
-                            const initial = group.getAttribute('pb-accordion-initial');
-                            if (initial && initial !== 'none') {
-                              const initialItem = items[parseInt(initial) - 1];
-                              if (initialItem) {
-                                this.openAccordion(initialItem);
-                              }
-                            }
-                          });
-                        }
-                        init() {
-                          document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                            const group = accordion.querySelector('[pb-accordion-element="group"]');
-                            if (!group) return;
-                            group.addEventListener('click', (e) => this.handleClick(e, group));
-                          });
-                        }
-                        handleClick(event, group) {
-                          const accordionItem = event.target.closest('[pb-accordion-element="accordion"]');
-                          if (!accordionItem) return;
-                          const isOpen = accordionItem.classList.contains('is-active-accordion');
-                          const isSingle = group.getAttribute('pb-accordion-single') === 'true';
-                          if (isSingle) {
-                            group.querySelectorAll('[pb-accordion-element="accordion"]').forEach(item => {
-                              if (item !== accordionItem && item.classList.contains('is-active-accordion')) {
-                                this.closeAccordion(item);
-                              }
-                            });
-                          }
-                          if (isOpen) {
-                            this.closeAccordion(accordionItem);
-                          } else {
-                            this.openAccordion(accordionItem);
-                          }
-                        }
-                        openAccordion(item) {
-                          const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                          const content = item.querySelector('[pb-accordion-element="content"]');
-                          const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                          const plus = item.querySelector('[pb-accordion-element="plus"]');
-                          content.style.visibility = 'visible';
-                          content.style.display = 'block';
-                          content.offsetHeight;
-                          const contentHeight = content.scrollHeight;
-                          requestAnimationFrame(() => {
-                            content.style.maxHeight = `${contentHeight}px`;
-                            content.style.opacity = '1';
-                            trigger.setAttribute('aria-expanded', 'true');
-                            item.classList.add('is-active-accordion');
-                            content.classList.add('is-active-accordion');
-                            if (arrow) arrow.classList.add('is-active-accordion');
-                            if (plus) plus.classList.add('is-active-accordion');
-                          });
-                          content.addEventListener('transitionend', () => {
-                            if (item.classList.contains('is-active-accordion')) {
-                              content.style.maxHeight = 'none';
-                            }
-                          }, {
-                            once: true
-                          });
-                        }
-                        closeAccordion(item) {
-                          const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                          const content = item.querySelector('[pb-accordion-element="content"]');
-                          const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                          const plus = item.querySelector('[pb-accordion-element="plus"]');
-                          content.style.maxHeight = `${content.scrollHeight}px`;
-                          content.style.display = 'block';
-                          content.offsetHeight;
-                          requestAnimationFrame(() => {
-                            content.style.maxHeight = '0';
-                            content.style.opacity = '0';
-                            trigger.setAttribute('aria-expanded', 'false');
-                            item.classList.remove('is-active-accordion');
-                            content.classList.remove('is-active-accordion');
-                            if (arrow) arrow.classList.remove('is-active-accordion');
-                            if (plus) plus.classList.remove('is-active-accordion');
-                          });
-                          content.addEventListener('transitionend', () => {
-                            if (!item.classList.contains('is-active-accordion')) {
-                              content.style.visibility = 'hidden';
-                              content.style.display = 'none';
-                            }
-                          }, {
-                            once: true
-                          });
-                        }
-                      }
-                      // Initialize
-                      new PBAccordion();
-                    </script>
+
                   </div>
                 </div>
               </div>
@@ -2003,80 +1503,7 @@
                 </div>
               </div>
               <div class="custom-code w-embed w-script">
-                <script>
-                  document.querySelectorAll('[swiper="sw08"]').forEach((sliderComponent) => {
-                    // Get elements
-                    const sliderEl = sliderComponent.querySelector('[swiper="slider"]');
-                    const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                    const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                    const paginationEl = sliderComponent.querySelector('[swiper="pagination"]');
-                    const thumbnailsHolder = document.querySelector('[swiper="thumbnails-holder"]');
-                    // Initialize main swiper
-                    const mainSwiper = new Swiper(sliderEl, {
-                      slidesPerView: 1,
-                      spaceBetween: 16,
-                      direction: 'horizontal',
-                      navigation: {
-                        nextEl: buttonNextEl,
-                        prevEl: buttonPrevEl,
-                      },
-                      pagination: {
-                        el: paginationEl,
-                      },
-                      breakpoints: {
-                        768: {
-                          spaceBetween: 32,
-                        },
-                      },
-                      on: {
-                        slideChange: function() {
-                          // Update thumbnails when slide changes
-                          if (thumbnailsHolder) {
-                            const thumbnails = thumbnailsHolder.querySelectorAll('[swiper="gallery-thumbnail"]');
-                            thumbnails.forEach((thumbnail, index) => {
-                              if (index === this.activeIndex) {
-                                thumbnail.setAttribute('swiper-state', 'active');
-                                thumbnail.classList.add('is-current');
-                              } else {
-                                thumbnail.removeAttribute('swiper-state');
-                                thumbnail.classList.remove('is-current');
-                              }
-                            });
-                          }
-                        },
-                        init: function() {
-                          // Set initial active state
-                          if (thumbnailsHolder) {
-                            const firstThumbnail = thumbnailsHolder.querySelector('[swiper="gallery-thumbnail"]');
-                            if (firstThumbnail) {
-                              firstThumbnail.setAttribute('swiper-state', 'active');
-                              firstThumbnail.classList.add('is-current');
-                            }
-                          }
-                        }
-                      }
-                    });
-                    // Set up thumbnail click handlers
-                    if (thumbnailsHolder) {
-                      const thumbnails = thumbnailsHolder.querySelectorAll('[swiper="gallery-thumbnail"]');
-                      thumbnails.forEach((thumbnail, index) => {
-                        thumbnail.style.userSelect = 'none';
-                        thumbnail.setAttribute('tabindex', '0');
-                        // Add click handler
-                        thumbnail.addEventListener('click', () => {
-                          mainSwiper.slideTo(index);
-                        });
-                        // Add keyboard support
-                        thumbnail.addEventListener('keydown', (event) => {
-                          if (event.key === 'Enter' || event.key === ' ') {
-                            event.preventDefault();
-                            mainSwiper.slideTo(index);
-                          }
-                        });
-                      });
-                    }
-                  });
-                </script>
+
               </div>
             </div>
           </div>
@@ -2156,34 +1583,7 @@
             <div class="adv-cta__container cc-primary">
               <div pb-component="progress-bar1" class="progress-bar1">
                 <div class="custom-code w-embed">
-                  <style>
-                    /* Striped Flow */
-                    [pb-component="progress-bar1"]::after {
-                      content: '';
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      width: 100%;
-                      height: 100%;
-                      background-image: linear-gradient(135deg,
-                          rgba(255, 255, 255, .15) 25%,
-                          transparent 25%,
-                          transparent 50%,
-                          rgba(255, 255, 255, .15) 50%,
-                          rgba(255, 255, 255, .15) 75%,
-                          transparent 75%,
-                          transparent);
-                      background-size: 30px 30px;
-                      animation: moveStripes 1.25s linear infinite;
-                    }
 
-                    @keyframes moveStripes {
-                      to {
-                        background-position: 60px 0;
-                      }
-                    }
-
-                  </style>
                 </div>
               </div>
               <div class="content-wrapper">
@@ -2256,13 +1656,7 @@
                                 </div>
                               </div>
                               <div class="w-embed">
-                                <style>
-                                  [pb-component="ba25"] {
-                                    font-size: clamp(0.625rem, 3vw, 0.875rem);
-                                    /* Min font 12px, responsive to viewport, Max 20px */
-                                  }
 
-                                </style>
                               </div>
                             </div>
                           </div>
@@ -2287,34 +1681,7 @@
                   <div class="animation-wrapper">
                     <div pb-component="progress-bar1" class="progress-bar-2">
                       <div class="custom-code w-embed">
-                        <style>
-                          /* Striped Flow */
-                          [pb-component="progress-bar1"]::after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background-image: linear-gradient(135deg,
-                                rgba(255, 255, 255, .15) 25%,
-                                transparent 25%,
-                                transparent 50%,
-                                rgba(255, 255, 255, .15) 50%,
-                                rgba(255, 255, 255, .15) 75%,
-                                transparent 75%,
-                                transparent);
-                            background-size: 30px 30px;
-                            animation: moveStripes 1.25s linear infinite;
-                          }
 
-                          @keyframes moveStripes {
-                            to {
-                              background-position: 60px 0;
-                            }
-                          }
-
-                        </style>
                       </div>
                     </div>
                   </div>
@@ -2480,124 +1847,7 @@
                 </div>
               </div>
               <div class="custom-code w-embed w-script">
-                <script>
-                  class PBAccordion {
-                    constructor() {
-                      this.cleanupInitialState();
-                      this.init();
-                    }
-                    cleanupInitialState() {
-                      document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                        const group = accordion.querySelector('[pb-accordion-element="group"]');
-                        if (!group) return;
-                        const items = group.querySelectorAll('[pb-accordion-element="accordion"]');
-                        items.forEach(item => {
-                          const content = item.querySelector('[pb-accordion-element="content"]');
-                          const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                          const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                          const plus = item.querySelector('[pb-accordion-element="plus"]');
-                          if (content) {
-                            content.style.maxHeight = '0';
-                            content.style.opacity = '0';
-                            content.style.visibility = 'hidden';
-                            content.style.display = 'none';
-                          }
-                          if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                          item.classList.remove('is-active-accordion');
-                          content?.classList.remove('is-active-accordion');
-                          if (arrow) arrow.classList.remove('is-active-accordion');
-                          if (plus) plus.classList.remove('is-active-accordion');
-                        });
-                        const initial = group.getAttribute('pb-accordion-initial');
-                        if (initial && initial !== 'none') {
-                          const initialItem = items[parseInt(initial) - 1];
-                          if (initialItem) {
-                            this.openAccordion(initialItem);
-                          }
-                        }
-                      });
-                    }
-                    init() {
-                      document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                        const group = accordion.querySelector('[pb-accordion-element="group"]');
-                        if (!group) return;
-                        group.addEventListener('click', (e) => this.handleClick(e, group));
-                      });
-                    }
-                    handleClick(event, group) {
-                      const accordionItem = event.target.closest('[pb-accordion-element="accordion"]');
-                      if (!accordionItem) return;
-                      const isOpen = accordionItem.classList.contains('is-active-accordion');
-                      const isSingle = group.getAttribute('pb-accordion-single') === 'true';
-                      if (isSingle) {
-                        group.querySelectorAll('[pb-accordion-element="accordion"]').forEach(item => {
-                          if (item !== accordionItem && item.classList.contains('is-active-accordion')) {
-                            this.closeAccordion(item);
-                          }
-                        });
-                      }
-                      if (isOpen) {
-                        this.closeAccordion(accordionItem);
-                      } else {
-                        this.openAccordion(accordionItem);
-                      }
-                    }
-                    openAccordion(item) {
-                      const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                      const content = item.querySelector('[pb-accordion-element="content"]');
-                      const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                      const plus = item.querySelector('[pb-accordion-element="plus"]');
-                      content.style.visibility = 'visible';
-                      content.style.display = 'block';
-                      content.offsetHeight;
-                      const contentHeight = content.scrollHeight;
-                      requestAnimationFrame(() => {
-                        content.style.maxHeight = `${contentHeight}px`;
-                        content.style.opacity = '1';
-                        trigger.setAttribute('aria-expanded', 'true');
-                        item.classList.add('is-active-accordion');
-                        content.classList.add('is-active-accordion');
-                        if (arrow) arrow.classList.add('is-active-accordion');
-                        if (plus) plus.classList.add('is-active-accordion');
-                      });
-                      content.addEventListener('transitionend', () => {
-                        if (item.classList.contains('is-active-accordion')) {
-                          content.style.maxHeight = 'none';
-                        }
-                      }, {
-                        once: true
-                      });
-                    }
-                    closeAccordion(item) {
-                      const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                      const content = item.querySelector('[pb-accordion-element="content"]');
-                      const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                      const plus = item.querySelector('[pb-accordion-element="plus"]');
-                      content.style.maxHeight = `${content.scrollHeight}px`;
-                      content.style.display = 'block';
-                      content.offsetHeight;
-                      requestAnimationFrame(() => {
-                        content.style.maxHeight = '0';
-                        content.style.opacity = '0';
-                        trigger.setAttribute('aria-expanded', 'false');
-                        item.classList.remove('is-active-accordion');
-                        content.classList.remove('is-active-accordion');
-                        if (arrow) arrow.classList.remove('is-active-accordion');
-                        if (plus) plus.classList.remove('is-active-accordion');
-                      });
-                      content.addEventListener('transitionend', () => {
-                        if (!item.classList.contains('is-active-accordion')) {
-                          content.style.visibility = 'hidden';
-                          content.style.display = 'none';
-                        }
-                      }, {
-                        once: true
-                      });
-                    }
-                  }
-                  // Initialize
-                  new PBAccordion();
-                </script>
+
               </div>
             </div>
           </div>
@@ -2655,34 +1905,7 @@
                     <div class="animation-wrapper">
                       <div pb-component="progress-bar1" class="progress-bar-2">
                         <div class="custom-code w-embed">
-                          <style>
-                            /* Striped Flow */
-                            [pb-component="progress-bar1"]::after {
-                              content: '';
-                              position: absolute;
-                              top: 0;
-                              left: 0;
-                              width: 100%;
-                              height: 100%;
-                              background-image: linear-gradient(135deg,
-                                  rgba(255, 255, 255, .15) 25%,
-                                  transparent 25%,
-                                  transparent 50%,
-                                  rgba(255, 255, 255, .15) 50%,
-                                  rgba(255, 255, 255, .15) 75%,
-                                  transparent 75%,
-                                  transparent);
-                              background-size: 30px 30px;
-                              animation: moveStripes 1.25s linear infinite;
-                            }
 
-                            @keyframes moveStripes {
-                              to {
-                                background-position: 60px 0;
-                              }
-                            }
-
-                          </style>
                         </div>
                       </div>
                     </div>
@@ -2713,13 +1936,7 @@
                     </div>
                   </div>
                   <div class="w-embed">
-                    <style>
-                      [pb-component="ba25"] {
-                        font-size: clamp(0.625rem, 3vw, 0.875rem);
-                        /* Min font 12px, responsive to viewport, Max 20px */
-                      }
 
-                    </style>
                   </div>
                 </div>
               </div>
@@ -2727,7 +1944,7 @@
           </div>
         </section>
         <footer class="footer_section">
-          <div class="container">
+          <div class="container cc-medium">
             <div class="footer_layout">
               <div class="footer_copy-info">
                 <div class="footer_link-wrapper">
@@ -2746,402 +1963,8 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      [swiper="sw12"] .swiper-slide_image-wrap {
-        aspect-ratio: 1 / 1;
-      }
 
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide {
-        filter: grayscale(100%);
-        transition: filter 0.4s ease;
-        cursor: pointer;
-      }
 
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide:focus-visible {
-        border: 2px solid #000;
-      }
-
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide.swiper-slide-thumb-active {
-        filter: grayscale(0);
-      }
-
-      /* Button base state */
-      [data-action="submit"] {
-        position: relative;
-        /* Prevent layout shifts */
-        min-width: 100px;
-        /* Adjust based on your needs */
-        min-height: 40px;
-        /* Adjust based on your needs */
-      }
-
-      /* Spinner container */
-      [data-button="spinner"] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        pointer-events: none;
-        font-size: calc(2 * 1em);
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        color: inherit;
-        transition: opacity 0.2s ease;
-      }
-
-      /* Button content and icon */
-      [data-button="content"],
-      [data-button="icon"] {
-        transition: opacity 0.2s ease;
-      }
-
-      /* Loading state */
-      [data-action="submit"].is-submitting {
-        cursor: not-allowed;
-      }
-
-      [data-action="submit"].is-submitting [data-button="spinner"] {
-        opacity: 1;
-      }
-
-      [data-action="submit"].is-submitting [data-button="content"],
-      [data-action="submit"].is-submitting [data-button="icon"] {
-        opacity: 0;
-      }
-
-      /* Spinner elements */
-      [data-button="spinner"] .line {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        stroke-linecap: round;
-        transform-origin: 50% 50%;
-        animation: spinner-arc 2156ms ease-in-out infinite,
-          spinner-rotate 1829ms linear infinite;
-      }
-
-      [data-button="spinner"] .ring {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        opacity: 0.15;
-      }
-
-      /* Animations */
-      @keyframes spinner-rotate {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spinner-arc {
-        0% {
-          stroke-dasharray: 0 150;
-          stroke-dashoffset: 0;
-        }
-
-        100% {
-          stroke-dasharray: 100 150;
-          stroke-dashoffset: -140;
-        }
-      }
-
-      [swiper="TEST-013"] .span.swiper-pagination-bullet {
-        border: 1px solid #000;
-        background-color: transparent;
-        opacity: 1;
-      }
-
-      [swiper="TEST-013"] span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background-color: #000 !important;
-      }
-
-      [swiper="TEST-013"] span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background-color: #000 !important;
-      }
-
-      /* Button base state */
-      [data-action="submit"] {
-        position: relative;
-        /* Prevent layout shifts */
-        min-width: 100px;
-        /* Adjust based on your needs */
-        min-height: 40px;
-        /* Adjust based on your needs */
-      }
-
-      /* Spinner container */
-      [data-button="spinner"] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        pointer-events: none;
-        font-size: calc(2 * 1em);
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        color: inherit;
-        transition: opacity 0.2s ease;
-      }
-
-      /* Button content and icon */
-      [data-button="content"],
-      [data-button="icon"] {
-        transition: opacity 0.2s ease;
-      }
-
-      /* Loading state */
-      [data-action="submit"].is-submitting {
-        cursor: not-allowed;
-      }
-
-      [data-action="submit"].is-submitting [data-button="spinner"] {
-        opacity: 1;
-      }
-
-      [data-action="submit"].is-submitting [data-button="content"],
-      [data-action="submit"].is-submitting [data-button="icon"] {
-        opacity: 0;
-      }
-
-      /* Spinner elements */
-      [data-button="spinner"] .line {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        stroke-linecap: round;
-        transform-origin: 50% 50%;
-        animation: spinner-arc 2156ms ease-in-out infinite,
-          spinner-rotate 1829ms linear infinite;
-      }
-
-      [data-button="spinner"] .ring {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        opacity: 0.15;
-      }
-
-      /* Animations */
-      @keyframes spinner-rotate {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spinner-arc {
-        0% {
-          stroke-dasharray: 0 150;
-          stroke-dashoffset: 0;
-        }
-
-        100% {
-          stroke-dasharray: 100 150;
-          stroke-dashoffset: -140;
-        }
-      }
-
-      [swiper="TEST-013"] .span.swiper-pagination-bullet {
-        border: 1px solid #000;
-        background-color: transparent;
-        opacity: 1;
-      }
-
-      [swiper="TEST-013"] span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background-color: #000 !important;
-      }
-
-      [swiper="TEST-013"] span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-        background-color: #000 !important;
-      }
-
-      [pb-accordion-element="content"] {
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-        /* Faster transitions */
-        transition:
-          max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-          opacity 0.15s ease-out,
-          visibility 0s linear 0.2s;
-        /* Optimize rendering */
-        will-change: max-height, opacity;
-        transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-      }
-
-      [pb-accordion-element="content"].is-active-accordion {
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        transition:
-          max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-          opacity 0.15s ease-out,
-          visibility 0s linear 0s;
-      }
-
-      [pb-accordion-element="arrow"] {
-        transition: transform 0.15s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate3d(0, 0, 0);
-      }
-
-      [pb-accordion-element="arrow"].is-active-accordion {
-        transform: rotate(180deg) translate3d(0, 0, 0);
-      }
-
-      [pb-accordion-element="plus"] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      [pb-accordion-element="plus"] svg {
-        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translate3d(0, 0, 0);
-      }
-
-      [pb-accordion-element="plus"] .vertical {
-        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        transform-origin: center;
-      }
-
-      [pb-accordion-element="plus"].is-active-accordion .vertical {
-        transform: scaleY(0);
-      }
-
-      [pb-accordion-element="plus"]:hover {
-        opacity: 0.8;
-      }
-
-      [pb-accordion-element="trigger"]:focus {
-        outline: 2px solid #fff;
-        outline-offset: 2px;
-        border-radius: 4px;
-      }
-
-      [pb-accordion-element="trigger"]:focus:not(:focus-visible) {
-        outline: none;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-
-        [pb-accordion-element="content"],
-        [pb-accordion-element="arrow"],
-        [pb-accordion-element="plus"] svg,
-        [pb-accordion-element="plus"] .vertical {
-          transition: none;
-        }
-      }
-
-      [swiper="sw08"] .swiper-slide_image-wrap {
-        aspect-ratio: 16 / 9;
-      }
-
-      [swiper="sw08"] [swiper="slider-nav"] .swiper-slide {
-        width: auto;
-      }
-
-      [swiper="sw08"] [swiper="slider-nav"] .swiper-slide.swiper-slide-active {
-        color: #000;
-      }
-
-      /* Add the button disabled style here instead of in JS */
-      .swiper-button-disabled {
-        opacity: 30% !important;
-      }
-
-      /* Button base state */
-      [data-action="submit"] {
-        position: relative;
-        /* Prevent layout shifts */
-        min-width: 100px;
-        /* Adjust based on your needs */
-        min-height: 40px;
-        /* Adjust based on your needs */
-      }
-
-      /* Spinner container */
-      [data-button="spinner"] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        pointer-events: none;
-        font-size: calc(2 * 1em);
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        color: inherit;
-        transition: opacity 0.2s ease;
-      }
-
-      /* Button content and icon */
-      [data-button="content"],
-      [data-button="icon"] {
-        transition: opacity 0.2s ease;
-      }
-
-      /* Loading state */
-      [data-action="submit"].is-submitting {
-        cursor: not-allowed;
-      }
-
-      [data-action="submit"].is-submitting [data-button="spinner"] {
-        opacity: 1;
-      }
-
-      [data-action="submit"].is-submitting [data-button="content"],
-      [data-action="submit"].is-submitting [data-button="icon"] {
-        opacity: 0;
-      }
-
-      /* Spinner elements */
-      [data-button="spinner"] .line {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        stroke-linecap: round;
-        transform-origin: 50% 50%;
-        animation: spinner-arc 2156ms ease-in-out infinite,
-          spinner-rotate 1829ms linear infinite;
-      }
-
-      [data-button="spinner"] .ring {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        opacity: 0.15;
-      }
-
-      /* Animations */
-      @keyframes spinner-rotate {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spinner-arc {
-        0% {
-          stroke-dasharray: 0 150;
-          stroke-dashoffset: 0;
-        }
-
-        100% {
-          stroke-dasharray: 100 150;
-          stroke-dashoffset: -140;
-        }
-      }
-
-    </style>
+    <script defer="" src="/js/templates-landing-pages-lp01.js"></script>
   </body>
 </html>

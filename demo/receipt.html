@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Receipt</title>
@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-page-type" content="receipt">
@@ -26,62 +26,11 @@
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
-
-
+    <link href="/css/demo-receipt.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="page-wrapper">
@@ -188,15 +137,9 @@
                             <h4 class="order-summary__title checkout">Order Summary</h4>
                             <div class="order-summary__content">
                               <div class="cart-items">
-                                <div pb-checkout="summary-scroll" class="cart-items__scroll-hint cart-items__scroll-hint--active">
-                                  <div>Scroll for more items</div>
-                                  <div class="icon__view-more w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                      <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z"></path>
-                                    </svg></div>
-                                </div>
                                 <div data-next-content="">
-                                  <div data-next-order-items="" class="cart-items__list">
-                                    <div data-order-line-id="{item.id}" class="cart-item">
+                                  <div class="cart-items__list">
+                                    <div class="cart-item">
                                       <div class="cart-item__wrapper">
                                         <div class="skeleton skeleton-avatar skeleton-avatar--lg skeleton-avatar--square skeleton--darker"></div>
                                         <div class="cart-item__details">
@@ -309,7 +252,7 @@
                                         <div class="cart-item__image-container">
                                           <div class="cart-item__quantity-badge">
                                             <div class="cart-item__quantity">{item.quantity}</div>
-                                          </div><img src="{item.image}" class="cart-item__image">
+                                          </div><img src="/images/{item.image}" class="cart-item__image">
                                         </div>
                                         <div class="cart-item__details">
                                           <div class="cart-item__content">
@@ -485,7 +428,7 @@
                                       <div class="cart-item__image-container">
                                         <div class="cart-item__quantity-badge">
                                           <div class="cart-item__quantity">{item.quantity}</div>
-                                        </div><img src="{item.image}" class="cart-item__image">
+                                        </div><img src="/images/{item.image}" class="cart-item__image">
                                       </div>
                                       <div class="cart-item__details">
                                         <div class="cart-item__content">

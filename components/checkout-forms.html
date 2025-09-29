@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Checkout Forms</title>
@@ -12,69 +12,18 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
 
     <link href="/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="/css/components.css" rel="stylesheet" type="text/css">
     <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/components-checkout-forms.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
   </head>
@@ -95,13 +44,13 @@
                     <div class="form-content">
                       <div class="form-sections">
                         <div class="form-section form-section--first">
-                          <h2 class="form-section__title">Contact Information</h2>
+                          <h2 class="form-section__title">Contact</h2>
                           <div class="form-group">
                             <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
                           </div>
                         </div>
                         <div pb-checkout-section="shipping" class="form-section">
-                          <h1 class="form-section__title">Shipping Information</h1>
+                          <h1 class="form-section__title">Shipping</h1>
                           <div os-checkout-component="shipping-form">
                             <div class="form-grid">
                               <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -165,7 +114,7 @@
                               </div>
                               <div data-next-component="shipping-field-row" class="form-grid__row">
                                 <div class="form-group">
-                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
+                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
 
                                   </div>
                                 </div>
@@ -210,7 +159,7 @@
                         </div>
                         <div class="form-section form-section--last">
                           <div class="form-section__header">
-                            <h1 class="form-section__title">Payment Details</h1>
+                            <h1 class="form-section__title">Payment</h1>
                             <div class="form-section__subtitle">All transactions are secure and encrypted.<br></div>
 
                           </div>
@@ -324,12 +273,7 @@
                           <div class="submit-section__button"><button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
                               <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
                                 <div class="w-embed">
-                                  <style>
-                                    .three-quarter-spinner {
-                                      animation: spin .9s linear 0s infinite;
-                                    }
 
-                                  </style>
                                 </div>
                                 <div class="three-quarter-spinner black"></div>
                               </div>
@@ -488,7 +432,7 @@
                             </div>
                           </div>
                           <div data-next-express-checkout="buttons" class="express-checkout__buttons"><button data-next-express-checkout="paypal" data-action="submit" class="payment-btn cc-paypal">
-                              <div class="w-embed">
+                              <div class="paypal-btn w-embed">
                                 <!--?xml version="1.0" encoding="UTF-8"?-->
                                 <svg width="86px" height="22px" viewBox="0 0 86 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                   <title>paypal</title>
@@ -543,19 +487,19 @@
                               </div>
                             </button></div>
                           <div class="divider-section">
-                            <div class="divider-section__line"></div>
-                            <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
-                            <div class="divider-section__line"></div>
+                            <div class="divider-section__line-v2"></div>
+                            <div data-i18n="pay_cc" class="divider-section__text-v2">OR</div>
+                            <div class="divider-section__line-v2"></div>
                           </div>
                         </div>
                         <div class="form-section form-section--first">
-                          <h2 class="form-section__title">Contact Information</h2>
+                          <h2 class="form-section__title">Contact</h2>
                           <div class="form-group">
                             <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
                           </div>
                         </div>
                         <div pb-checkout-section="shipping" class="form-section">
-                          <h1 class="form-section__title">Shipping Information</h1>
+                          <h1 class="form-section__title">Shipping</h1>
                           <div os-checkout-component="shipping-form">
                             <div class="form-grid">
                               <div data-next-component="shipping-field-row" class="form-grid__row">
@@ -619,7 +563,7 @@
                               </div>
                               <div data-next-component="shipping-field-row" class="form-grid__row">
                                 <div class="form-group">
-                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" os-checkout-validate="true" data-next-checkout-field="phone" class="input-flds">
+                                  <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
 
                                   </div>
                                 </div>
@@ -664,7 +608,7 @@
                         </div>
                         <div class="form-section form-section--last">
                           <div class="form-section__header">
-                            <h1 class="form-section__title">Payment Details</h1>
+                            <h1 class="form-section__title">Payment</h1>
                             <div class="form-section__subtitle">All transactions are secure and encrypted.<br></div>
 
                           </div>
@@ -778,12 +722,7 @@
                           <div class="submit-section__button"><button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
                               <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
                                 <div class="w-embed">
-                                  <style>
-                                    .three-quarter-spinner {
-                                      animation: spin .9s linear 0s infinite;
-                                    }
 
-                                  </style>
                                 </div>
                                 <div class="three-quarter-spinner black"></div>
                               </div>
@@ -1065,7 +1004,7 @@
                               </div>
                             </div>
                             <div data-next-express-checkout="buttons" class="express-checkout__buttons"><button data-next-express-checkout="paypal" data-action="submit" class="payment-btn cc-paypal">
-                                <div class="w-embed">
+                                <div class="paypal-btn w-embed">
                                   <!--?xml version="1.0" encoding="UTF-8"?-->
                                   <svg width="86px" height="22px" viewBox="0 0 86 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <title>paypal</title>
@@ -1120,9 +1059,9 @@
                                 </div>
                               </button></div>
                             <div class="divider-section">
-                              <div class="divider-section__line"></div>
-                              <div data-i18n="pay_cc" class="divider-section__text">OR PAY WITH CREDIT CARD</div>
-                              <div class="divider-section__line"></div>
+                              <div class="divider-section__line-v2"></div>
+                              <div data-i18n="pay_cc" class="divider-section__text-v2">OR</div>
+                              <div class="divider-section__line-v2"></div>
                             </div>
                           </div>
                           <div class="payment-methods">
@@ -1250,7 +1189,7 @@
                                           <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6z"></path>
                                         </svg></div>
                                     </div>
-                                    <div data-next-cart-items="" class="cart-items__list">
+                                    <div data-group-items="" data-next-cart-items="" class="cart-items__list">
                                       <div data-cart-item-id="{item.id}" class="cart-item">
                                         <div class="cart-item__wrapper">
                                           <div class="cart-item__details cc-left-0">
@@ -1340,12 +1279,7 @@
                           <div class="submit-section__button"><button os-checkout-payment="combo" data-action="submit" type="submit" class="submit-button">
                               <div data-pb-element="checkout-button-spinner" class="submit-button__loader">
                                 <div class="w-embed">
-                                  <style>
-                                    .three-quarter-spinner {
-                                      animation: spin .9s linear 0s infinite;
-                                    }
 
-                                  </style>
                                 </div>
                                 <div class="three-quarter-spinner black"></div>
                               </div>
@@ -1370,34 +1304,6 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      .iti__flag-container {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 3rem !important;
-        right: 0 !important;
-        left: auto !important;
-        padding: 1px;
-      }
 
-      .iti--allow-dropdown input,
-      .iti--allow-dropdown input[type=text],
-      .iti--allow-dropdown input[type=tel],
-      .iti--separate-dial-code input,
-      .iti--separate-dial-code input[type=text],
-      .iti--separate-dial-code input[type=tel] {
-        padding-right: 52px !important;
-        padding-left: 12px !important;
-        margin-left: 0 !important;
-      }
-
-      /* Remove the divider on the very last payment-method block */
-      .payment-methods>.payment-method:last-child {
-        border-bottom: 0 !important;
-        /* kill the bottom border */
-      }
-
-    </style>
   </body>
 </html>

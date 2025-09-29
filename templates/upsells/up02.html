@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>UP02</title>
@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.11/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-page-type" content="upsell">
@@ -24,62 +24,11 @@
     <link href="/css/components.css" rel="stylesheet" type="text/css">
     <link href="/css/next-staging-core.css" rel="stylesheet" type="text/css">
     <link href="/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="/css/templates-upsells-up02.css" rel="stylesheet" type="text/css">
 
 
-    <link href="../../images/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <link href="../../images/webclip.png" rel="apple-touch-icon"><!--  Varify.io® code for Blackout Media -->
-
-
-
-    <style>
-      html:not(.next-display-ready) [data-next-await] {
-        position: relative;
-        overflow: hidden;
-        border-color: transparent !important;
-        box-shadow: none !important;
-      }
-
-      [data-next-await] * {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-      }
-
-      [data-next-await]::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #e0e0e0;
-        animation: pulse-gray 1.5s ease-in-out infinite;
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      @keyframes pulse-gray {
-
-        0%,
-        100% {
-          background-color: #e0e0e0;
-          opacity: 0.6;
-        }
-
-        50% {
-          background-color: #f5f5f5;
-          opacity: 0.8;
-        }
-      }
-
-      html.next-display-ready [data-next-await] * {
-        opacity: 1;
-      }
-
-      html.next-display-ready [data-next-await]::before {
-        display: none;
-      }
-
-    </style>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="/images/webclip.png" rel="apple-touch-icon">
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -89,38 +38,36 @@
     <div class="page-wrapper">
 
       <div class="main-wrapper">
-        <section class="section cc-0">
-          <div class="container cc-0">
-            <div class="upsell-navbar">
-              <div class="upsell-navbar__wrapper">
-                <div class="upsell-steps">
-                  <div class="os-bundle__selector">
-                    <div class="os-bundle__progress-bar">
-                      <div class="os-bundle__progress-fill"></div>
+        <section class="section cc-custom cc-upsell-header">
+          <div class="container">
+            <div class="upsell-navbar_header"><img src="/images/next-logo.png" loading="eager" alt="" class="brand-logo">
+              <div class="upsell-steps">
+                <div class="os-bundle__selector">
+                  <div class="os-bundle__progress-bar">
+                    <div class="os-bundle__progress-fill"></div>
+                  </div>
+                  <div class="os-bundle__option os-bundle__option--active">
+                    <div class="os-bundle__option-circle2 os-bundle__option-circle--active">
+                      <div>1</div>
                     </div>
-                    <div class="os-bundle__option os-bundle__option--active">
-                      <div class="os-bundle__option-circle2 os-bundle__option-circle--active">
-                        <div>1</div>
-                      </div>
-                      <div class="os-bundle__option-content">
-                        <div class="os-bundle__option-quantity"><strong>Checkout</strong></div>
-                      </div>
+                    <div class="os-bundle__option-content">
+                      <div class="os-bundle__option-quantity"><strong>Checkout</strong></div>
                     </div>
-                    <div class="os-bundle__option">
-                      <div class="os-bundle__option-circle2">
-                        <div>2</div>
-                      </div>
-                      <div class="os-bundle__option-content">
-                        <div class="os-bundle__option-quantity">Special Deal</div>
-                      </div>
+                  </div>
+                  <div class="os-bundle__option">
+                    <div class="os-bundle__option-circle2">
+                      <div>2</div>
                     </div>
-                    <div class="os-bundle__option">
-                      <div class="os-bundle__option-circle2">
-                        <div>3</div>
-                      </div>
-                      <div class="os-bundle__option-content">
-                        <div class="os-bundle__option-quantity">Summary</div>
-                      </div>
+                    <div class="os-bundle__option-content">
+                      <div class="os-bundle__option-quantity">Special Deal</div>
+                    </div>
+                  </div>
+                  <div class="os-bundle__option">
+                    <div class="os-bundle__option-circle2">
+                      <div>3</div>
+                    </div>
+                    <div class="os-bundle__option-content">
+                      <div class="os-bundle__option-quantity">Summary</div>
                     </div>
                   </div>
                 </div>
@@ -260,116 +207,89 @@
                       <div class="slider2_component-wrapper">
                         <div swiper="slider-main" class="swiper is-v9-main">
                           <div class="swiper-wrapper">
-                            <div class="swiper-slide cc-color">
+                            <div class="swiper-slide">
                               <div class="swiper-slide_inner">
-                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1_1.svg" alt="" class="cover"></div>
                               </div>
                             </div>
-                            <div class="swiper-slide cc-color">
+                            <div class="swiper-slide">
                               <div class="swiper-slide_inner">
-                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1_1.svg" alt="" class="cover"></div>
                               </div>
                             </div>
-                            <div class="swiper-slide cc-color">
+                            <div class="swiper-slide">
                               <div class="swiper-slide_inner">
-                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1_1.svg" alt="" class="cover"></div>
                               </div>
                             </div>
-                            <div class="swiper-slide cc-color">
+                            <div class="swiper-slide">
                               <div class="swiper-slide_inner">
-                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1_1.svg" alt="" class="cover"></div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="swiper-slide_inner">
+                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1_1.svg" alt="" class="cover"></div>
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="swiper-slide_inner">
+                                <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1_1.svg" alt="" class="cover"></div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class="swiper-thumbs-arrow"><button swiper="prev-button" class="swiper__button-static is-sw22">
+                        <div class="swiper-thumbs-arrow">
+                          <div swiper="prev-button" class="swiper__button-static is-sw22">
                             <div class="swiper__button-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.91316 12.9545L0 12.0028L0.91316 11.0511L9.16383 2.45175L10.077 1.5L11.8979 3.39789L10.9848 4.34964L4.93644 10.6592H22.7108H24V13.3464H22.7108H4.93644L10.9902 19.6504L11.9033 20.6021L10.0824 22.5L9.1692 21.5483L0.91316 12.9545Z" fill="currentColor"></path>
                               </svg></div>
-                          </button>
+                          </div>
                           <div class="slider2_thumbs-wrap is-sw22">
                             <div thumbsslider="" swiper="slider-thumbs" class="swiper is-v9-thumbs">
                               <div class="swiper-wrapper">
                                 <div class="swiper-slide is-thumb swiper-slide-thumb-active">
                                   <div class="swiper-slide_inner">
-                                    <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                    <div class="swiper-slide_image-wrap"><img loading="eager" src="/images/1x1_2.svg" alt="" class="cover"></div>
                                   </div>
                                 </div>
-                                <div class="swiper-slide is-thumb swiper-slide-thumb-active">
+                                <div class="swiper-slide is-thumb">
                                   <div class="swiper-slide_inner">
-                                    <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                    <div class="swiper-slide_image-wrap"><img loading="eager" src="/images/1x1_2.svg" alt="" class="cover"></div>
                                   </div>
                                 </div>
-                                <div class="swiper-slide is-thumb swiper-slide-thumb-active">
+                                <div class="swiper-slide is-thumb">
                                   <div class="swiper-slide_inner">
-                                    <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                    <div class="swiper-slide_image-wrap"><img loading="eager" src="/images/1x1_2.svg" alt="" class="cover"></div>
                                   </div>
                                 </div>
-                                <div class="swiper-slide is-thumb swiper-slide-thumb-active">
+                                <div class="swiper-slide is-thumb">
                                   <div class="swiper-slide_inner">
-                                    <div class="swiper-slide_image-wrap is-square"><img loading="eager" src="/images/1x1.svg" alt="" class="cover"></div>
+                                    <div class="swiper-slide_image-wrap"><img loading="eager" src="/images/1x1_2.svg" alt="" class="cover"></div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide is-thumb">
+                                  <div class="swiper-slide_inner">
+                                    <div class="swiper-slide_image-wrap"><img loading="eager" src="/images/1x1_2.svg" alt="" class="cover"></div>
+                                  </div>
+                                </div>
+                                <div class="swiper-slide is-thumb">
+                                  <div class="swiper-slide_inner">
+                                    <div class="swiper-slide_image-wrap"><img loading="eager" src="/images/1x1_2.svg" alt="" class="cover"></div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div><button swiper="next-button" class="swiper__button-static is-sw22">
+                          </div>
+                          <div swiper="next-button" class="swiper__button-static is-sw22">
                             <div class="swiper__button-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M23.0868 12.9545L24 12.0028L23.0868 11.0511L14.8362 2.45175L13.923 1.5L12.1021 3.39789L13.0152 4.34964L19.0636 10.6592H1.28917H0V13.3464H1.28917H19.0582L13.0098 19.6504L12.0967 20.6021L13.9176 22.5L14.8308 21.5483L23.0868 12.9545Z" fill="currentColor"></path>
                               </svg></div>
-                          </button>
+                          </div>
                         </div>
                       </div>
                       <div class="custom-code w-embed w-script">
-                        <script>
-                          document.querySelectorAll('[swiper="sw12"]').forEach((sliderComponent) => {
-                            const sliderMain = sliderComponent.querySelector('[swiper="slider-main"]');
-                            const sliderThumbs = sliderComponent.querySelector('[swiper="slider-thumbs"]');
-                            const buttonNextEl = sliderComponent.querySelector('[swiper="next-button"]');
-                            const buttonPrevEl = sliderComponent.querySelector('[swiper="prev-button"]');
-                            // Initialize thumbs swiper first
-                            const thumbsSwiper = new Swiper(sliderThumbs, {
-                              slidesPerView: 5, // Show a fixed number of thumbs
-                              spaceBetween: 10,
-                              freeMode: false, // Disable free mode for proper controlled movement
-                              watchSlidesProgress: true,
-                              watchOverflow: true, // Prevent extra spacing when fewer slides exist
-                              centerInsufficientSlides: true, // Prevents misalignment when fewer thumbs exist
-                              breakpoints: {
-                                768: {
-                                  slidesPerView: 5, // Adjust for desktop
-                                  spaceBetween: 10,
-                                },
-                                480: {
-                                  slidesPerView: 5, // Adjust for mobile
-                                  spaceBetween: 8,
-                                },
-                              },
-                            });
-                            // Initialize main swiper with thumbs navigation
-                            new Swiper(sliderMain, {
-                              slidesPerView: 1,
-                              spaceBetween: 0,
-                              navigation: {
-                                nextEl: buttonNextEl,
-                                prevEl: buttonPrevEl,
-                              },
-                              thumbs: {
-                                swiper: thumbsSwiper,
-                              },
-                            });
-                            // Add keyboard accessibility for thumbs
-                            if (sliderThumbs) {
-                              sliderThumbs.querySelectorAll('.swiper-slide').forEach((slide, index) => {
-                                slide.addEventListener('keydown', (event) => {
-                                  if (event.key === 'Enter' || event.key === ' ') {
-                                    event.preventDefault();
-                                    thumbsSwiper.slideTo(index, 300);
-                                  }
-                                });
-                              });
-                            }
-                          });
-                        </script>
+
                       </div>
                     </div>
                   </div>
@@ -650,124 +570,7 @@
                       </div>
                     </div>
                     <div class="custom-code w-embed w-script">
-                      <script>
-                        class PBAccordion {
-                          constructor() {
-                            this.cleanupInitialState();
-                            this.init();
-                          }
-                          cleanupInitialState() {
-                            document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                              const group = accordion.querySelector('[pb-accordion-element="group"]');
-                              if (!group) return;
-                              const items = group.querySelectorAll('[pb-accordion-element="accordion"]');
-                              items.forEach(item => {
-                                const content = item.querySelector('[pb-accordion-element="content"]');
-                                const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                                const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                                const plus = item.querySelector('[pb-accordion-element="plus"]');
-                                if (content) {
-                                  content.style.maxHeight = '0';
-                                  content.style.opacity = '0';
-                                  content.style.visibility = 'hidden';
-                                  content.style.display = 'none';
-                                }
-                                if (trigger) trigger.setAttribute('aria-expanded', 'false');
-                                item.classList.remove('is-active-accordion');
-                                content?.classList.remove('is-active-accordion');
-                                if (arrow) arrow.classList.remove('is-active-accordion');
-                                if (plus) plus.classList.remove('is-active-accordion');
-                              });
-                              const initial = group.getAttribute('pb-accordion-initial');
-                              if (initial && initial !== 'none') {
-                                const initialItem = items[parseInt(initial) - 1];
-                                if (initialItem) {
-                                  this.openAccordion(initialItem);
-                                }
-                              }
-                            });
-                          }
-                          init() {
-                            document.querySelectorAll('[pb-component="accordion"]').forEach(accordion => {
-                              const group = accordion.querySelector('[pb-accordion-element="group"]');
-                              if (!group) return;
-                              group.addEventListener('click', (e) => this.handleClick(e, group));
-                            });
-                          }
-                          handleClick(event, group) {
-                            const accordionItem = event.target.closest('[pb-accordion-element="accordion"]');
-                            if (!accordionItem) return;
-                            const isOpen = accordionItem.classList.contains('is-active-accordion');
-                            const isSingle = group.getAttribute('pb-accordion-single') === 'true';
-                            if (isSingle) {
-                              group.querySelectorAll('[pb-accordion-element="accordion"]').forEach(item => {
-                                if (item !== accordionItem && item.classList.contains('is-active-accordion')) {
-                                  this.closeAccordion(item);
-                                }
-                              });
-                            }
-                            if (isOpen) {
-                              this.closeAccordion(accordionItem);
-                            } else {
-                              this.openAccordion(accordionItem);
-                            }
-                          }
-                          openAccordion(item) {
-                            const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                            const content = item.querySelector('[pb-accordion-element="content"]');
-                            const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                            const plus = item.querySelector('[pb-accordion-element="plus"]');
-                            content.style.visibility = 'visible';
-                            content.style.display = 'block';
-                            content.offsetHeight;
-                            const contentHeight = content.scrollHeight;
-                            requestAnimationFrame(() => {
-                              content.style.maxHeight = `${contentHeight}px`;
-                              content.style.opacity = '1';
-                              trigger.setAttribute('aria-expanded', 'true');
-                              item.classList.add('is-active-accordion');
-                              content.classList.add('is-active-accordion');
-                              if (arrow) arrow.classList.add('is-active-accordion');
-                              if (plus) plus.classList.add('is-active-accordion');
-                            });
-                            content.addEventListener('transitionend', () => {
-                              if (item.classList.contains('is-active-accordion')) {
-                                content.style.maxHeight = 'none';
-                              }
-                            }, {
-                              once: true
-                            });
-                          }
-                          closeAccordion(item) {
-                            const trigger = item.querySelector('[pb-accordion-element="trigger"]');
-                            const content = item.querySelector('[pb-accordion-element="content"]');
-                            const arrow = item.querySelector('[pb-accordion-element="arrow"]');
-                            const plus = item.querySelector('[pb-accordion-element="plus"]');
-                            content.style.maxHeight = `${content.scrollHeight}px`;
-                            content.style.display = 'block';
-                            content.offsetHeight;
-                            requestAnimationFrame(() => {
-                              content.style.maxHeight = '0';
-                              content.style.opacity = '0';
-                              trigger.setAttribute('aria-expanded', 'false');
-                              item.classList.remove('is-active-accordion');
-                              content.classList.remove('is-active-accordion');
-                              if (arrow) arrow.classList.remove('is-active-accordion');
-                              if (plus) plus.classList.remove('is-active-accordion');
-                            });
-                            content.addEventListener('transitionend', () => {
-                              if (!item.classList.contains('is-active-accordion')) {
-                                content.style.visibility = 'hidden';
-                                content.style.display = 'none';
-                              }
-                            }, {
-                              once: true
-                            });
-                          }
-                        }
-                        // Initialize
-                        new PBAccordion();
-                      </script>
+
                     </div>
                   </div>
                 </div>
@@ -1102,7 +905,7 @@
           </div>
         </section>
         <footer class="footer_section">
-          <div class="container">
+          <div class="container cc-medium">
             <div class="footer_layout">
               <div class="footer_copy-info">
                 <div class="footer_link-wrapper">
@@ -1121,204 +924,8 @@
 
 
     <!-- Consolidated Custom CSS -->
-    <style>
-      [swiper="sw12"] .swiper-slide_image-wrap {
-        aspect-ratio: 1 / 1;
-      }
 
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide {
-        filter: grayscale(100%);
-        transition: filter 0.4s ease;
-        cursor: pointer;
-      }
 
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide:focus-visible {
-        border: 2px solid #000;
-      }
-
-      [swiper="sw12"] [swiper="slider-thumbs"] .swiper-slide.swiper-slide-thumb-active {
-        filter: grayscale(0);
-      }
-
-      [swiper="sw12"] [swiper="prev-button"].swiper-button-disabled,
-      [swiper="sw12"] [swiper="next-button"].swiper-button-disabled {
-        opacity: 0.5;
-        /* Reduce opacity to indicate it's inactive */
-        pointer-events: none;
-        /* Disable pointer events so it cannot be clicked */
-        cursor: default;
-        /* Change cursor to default */
-        filter: grayscale(100%);
-        /* Optional: Make it grayscale to reinforce inactive state */
-        transition: opacity 0.3s ease, filter 0.3s ease;
-      }
-
-      /* Button base state */
-      [data-action="submit"] {
-        position: relative;
-        /* Prevent layout shifts */
-        min-width: 100px;
-        /* Adjust based on your needs */
-        min-height: 40px;
-        /* Adjust based on your needs */
-      }
-
-      /* Spinner container */
-      [data-button="spinner"] {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        pointer-events: none;
-        font-size: calc(2 * 1em);
-        width: 1em;
-        height: 1em;
-        border-radius: 50%;
-        color: inherit;
-        transition: opacity 0.2s ease;
-      }
-
-      /* Button content and icon */
-      [data-button="content"],
-      [data-button="icon"] {
-        transition: opacity 0.2s ease;
-      }
-
-      /* Loading state */
-      [data-action="submit"].is-submitting {
-        cursor: not-allowed;
-      }
-
-      [data-action="submit"].is-submitting [data-button="spinner"] {
-        opacity: 1;
-      }
-
-      [data-action="submit"].is-submitting [data-button="content"],
-      [data-action="submit"].is-submitting [data-button="icon"] {
-        opacity: 0;
-      }
-
-      /* Spinner elements */
-      [data-button="spinner"] .line {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        stroke-linecap: round;
-        transform-origin: 50% 50%;
-        animation: spinner-arc 2156ms ease-in-out infinite,
-          spinner-rotate 1829ms linear infinite;
-      }
-
-      [data-button="spinner"] .ring {
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 6px;
-        opacity: 0.15;
-      }
-
-      /* Animations */
-      @keyframes spinner-rotate {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spinner-arc {
-        0% {
-          stroke-dasharray: 0 150;
-          stroke-dashoffset: 0;
-        }
-
-        100% {
-          stroke-dasharray: 100 150;
-          stroke-dashoffset: -140;
-        }
-      }
-
-      [pb-accordion-element="content"] {
-        overflow: hidden;
-        max-height: 0;
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-        /* Faster transitions */
-        transition:
-          max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-          opacity 0.15s ease-out,
-          visibility 0s linear 0.2s;
-        /* Optimize rendering */
-        will-change: max-height, opacity;
-        transform: translate3d(0, 0, 0);
-        backface-visibility: hidden;
-      }
-
-      [pb-accordion-element="content"].is-active-accordion {
-        display: block;
-        visibility: visible;
-        opacity: 1;
-        transition:
-          max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-          opacity 0.15s ease-out,
-          visibility 0s linear 0s;
-      }
-
-      [pb-accordion-element="arrow"] {
-        transition: transform 0.15s ease-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate3d(0, 0, 0);
-      }
-
-      [pb-accordion-element="arrow"].is-active-accordion {
-        transform: rotate(180deg) translate3d(0, 0, 0);
-      }
-
-      [pb-accordion-element="plus"] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      [pb-accordion-element="plus"] svg {
-        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        transform: translate3d(0, 0, 0);
-      }
-
-      [pb-accordion-element="plus"] .vertical {
-        transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        transform-origin: center;
-      }
-
-      [pb-accordion-element="plus"].is-active-accordion .vertical {
-        transform: scaleY(0);
-      }
-
-      [pb-accordion-element="plus"]:hover {
-        opacity: 0.8;
-      }
-
-      [pb-accordion-element="trigger"]:focus {
-        outline: 2px solid #fff;
-        outline-offset: 2px;
-        border-radius: 4px;
-      }
-
-      [pb-accordion-element="trigger"]:focus:not(:focus-visible) {
-        outline: none;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-
-        [pb-accordion-element="content"],
-        [pb-accordion-element="arrow"],
-        [pb-accordion-element="plus"] svg,
-        [pb-accordion-element="plus"] .vertical {
-          transition: none;
-        }
-      }
-
-    </style>
+    <script defer="" src="/js/templates-upsells-up02.js"></script>
   </body>
 </html>

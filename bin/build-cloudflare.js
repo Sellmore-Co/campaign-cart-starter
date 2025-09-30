@@ -1,5 +1,5 @@
-import { cpSync, mkdirSync, rmSync, existsSync } from 'fs';
-import { join } from 'path';
+import { cpSync, mkdirSync, rmSync, existsSync, readdirSync } from 'fs';
+import { join, extname } from 'path';
 
 const BUILD_DIRECTORY = 'dist-cloudflare';
 const STATIC_DIR = 'src/static';
@@ -14,43 +14,25 @@ mkdirSync(BUILD_DIRECTORY, { recursive: true });
 mkdirSync(join(BUILD_DIRECTORY, 'css'), { recursive: true });
 mkdirSync(join(BUILD_DIRECTORY, 'js'), { recursive: true });
 
-// Copy CSS files from static
-const cssFiles = [
-  'custom.css',
-  'components.css',
-  'olympus-mv.css'
-];
+// Get all files from static directory
+const allFiles = readdirSync(STATIC_DIR);
 
+// Copy all CSS files
+const cssFiles = allFiles.filter(file => extname(file) === '.css');
 cssFiles.forEach(file => {
   const sourcePath = join(STATIC_DIR, file);
   const destPath = join(BUILD_DIRECTORY, 'css', file);
-
-  if (existsSync(sourcePath)) {
-    cpSync(sourcePath, destPath);
-    console.log(`✅ Copied css/${file}`);
-  } else {
-    console.log(`⚠️ File not found: ${sourcePath}`);
-  }
+  cpSync(sourcePath, destPath);
+  console.log(`✅ Copied css/${file}`);
 });
 
-// Copy JS files from static
-const jsFiles = [
-  'config.js',
-  'loader.js',
-  'olympus-mv-full.js',
-  'olympus-mv-selection.js'
-];
-
+// Copy all JS files
+const jsFiles = allFiles.filter(file => extname(file) === '.js');
 jsFiles.forEach(file => {
   const sourcePath = join(STATIC_DIR, file);
   const destPath = join(BUILD_DIRECTORY, 'js', file);
-
-  if (existsSync(sourcePath)) {
-    cpSync(sourcePath, destPath);
-    console.log(`✅ Copied js/${file}`);
-  } else {
-    console.log(`⚠️ File not found: ${sourcePath}`);
-  }
+  cpSync(sourcePath, destPath);
+  console.log(`✅ Copied js/${file}`);
 });
 
 // Copy config.js to root as well (if needed by your app)

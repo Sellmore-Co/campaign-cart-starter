@@ -1,11 +1,8 @@
 // JavaScript extracted from templates\checkout\olympus-mv-selection.html
 
 // Content from static file: olympus-mv-selection.js
-// T-Shirts Demo - Ultra-Optimized Version
-// All functionality preserved with reduced code size
-
 // ============================================
-// CONFIGURATION SECTION - EASY TO MODIFY
+// CONFIGURATION SECTION
 // ============================================
 const CONFIG = {
   // Navigation URLs

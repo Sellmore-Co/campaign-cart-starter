@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-page-type" content="receipt">
@@ -30,6 +30,11 @@
     <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="/images/webclip.png" rel="apple-touch-icon">
 
+
+    <!--  
+This script normalizes payment method names (e.g. "apple_pay" → "Apple Pay") 
+and updates all relevant DOM elements automatically, including dynamically added ones. 
+ -->
 
   </head>
   <body>
@@ -484,5 +489,6 @@
     </div>
 
 
+    <script defer="" src="/js/templates-receipt-re02.js"></script>
   </body>
 </html>

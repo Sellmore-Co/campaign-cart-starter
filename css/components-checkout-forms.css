@@ -64,6 +64,12 @@ html.next-display-ready [data-next-await]::before {
 }
 
 /* Inline style 5 from checkout-forms.html */
+/* Remove the divider on the very last payment-method block */
+.payment-methods > .payment-method:last-child {
+  border-bottom: 0 !important;
+  /* kill the bottom border */
+}
+
 .iti__flag-container {
   position: absolute;
   top: 0;
@@ -83,10 +89,4 @@ html.next-display-ready [data-next-await]::before {
   padding-right: 52px !important;
   padding-left: 12px !important;
   margin-left: 0 !important;
-}
-
-/* Remove the divider on the very last payment-method block */
-.payment-methods > .payment-method:last-child {
-  border-bottom: 0 !important;
-  /* kill the bottom border */
 }

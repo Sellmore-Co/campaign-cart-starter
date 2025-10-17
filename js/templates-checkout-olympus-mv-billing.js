@@ -1,6 +1,6 @@
 // JavaScript extracted from templates\checkout\olympus-mv-billing.html
 
-// Inline script 7 from olympus-mv-billing.html
+// Inline script 4 from olympus-mv-billing.html
 document.querySelectorAll('[data-next-element="timer"]').forEach(timer => {
   let [minutes, seconds] = timer.textContent.split(':').map(Number);
   let total = minutes * 60 + seconds;

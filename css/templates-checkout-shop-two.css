@@ -99,27 +99,6 @@ html.next-display-ready [data-next-await]::before {
   animation: moveLeftRight 1.5s infinite ease-in-out;
 }
 
-.iti__flag-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3rem !important;
-  right: 0 !important;
-  left: auto !important;
-  padding: 1px;
-}
-
-.iti--allow-dropdown input,
-.iti--allow-dropdown input[type=text],
-.iti--allow-dropdown input[type=tel],
-.iti--separate-dial-code input,
-.iti--separate-dial-code input[type=text],
-.iti--separate-dial-code input[type=tel] {
-  padding-right: 52px !important;
-  padding-left: 12px !important;
-  margin-left: 0 !important;
-}
-
 /* Remove the divider on the very last payment-method block */
 .payment-methods > .payment-method:last-child {
   border-bottom: 0 !important;

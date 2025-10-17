@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 30 2025 17:36:53 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Fri Oct 17 2025 19:18:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="68b9713953b1ef500d4dee2d" data-wf-site="685996de362613655dd702b4" lang="en">
 <head>
   <meta charset="utf-8">
@@ -43,7 +43,8 @@
         paymentConfig: {
           expressCheckout: {
             requireValidation: true,
-            requiredFields: ['email', 'fname', 'lname']
+            requiredFields: ['email', 'fname', 'lname'],
+            methodOrder: ['paypal', 'apple_pay', 'google_pay']
           }
         },
         addressConfig: {
@@ -114,7 +115,7 @@
         }
       };
     </script>
-  <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
   <style>
       html:not(.next-display-ready) [data-next-await] {
         position: relative;
@@ -196,7 +197,7 @@
   <div class="page-wrapper">
     <div data-remove-prod="" class="pageblock-styles">
       <div class="next-styles w-embed">
-        <link href="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.15/dist/campaign-cart.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@0/dist/campaign-cart.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://localhost:3000/css/olympus-mv.css" type="text/css">
         <!--  For development on webflow
 <link href="http://localhost:3000/src/styles/main.css" rel="stylesheet" type="text/css" />
@@ -390,7 +391,7 @@
       <section class="section cc-custom he01">
         <div class="container cc-medium">
           <div class="sale-elements">
-            <div class="scarcity-banner">
+            <div data-next-hide="param.timer == &#x27;n&#x27;" class="scarcity-banner">
               <div class="scarcity-banner__left">
                 <div class="promo-wrapper">
                   <div class="next-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -416,7 +417,7 @@
                   <path fill="currentColor" d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4"></path>
                 </svg></div>
             </div>
-            <div class="section_header">
+            <div data-next-hide="param.banner==&#x27;n&#x27;" class="section_header">
               <div class="announcement">
                 <div class="announcement__block">
                   <div class="announcement__text">GET UP TO 40% OFF NOW! <span class="text-span-53">USE PROMO CODE:</span></div>

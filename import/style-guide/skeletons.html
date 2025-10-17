@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 30 2025 17:36:53 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Fri Oct 17 2025 19:18:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="685b27758d2e4f8a2e79638e" data-wf-site="685996de362613655dd702b4" lang="en">
 <head>
   <meta charset="utf-8">
@@ -43,7 +43,8 @@
         paymentConfig: {
           expressCheckout: {
             requireValidation: true,
-            requiredFields: ['email', 'fname', 'lname']
+            requiredFields: ['email', 'fname', 'lname'],
+            methodOrder: ['paypal', 'apple_pay', 'google_pay']
           }
         },
         addressConfig: {
@@ -114,7 +115,7 @@
         }
       };
     </script>
-  <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
   <style>
       html:not(.next-display-ready) [data-next-await] {
         position: relative;
@@ -224,7 +225,7 @@
   <div class="page-wrapper">
     <div data-remove-prod="" class="pageblock-styles">
       <div class="next-styles w-embed">
-        <link href="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.15/dist/campaign-cart.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@0/dist/campaign-cart.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://localhost:3000/css/olympus-mv.css" type="text/css">
         <!--  For development on webflow
 <link href="http://localhost:3000/src/styles/main.css" rel="stylesheet" type="text/css" />
@@ -581,16 +582,6 @@
                             </div>
                           </div>
                         </div>
-                        <div data-next-show="cart.isEmpty" class="next-empty-cart">
-                          <div class="tw-600">YOUR CART IS EMPTY</div>
-                          <div>
-                            <div>Don&#x27;t miss out!</div>
-                            <div class="tw-500">Our deal ends soon.</div>
-                          </div>
-                          <a href="../demo/landing.html" class="button cc-sm w-inline-block">
-                            <div>SHOP NOW</div>
-                          </a>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -749,6 +740,9 @@
                       <div class="form-group">
                         <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
                       </div>
+                      <div class="checkbox-wrapper"><label for="accepts_marketing" class="checkout__checkbox"><input type="checkbox" data-next-checkout-field="accepts_marketing" name="accepts_marketing" id="accepts_marketing" class="checkbox__input" checked="">
+                          <div class="checkbox__label">Email me with news and offers</div>
+                        </label></div>
                     </div>
                     <div pb-checkout-section="shipping" class="form-section">
                       <h1 class="form-section__title">Shipping</h1>
@@ -815,31 +809,7 @@
                           </div>
                           <div data-next-component="shipping-field-row" class="form-grid__row">
                             <div class="form-group">
-                              <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
-                                <div class="custom-css w-embed">
-                                  <style>
-                                      .iti__flag-container {
-                                        position: absolute;
-                                        top: 0;
-                                        bottom: 0;
-                                        width: 3rem !important;
-                                        right: 0 !important;
-                                        left: auto !important;
-                                        padding: 1px;
-                                      }
-                                      .iti--allow-dropdown input,
-                                      .iti--allow-dropdown input[type=text],
-                                      .iti--allow-dropdown input[type=tel],
-                                      .iti--separate-dial-code input,
-                                      .iti--separate-dial-code input[type=text],
-                                      .iti--separate-dial-code input[type=tel] {
-                                        padding-right: 52px !important;
-                                        padding-left: 12px !important;
-                                        margin-left: 0 !important;
-                                      }
-                                    </style>
-                                </div>
-                              </div>
+                              <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" class="input-flds"></div>
                             </div>
                           </div>
                         </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 30 2025 17:36:53 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Fri Oct 17 2025 19:18:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="685996de362613655dd70394" data-wf-site="685996de362613655dd702b4" lang="en">
 <head>
   <meta charset="utf-8">
@@ -43,7 +43,8 @@
         paymentConfig: {
           expressCheckout: {
             requireValidation: true,
-            requiredFields: ['email', 'fname', 'lname']
+            requiredFields: ['email', 'fname', 'lname'],
+            methodOrder: ['paypal', 'apple_pay', 'google_pay']
           }
         },
         addressConfig: {
@@ -114,7 +115,7 @@
         }
       };
     </script>
-  <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
   <style>
       html:not(.next-display-ready) [data-next-await] {
         position: relative;
@@ -197,7 +198,7 @@
   <div class="page-wrapper is-styleguide">
     <div data-remove-prod="" class="pageblock-styles">
       <div class="next-styles w-embed">
-        <link href="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.15/dist/campaign-cart.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@0/dist/campaign-cart.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://localhost:3000/css/olympus-mv.css" type="text/css">
         <!--  For development on webflow
 <link href="http://localhost:3000/src/styles/main.css" rel="stylesheet" type="text/css" />
@@ -391,12 +392,15 @@
       <div id="sidebar" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="sidebar w-nav">
         <div class="sidebar__links-wrap">
           <div class="sidebar_group">
-            <a href="#" class="sidebar_link-group hide-mobile-p w-inline-block">
-              <div class="icon-1-5 w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5.75 10.113V18C5.75 18.1381 5.86193 18.25 6 18.25H18C18.1381 18.25 18.25 18.1381 18.25 18V10.113C18.25 10.0412 18.2191 9.9728 18.1652 9.92534L12.1652 4.64522C12.0707 4.56212 11.9293 4.56212 11.8348 4.64522L5.83484 9.92534C5.78091 9.9728 5.75 10.0412 5.75 10.113Z" stroke="currentColor" stroke-width="1.5"></path>
+            <a href="playground.html" aria-current="page" class="sidebar_link-group hide-mobile-p w-inline-block w--current">
+              <div class="icon-1-5 w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ph" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 256 256">
+                  <g fill="currentColor">
+                    <path d="m232 160l-104 56l-104-56l104-56Z" opacity=".2"></path>
+                    <path d="m235.79 89l-104-56a8 8 0 0 0-7.58 0l-104 56A8 8 0 0 0 16 96v64a8 8 0 0 0 4.21 7.05l104 56a8 8 0 0 0 7.58 0l104-56A8 8 0 0 0 240 160V96a8 8 0 0 0-4.21-7M224 146.61L189.45 128L224 109.39Zm-51.43-27.7L136 99.22V53.39L215.13 96Zm-44.57 24L100.3 128l27.7-14.91L155.7 128Zm-8-89.52v45.83l-36.57 19.69L40.87 96Zm-88 56L66.55 128L32 146.61Zm51.43 27.7L120 156.78v45.83L40.87 160ZM136 202.61v-45.83l36.57-19.69L215.13 160Z"></path>
+                  </g>
                 </svg></div>
               <div class="sidebar_link-text">
-                <div>Home</div>
+                <div>Playground</div>
               </div>
             </a>
           </div>
@@ -446,6 +450,90 @@
               </div>
             </div>
           </div>
+          <div class="template-container">
+            <div class="sidebar_group">
+              <a href="https://campaigns.nextcommerce.com/gallery?template=https%3A%2F%2Fcampaigns.nextcommerce.com%2Ftemplates%2Fcheckout%2Fshop%3FforcePackageId%3D2%3A1" class="sidebar_link-group hide-mobile-p w-inline-block">
+                <div class="icon-1-5 w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--carbon" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 32 32">
+                    <path fill="currentColor" d="M26 6v4H6V6zm0-2H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M10 16v10H6V16zm0-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V16a2 2 0 0 0-2-2m16 2v10H16V16zm0-2H16a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V16a2 2 0 0 0-2-2"></path>
+                  </svg></div>
+                <div class="sidebar_link-text">
+                  <div>Templates</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar_footer">
+          <div class="sidebar_group hide-tablet hide">
+            <div class="sidebar_title u-fc-3">
+              <div>Engage</div>
+            </div>
+            <a data-logged-in-display="none" data-tooltip="Home" href="#" class="sidebar_link-group hide-mobile-p w-inline-block">
+              <div class="icon-1-5 w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.75 10.113V18C5.75 18.1381 5.86193 18.25 6 18.25H18C18.1381 18.25 18.25 18.1381 18.25 18V10.113C18.25 10.0412 18.2191 9.9728 18.1652 9.92534L12.1652 4.64522C12.0707 4.56212 11.9293 4.56212 11.8348 4.64522L5.83484 9.92534C5.78091 9.9728 5.75 10.0412 5.75 10.113Z" stroke="currentColor" stroke-width="1.5"></path>
+                </svg></div>
+              <div class="sidebar_link-text">
+                <div>New site</div>
+              </div>
+              <div class="sidebar_link-text secondary">
+                <div>↗</div>
+              </div>
+            </a>
+            <a data-logged-in-display="flex" data-tooltip="Home" href="#" class="sidebar_link-group hide-mobile-p w-inline-block">
+              <div class="icon-1-5 w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6C4 5.86193 4.11193 5.75 4.25 5.75H19.75C19.8881 5.75 20 5.86193 20 6V18C20 18.1381 19.8881 18.25 19.75 18.25H4.25C4.11193 18.25 4 18.1381 4 18V6Z" stroke="currentColor" stroke-width="1.5"></path>
+                  <path d="M17 10L9 10" stroke="currentColor" stroke-width="1.5"></path>
+                  <path d="M17 14L9 14" stroke="currentColor" stroke-width="1.5"></path>
+                </svg></div>
+              <div class="sidebar_link-text">
+                <div>Project dashboard</div>
+              </div>
+              <div class="sidebar_link-text secondary">
+                <div>↗</div>
+              </div>
+            </a>
+          </div>
+          <div data-sidebar="cta-container" class="cta-container">
+            <div data-ms-content="!members">
+              <a href="https://nextcommerce.com/" class="button-next w-inline-block">
+                <div>Get Started — It&#x27;s free</div>
+              </a>
+              <div class="hide w-embed">
+                <style>
+                    .button-next {
+                      color: #fff;
+                      text-align: center;
+                      background-color: #3c7dff;
+                      border: 1px solid #3c7dff;
+                      border-radius: 8px;
+                      justify-content: center;
+                      align-items: center;
+                      font-weight: 500;
+                      text-decoration: none;
+                      transition: box-shadow .3s cubic-bezier(.165, .84, .44, 1), background-color .3s cubic-bezier(.165, .84, .44, 1);
+                      display: flex;
+                      position: relative;
+                      box-shadow: inset 0 1px 1px #fff3, inset 0 6px 12px #ffffff0f, 0 4px 4px #08080814, 0 1px 2px #08080833;
+                      cursor: pointer;
+                      overflow: hidden;
+                    }
+                    .button-next::before {
+                      content: '';
+                      position: absolute;
+                      top: 0;
+                      left: -100%;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                      transition: left 0.5s ease;
+                    }
+                    .button-next:hover::before {
+                      left: 100%;
+                    }
+                  </style>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -453,30 +541,20 @@
       <div class="page-global is-nav">
         <div class="container-12">
           <div class="nav-inner">
-            <div class="nav-menu-wrap">
-              <a href="index.html" class="nav-logo-2 w-inline-block"><img src="images/next-logo.png" loading="eager" alt="" class="brand-logo">
-                <div class="logo_water hide w-embed">
-                  <?xml version="1.0" encoding="utf-8"?>
-                  <!--  Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 9.03 Build 54978)   -->
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 160 30" style="enable-background:new 0 0 160 30;" width="100%" height="100%" xml:space="preserve">
-                    <path fill="CurrentColor" d="M0,0h8c5,0,8.6,3.3,8.6,8c0,4.7-3.6,7.9-8.6,7.9H5.5v8.5H0V0z M7.5,11c2.3,0,3.5-1,3.5-3c0-2-1.2-3.1-3.5-3.1
-	H5.5V11H7.5z M17.4,19.5c0-3.1,2.2-4.7,5.5-5.5l5.4-1.2c0-2.1-0.7-3.3-2.6-3.3c-1.7,0-2.5,1-2.7,2.3l-5.4,0c0.5-4.2,3.7-6.3,8-6.3
-	c5.6,0,8,2.8,8,7.7v6.1c0,1,0.3,1.3,0.9,1.3h0.6v3.8c-0.3,0.1-1,0.2-1.7,0.2c-2.4,0-3.9-1.1-4.4-3c-0.7,1.9-2.6,3.2-5.4,3.2
-	C20.2,24.8,17.4,22.9,17.4,19.5z M28.3,17.4v-0.9l-3.6,0.8c-1.4,0.3-1.9,0.9-1.9,2.1c0,1.1,0.7,1.7,1.9,1.7
-	C26.9,21,28.3,19.7,28.3,17.4z M37.4,24.7l5.5-0.3c0.3,0.9,1.2,1.5,2.7,1.5c2.4,0,3.6-1.1,3.6-3.3v-1.9c-0.8,1.6-2.4,2.7-5,2.7
-	c-4.3,0-7.5-3.6-7.5-8.8c0-5.6,3.1-9.2,7.5-9.2c2.4,0,4.2,1.1,5.1,3.2l0.1-2.8h5.1v16c0,5.5-3.5,8.1-8.9,8.1
-	C40.9,30,38.2,27.9,37.4,24.7z M49.2,14.5c0-3.3-1.4-4.9-3.5-4.9c-2.3,0-3.6,1.7-3.6,4.9c0,3.3,1.3,4.8,3.6,4.8
-	C47.8,19.4,49.2,17.8,49.2,14.5z M80.7,21.5l-0.1,3h-5.1V0h5.3v8.5c0.9-1.8,2.8-3,5.4-3c4.3,0,7.2,3.5,7.2,9.7s-2.9,9.7-7.2,9.7
-	C83.4,24.8,81.6,23.4,80.7,21.5z M87.8,15.2c0-3.3-1.1-5.1-3.5-5.1c-2.2,0-3.6,1.8-3.6,5.1c0,3.3,1.5,5.1,3.6,5.1
-	C86.7,20.3,87.8,18.5,87.8,15.2z M103.4,15.2c0-5.9,3.6-9.7,8.9-9.7c5.3,0,8.9,3.8,8.9,9.7s-3.6,9.7-8.9,9.7
-	C106.9,24.8,103.4,21,103.4,15.2z M115.7,15.2c0-3.3-1.2-5.1-3.4-5.1c-2.2,0-3.4,1.8-3.4,5.1s1.2,5.1,3.4,5.1
-	C114.4,20.3,115.7,18.5,115.7,15.2z M134.7,17.5c-0.5,1.8-1.6,2.7-3.3,2.7c-2.3,0-3.6-1.9-3.6-5.1s1.3-5.1,3.6-5.1
-	c1.6,0,2.8,1,3.3,2.8h5.3c-0.6-4.4-4.1-7.3-8.6-7.3c-5.4,0-9.1,4-9.1,9.7s3.7,9.7,9.1,9.7c4.4,0,7.9-2.9,8.6-7.3H134.7z M141.9,0
-	h5.3v13.4l6.4-7.5h6.1l-6.9,7.9l7.2,10.6h-5.9l-4.7-7.2l-2.1,2.4v4.8h-5.3V0z M96,24.4h5.3V0H96V24.4z M64.8,5.5
-	c-5.2,0-8.8,4-8.8,9.7c0,5.9,3.7,9.7,8.9,9.7c4.2,0,7.1-2.1,8.4-6.2h-5.4c-0.5,1-1.6,1.6-2.9,1.6c-2,0-3.4-1.3-3.6-3.7h12.3v-1.3
-	C73.6,9.4,70,5.5,64.8,5.5z M61.4,13.2c0.2-2,1.4-3.1,3.3-3.1c1.9,0,3.1,1.1,3.3,3.1H61.4z"></path>
-                  </svg>
-                </div>
+            <div class="gallery_menu-wrap">
+              <a href="index.html" class="nav-logo-2 w-inline-block">
+                <div class="logo_next w-embed"><svg class="debug-logo" width="100%" height="100%" viewbox="0 0 115.4 101.9" fill="none">
+                    <defs>
+                      <style>
+                          .st0 {
+                            fill: currentColor;
+                            stroke: currentColor;
+                            stroke-width: 2.5px;
+                          }
+                        </style>
+                    </defs>
+                    <path class="st0" d="M83.5,58.3l-1.9-1.3L27.2,21.2c-.7-.4-1.4-.6-2-.6-2,0-3.6,1.6-3.6,3.6v53.4c0,2,1.6,3.6,3.6,3.6h3.8v12.3h-3.8c-8.8,0-15.8-7.1-15.8-15.8V24.3c0-8.8,7.1-15.8,15.8-15.8,3.1,0,6.2.9,8.7,2.6h0l49,33.4.5.4v13.5ZM90.2,8.4c8.8,0,15.8,7.1,15.8,15.8v53.4c0,8.8-7.1,15.8-15.8,15.8s-6.2-.9-8.7-2.6h0l-49-33.4-.5-.4v-13.5l1.9,1.3,54.3,35.7c.7.4,1.4.7,2,.7,2,0,3.6-1.6,3.6-3.6V24.3c0-2-1.6-3.6-3.6-3.6h-3.8v-12.3h3.8Z"></path>
+                  </svg></div>
                 <div class="code-embed-10 hide w-embed">
                   <?xml version="1.0" encoding="utf-8"?>
                   <!--  Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 9.03 Build 54978)   -->
@@ -501,6 +579,7 @@
                 </div>
               </a>
               <link rel="prefetch" href="/">
+              <div class="nav-middle"></div>
             </div>
           </div>
         </div>
@@ -951,7 +1030,7 @@
                 </div>
                 <div class="sg_griddd">
                   <div class="sample-sec">
-                    <div data-next-selector-id="demo-2" data-next-cart-selector="" data-next-selection-mode="select" class="os-option">
+                    <div data-next-selector-id="drone-packages" data-next-cart-selector="" data-next-selection-mode="select" class="os-option">
                       <div class="os-cards__vertical os--gap-m">
                         <div data-next-shipping-id="1" role="button" data-next-selector-card="" data-next-package-id="4" data-next-quantity="1" data-next-selected="true" data-next-await="" class="os-card next-selected">
                           <div os-slot="header" class="os-card__header-slot"></div>
@@ -1533,6 +1612,146 @@
 </span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml"></span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">button</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml">
 </span><span class="xml"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span></span></code></pre>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section_cards">
+                <div class="sg_header">
+                  <div class="section_card__title">
+                    <div>4. Quantity Control Buttons</div>
+                  </div>
+                  <div>Buttons that add specific packages directly without selection.</div>
+                </div>
+                <div class="sg_griddd">
+                  <div class="sample-sec">
+                    <div data-quantity-controller="" class="sg_qty-flex"><button quantity="decrease" class="sg_qty-item decrease">
+                        <div>-</div>
+                      </button>
+                      <div quantity="display" class="sg_qty-item sg_display">
+                        <div>1</div>
+                      </div><button quantity="increase" class="sg_qty-item increase">
+                        <div>+</div>
+                      </button>
+                    </div>
+                    <div class="w-embed w-script">
+                      <script>
+                          window.addEventListener('next:initialized', async function() {
+                            const packageId = 4;
+                            function updateDisplay() {
+                              const cartData = window.next.getCartData();
+                              const item = cartData.cartLines?.find(line => line.packageId === packageId);
+                              const quantity = item ? item.quantity : 0;
+                              document.querySelector('[quantity="display"] div').textContent = quantity;
+                              // Disable decrease button if quantity is 1 or less
+                              const decreaseBtn = document.querySelector('[quantity="decrease"]');
+                              if (quantity <= 1) {
+                                decreaseBtn.disabled = true;
+                                decreaseBtn.style.opacity = '0.5';
+                                decreaseBtn.style.cursor = 'not-allowed';
+                              } else {
+                                decreaseBtn.disabled = false;
+                                decreaseBtn.style.opacity = '1';
+                                decreaseBtn.style.cursor = 'pointer';
+                              }
+                            }
+                            document.querySelector('[quantity="decrease"]').addEventListener('click', function() {
+                              const cartData = window.next.getCartData();
+                              const item = cartData.cartLines?.find(line => line.packageId === packageId);
+                              if (item && item.quantity > 1) {
+                                window.next.updateQuantity({
+                                  packageId: packageId,
+                                  quantity: item.quantity - 1
+                                });
+                                setTimeout(updateDisplay, 100);
+                              }
+                            });
+                            document.querySelector('[quantity="increase"]').addEventListener('click', function() {
+                              const cartData = window.next.getCartData();
+                              const item = cartData.cartLines?.find(line => line.packageId === packageId);
+                              const currentQuantity = item ? item.quantity : 0;
+                              window.next.updateQuantity({
+                                packageId: packageId,
+                                quantity: currentQuantity + 1
+                              });
+                              setTimeout(updateDisplay, 100);
+                            });
+                            updateDisplay();
+                          });
+                        </script>
+                    </div>
+                  </div>
+                  <div class="code-sec">
+                    <div data-pb-component="code" class="elevation-code-block">
+                      <div class="code-block__header">
+                        <div class="code-block__header--left">
+                          <div class="code-block__title">Code</div>
+                        </div>
+                        <div class="code-block__header--right"><button pb-action="copy-code" class="code-block__icon--wrapper">
+                            <div class="code-block__icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 15 15" fill="none" class="text-medusa-contrast-fg-secondary group-hover:text-medusa-contrast-fg-primary group-focus:text-medusa-contrast-fg-primary">
+                                <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" clip-path="url(#a)">
+                                  <path d="M12.167 4.167H5.944c-.981 0-1.777.796-1.777 1.777v6.223c0 .982.796 1.777 1.777 1.777h6.223c.982 0 1.777-.796 1.777-1.777V5.944c0-.981-.796-1.777-1.777-1.777"></path>
+                                  <path d="M1.99 10.165 1.075 4.01a1.78 1.78 0 0 1 1.497-2.02l6.155-.914a1.78 1.78 0 0 1 1.909 1.092"></path>
+                                </g>
+                                <defs>
+                                  <clippath id="a">
+                                    <path fill="#fff" d="M0 0h15v15H0z"></path>
+                                  </clippath>
+                                </defs>
+                              </svg></div>
+                            <div class="code-block__icon cc-check w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
+                                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z"></path>
+                              </svg></div>
+                          </button></div>
+                      </div>
+                      <div class="code-block__content">
+                        <div class="code-block__content--wrapper cc-flex">
+                          <div data-pb-component="code-area" class="code_piece">
+                            <pre contenteditable="false" class="code-block-new cc-brd w-code-block" style="display:block;overflow-x:auto;background:#2b2b2b;color:#f8f8f2;padding:0.5em"><code class="language-htmlbars" style="white-space:pre"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">1</span><span class="xml" style="color:#ffa07a">&lt;</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span><span class="xml javascript">
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">2</span><span class="xml javascript">    </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> packageId = </span><span class="xml javascript" style="color:#f5ab35">3</span><span class="xml javascript">;
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">3</span>    
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">4</span><span class="xml javascript">    </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function"> </span><span class="xml javascript hljs-function" style="color:#00e0e0">updateDisplay</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">5</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> cartData = </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.next.getCartData();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">6</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> item = cartData.cartLines?.find(</span><span class="xml javascript hljs-function" style="color:#f5ab35">line</span><span class="xml javascript hljs-function"> =&gt;</span><span class="xml javascript"> line.packageId === packageId);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">7</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> quantity = item ? item.quantity : </span><span class="xml javascript" style="color:#f5ab35">0</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">8</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#f5ab35">document</span><span class="xml javascript">.querySelector(</span><span class="xml javascript" style="color:#abe338">&#x27;[quantity=&quot;display&quot;] div&#x27;</span><span class="xml javascript">).textContent = quantity;
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">9</span>        
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">10</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#d4d0ab">// Disable decrease button if quantity is 1 or less</span><span class="xml javascript">
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">11</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> decreaseBtn = </span><span class="xml javascript" style="color:#f5ab35">document</span><span class="xml javascript">.querySelector(</span><span class="xml javascript" style="color:#abe338">&#x27;[quantity=&quot;decrease&quot;]&#x27;</span><span class="xml javascript">);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">12</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">if</span><span class="xml javascript"> (quantity &lt;= </span><span class="xml javascript" style="color:#f5ab35">1</span><span class="xml javascript">) {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">13</span><span class="xml javascript">            decreaseBtn.disabled = </span><span class="xml javascript" style="color:#f5ab35">true</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">14</span><span class="xml javascript">            decreaseBtn.style.opacity = </span><span class="xml javascript" style="color:#abe338">&#x27;0.5&#x27;</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">15</span><span class="xml javascript">            decreaseBtn.style.cursor = </span><span class="xml javascript" style="color:#abe338">&#x27;not-allowed&#x27;</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">16</span><span class="xml javascript">        } </span><span class="xml javascript" style="color:#dcc6e0">else</span><span class="xml javascript"> {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">17</span><span class="xml javascript">            decreaseBtn.disabled = </span><span class="xml javascript" style="color:#f5ab35">false</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">18</span><span class="xml javascript">            decreaseBtn.style.opacity = </span><span class="xml javascript" style="color:#abe338">&#x27;1&#x27;</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">19</span><span class="xml javascript">            decreaseBtn.style.cursor = </span><span class="xml javascript" style="color:#abe338">&#x27;pointer&#x27;</span><span class="xml javascript">;
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">20</span>        }
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">21</span>    }
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">22</span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">23</span><span class="xml javascript">    </span><span class="xml javascript" style="color:#f5ab35">document</span><span class="xml javascript">.querySelector(</span><span class="xml javascript" style="color:#abe338">&#x27;[quantity=&quot;decrease&quot;]&#x27;</span><span class="xml javascript">).addEventListener(</span><span class="xml javascript" style="color:#abe338">&#x27;click&#x27;</span><span class="xml javascript">, </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">24</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> cartData = </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.next.getCartData();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">25</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> item = cartData.cartLines?.find(</span><span class="xml javascript hljs-function" style="color:#f5ab35">line</span><span class="xml javascript hljs-function"> =&gt;</span><span class="xml javascript"> line.packageId === packageId);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">26</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">if</span><span class="xml javascript"> (item &amp;&amp; item.quantity &gt; </span><span class="xml javascript" style="color:#f5ab35">1</span><span class="xml javascript">) {
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">27</span><span class="xml javascript">            </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.next.updateQuantity({ </span><span class="xml javascript hljs-attr">packageId</span><span class="xml javascript">: packageId, </span><span class="xml javascript hljs-attr">quantity</span><span class="xml javascript">: item.quantity - </span><span class="xml javascript" style="color:#f5ab35">1</span><span class="xml javascript"> });
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">28</span><span class="xml javascript">            </span><span class="xml javascript" style="color:#f5ab35">setTimeout</span><span class="xml javascript">(updateDisplay, </span><span class="xml javascript" style="color:#f5ab35">100</span><span class="xml javascript">);
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">29</span>        }
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">30</span>    });
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">31</span>
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">32</span><span class="xml javascript">    </span><span class="xml javascript" style="color:#f5ab35">document</span><span class="xml javascript">.querySelector(</span><span class="xml javascript" style="color:#abe338">&#x27;[quantity=&quot;increase&quot;]&#x27;</span><span class="xml javascript">).addEventListener(</span><span class="xml javascript" style="color:#abe338">&#x27;click&#x27;</span><span class="xml javascript">, </span><span class="xml javascript hljs-function" style="color:#dcc6e0">function</span><span class="xml javascript hljs-function">(</span><span class="xml javascript hljs-function">) </span><span class="xml javascript">{
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">33</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> cartData = </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.next.getCartData();
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">34</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> item = cartData.cartLines?.find(</span><span class="xml javascript hljs-function" style="color:#f5ab35">line</span><span class="xml javascript hljs-function"> =&gt;</span><span class="xml javascript"> line.packageId === packageId);
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">35</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#dcc6e0">const</span><span class="xml javascript"> currentQuantity = item ? item.quantity : </span><span class="xml javascript" style="color:#f5ab35">0</span><span class="xml javascript">;
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">36</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#f5ab35">window</span><span class="xml javascript">.next.updateQuantity({ </span><span class="xml javascript hljs-attr">packageId</span><span class="xml javascript">: packageId, </span><span class="xml javascript hljs-attr">quantity</span><span class="xml javascript">: currentQuantity + </span><span class="xml javascript" style="color:#f5ab35">1</span><span class="xml javascript"> });
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">37</span><span class="xml javascript">        </span><span class="xml javascript" style="color:#f5ab35">setTimeout</span><span class="xml javascript">(updateDisplay, </span><span class="xml javascript" style="color:#f5ab35">100</span><span class="xml javascript">);
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">38</span>    });
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">39</span>
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">40</span>    updateDisplay();
+</span><span class="xml javascript"><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">41</span>    
+</span><span class="comment linenumber react-syntax-highlighter-line-number" style="display:inline-block;min-width:1.25em;padding-right:1em;text-align:right;user-select:none">42</span><span class="xml javascript">    </span><span class="xml" style="color:#ffa07a">&lt;/</span><span class="xml" style="color:#ffa07a">script</span><span class="xml" style="color:#ffa07a">&gt;</span></code></pre>
                           </div>
                         </div>
                       </div>
@@ -3374,7 +3593,7 @@
             <div class="checkout__layout">
               <div class="checkout__column checkout__column--left">
                 <div class="checkout__form-container cc-checkout">
-                  <div class="checkout__header-brand cc-shop"></div>
+                  <div class="checkout__header-brand cc-shop"><img src="images/next-logo.png" loading="eager" alt="" class="brand-logo"></div>
                   <div class="order-summary-mobile">
                     <div data-initial-state="closed" data-next-accordion="order-summary" data-open-text="Hide Order Summary" data-close-text="Show Order Summary" data-toggle-class="next-expanded" class="order-summary-mobile__accordion">
                       <div data-next-accordion-trigger="order-summary" class="order-summary__trigger">
@@ -3531,16 +3750,6 @@
                                 </div>
                               </div>
                             </div>
-                            <div data-next-show="cart.isEmpty" class="next-empty-cart">
-                              <div class="tw-600">YOUR CART IS EMPTY</div>
-                              <div>
-                                <div>Don&#x27;t miss out!</div>
-                                <div class="tw-500">Our deal ends soon.</div>
-                              </div>
-                              <a href="demo/landing.html" class="button cc-sm w-inline-block">
-                                <div>SHOP NOW</div>
-                              </a>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -3624,6 +3833,9 @@
                             <div class="form-group">
                               <div class="form-input"><label for="email" class="label-checkout">Email</label><input autocomplete="email" os-checkout-validate="required" name="email" data-name="Email" type="email" id="email" placeholder="Email*" data-next-checkout-field="email" class="input-flds"></div>
                             </div>
+                            <div class="checkbox-wrapper"><label for="accepts_marketing" class="checkout__checkbox"><input type="checkbox" data-next-checkout-field="accepts_marketing" name="accepts_marketing" id="accepts_marketing" class="checkbox__input" checked="">
+                                <div class="checkbox__label">Email me with news and offers</div>
+                              </label></div>
                           </div>
                           <div pb-checkout-section="shipping" class="form-section">
                             <h1 class="form-section__title">Shipping</h1>
@@ -3690,31 +3902,7 @@
                                 </div>
                                 <div data-next-component="shipping-field-row" class="form-grid__row">
                                   <div class="form-group">
-                                    <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
-                                      <div class="custom-css w-embed">
-                                        <style>
-                                            .iti__flag-container {
-                                              position: absolute;
-                                              top: 0;
-                                              bottom: 0;
-                                              width: 3rem !important;
-                                              right: 0 !important;
-                                              left: auto !important;
-                                              padding: 1px;
-                                            }
-                                            .iti--allow-dropdown input,
-                                            .iti--allow-dropdown input[type=text],
-                                            .iti--allow-dropdown input[type=tel],
-                                            .iti--separate-dial-code input,
-                                            .iti--separate-dial-code input[type=text],
-                                            .iti--separate-dial-code input[type=tel] {
-                                              padding-right: 52px !important;
-                                              padding-left: 12px !important;
-                                              margin-left: 0 !important;
-                                            }
-                                          </style>
-                                      </div>
-                                    </div>
+                                    <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" class="input-flds"></div>
                                   </div>
                                 </div>
                               </div>
@@ -4060,16 +4248,6 @@
                                 </div>
                               </div>
                             </div>
-                            <div data-next-show="cart.isEmpty" class="next-empty-cart">
-                              <div class="tw-600">YOUR CART IS EMPTY</div>
-                              <div>
-                                <div>Don&#x27;t miss out!</div>
-                                <div class="tw-500">Our deal ends soon.</div>
-                              </div>
-                              <a href="demo/landing.html" class="button cc-sm w-inline-block">
-                                <div>SHOP NOW</div>
-                              </a>
-                            </div>
                           </div>
                         </div>
                       </div>
@@ -4089,5 +4267,198 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let isManualScroll = false;
+        let scrollTimeout;
+        function debounce(func, wait) {
+          let timeout;
+          return function executedFunction(...args) {
+            const later = () => {
+              clearTimeout(timeout);
+              func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+          };
+        }
+        function removeActiveStates() {
+          document.querySelectorAll('.is-active').forEach(element => {
+            element.classList.remove('is-active');
+          });
+        }
+        function handleActiveLink() {
+          const hash = window.location.hash;
+          if (!hash) {
+            removeActiveStates();
+            return;
+          }
+          removeActiveStates();
+          let activeLink = document.querySelector(`a[href="${hash}"]`);
+          if (!activeLink) {
+            const currentId = hash.substring(1);
+            const parentElement = document.getElementById(currentId)?.closest('[id]');
+            if (parentElement) {
+              activeLink = document.querySelector(`a[href="#${parentElement.id}"]`);
+            }
+          }
+          if (!activeLink) return;
+          const parentAccordion = activeLink.closest('.sidebar-dashboard_sub-link-accordion');
+          if (!parentAccordion) return;
+          const accordionList = parentAccordion.querySelector('.sidebar-dashboard_sub-link-accordion-list');
+          const accordionButton = parentAccordion.querySelector('.sidebar-dashboard_link-accordion-button');
+          const arrowButton = accordionButton.querySelector('.sidebar-arrow_button');
+          accordionList.classList.add('expanded');
+          arrowButton.style.transform = 'rotate(90deg)';
+          if (!isManualScroll) {
+            const sidebar = document.querySelector('.sidebar__links-wrap');
+            const linkRect = activeLink.getBoundingClientRect();
+            const sidebarRect = sidebar.getBoundingClientRect();
+            if (linkRect.top < sidebarRect.top || linkRect.bottom > sidebarRect.bottom) {
+              activeLink.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+              });
+            }
+          }
+          activeLink.classList.add('is-active');
+          parentAccordion.querySelector('.sidebar-dashboard_sub-link').classList.add('is-active');
+        }
+        const sidebarLinks = document.querySelectorAll('.sidebar__links-wrap a[href^="#"]');
+        const linkedSectionIds = new Set(
+          Array.from(sidebarLinks).map(link => link.getAttribute('href').substring(1))
+        );
+        let currentSection = '';
+        const observerCallback = debounce((entries) => {
+          if (isManualScroll) return;
+          let hasVisibleSection = false;
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              if (linkedSectionIds.has(id) && currentSection !== id) {
+                hasVisibleSection = true;
+                currentSection = id;
+                history.replaceState(null, null, `#${id}`);
+                handleActiveLink();
+              }
+            }
+          });
+          if (!hasVisibleSection) {
+            removeActiveStates();
+            currentSection = '';
+            history.replaceState(null, null, window.location.pathname);
+          }
+        }, 150);
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.5
+        };
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        linkedSectionIds.forEach(id => {
+          const element = document.getElementById(id);
+          if (element) {
+            observer.observe(element);
+          }
+        });
+        // Modified smooth scroll for anchor links
+        document.querySelectorAll('.sidebar__links-wrap a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              isManualScroll = true;
+              clearTimeout(scrollTimeout);
+              // Update URL and active state immediately
+              history.replaceState(null, null, `#${targetId}`);
+              handleActiveLink();
+              targetElement.scrollIntoView({
+                behavior: 'smooth'
+              });
+              // Reset manual scroll flag after animation
+              scrollTimeout = setTimeout(() => {
+                isManualScroll = false;
+              }, 1000);
+            }
+          });
+        });
+        // Handle accordion clicks
+        document.querySelectorAll('.sidebar-dashboard_link-accordion-button').forEach(button => {
+          button.addEventListener('click', function() {
+            const accordion = this.closest('.sidebar-dashboard_sub-link-accordion');
+            const accordionList = accordion.querySelector('.sidebar-dashboard_sub-link-accordion-list');
+            const arrowButton = this.querySelector('.sidebar-arrow_button');
+            const isExpanded = accordionList.classList.contains('expanded');
+            accordionList.classList.toggle('expanded');
+            arrowButton.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+          });
+        });
+        // Add CSS for transitions
+        const style = document.createElement('style');
+        style.textContent = `
+        .sidebar-arrow_button {
+            transition: transform 0.3s ease;
+        }
+        .sidebar-dashboard_sub-link-accordion-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .sidebar-dashboard_sub-link-accordion-list.expanded {
+            max-height: 500px; /* Adjust this value based on your content */
+            transition: max-height 0.3s ease-in;
+        }
+        .sidebar-dashboard_sub-link.is-active,
+        .sidebar-dashboard_sub-link.is-active .sidebar_link-text {
+            color: var(--theme--primary) !important;
+        }
+    `;
+        document.head.appendChild(style);
+        // Initial check for active link
+        handleActiveLink();
+        // Handle hash changes
+        window.addEventListener('hashchange', handleActiveLink);
+      });
+    </script>
+  <script>
+      // Select all copy buttons
+      const copyButtons = document.querySelectorAll('button[pb-action="copy-code"]');
+      copyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Find the code element within the same code block
+          const codeBlock = this.closest('[data-pb-component="code"]');
+          const codeElement = codeBlock.querySelector('pre code');
+          // Get all text nodes, excluding line numbers
+          let codeText = '';
+          const walkNodes = (node) => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              codeText += node.textContent;
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              // Skip line number elements
+              if (!node.classList.contains('linenumber') &&
+                !node.classList.contains('react-syntax-highlighter-line-number')) {
+                node.childNodes.forEach(walkNodes);
+              }
+            }
+          };
+          codeElement.childNodes.forEach(walkNodes);
+          // Copy to clipboard
+          navigator.clipboard.writeText(codeText).then(() => {
+            // Visual feedback
+            const checkIcon = this.querySelector('.cc-check');
+            const copyIcon = this.querySelector('.code-block__icon:not(.cc-check)');
+            if (copyIcon) copyIcon.style.display = 'none';
+            if (checkIcon) checkIcon.style.display = 'block';
+            setTimeout(() => {
+              if (copyIcon) copyIcon.style.display = 'block';
+              if (checkIcon) checkIcon.style.display = 'none';
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        });
+      });
+    </script>
 </body>
 </html>

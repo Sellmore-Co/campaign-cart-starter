@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 30 2025 17:36:53 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Fri Oct 17 2025 19:18:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="68b86feed970e7854a8ca4b4" data-wf-site="685996de362613655dd702b4" lang="en">
 <head>
   <meta charset="utf-8">
@@ -43,7 +43,8 @@
         paymentConfig: {
           expressCheckout: {
             requireValidation: true,
-            requiredFields: ['email', 'fname', 'lname']
+            requiredFields: ['email', 'fname', 'lname'],
+            methodOrder: ['paypal', 'apple_pay', 'google_pay']
           }
         },
         addressConfig: {
@@ -114,7 +115,7 @@
         }
       };
     </script>
-  <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
   <style>
       html:not(.next-display-ready) [data-next-await] {
         position: relative;
@@ -197,7 +198,7 @@
   <div class="page-wrapper is-styleguide">
     <div data-remove-prod="" class="pageblock-styles">
       <div class="next-styles w-embed">
-        <link href="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.15/dist/campaign-cart.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@0/dist/campaign-cart.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://localhost:3000/css/olympus-mv.css" type="text/css">
         <!--  For development on webflow
 <link href="http://localhost:3000/src/styles/main.css" rel="stylesheet" type="text/css" />
@@ -391,139 +392,226 @@
       <div id="sidebar" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="sidebar w-nav">
         <div class="sidebar__links-wrap">
           <div class="sidebar_group">
-            <a href="#" class="sidebar_link-group hide-mobile-p w-inline-block">
+            <a href="playground.html" class="sidebar_link-group hide-mobile-p w-inline-block">
+              <div class="icon-1-5 w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ph" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 256 256">
+                  <g fill="currentColor">
+                    <path d="m232 160l-104 56l-104-56l104-56Z" opacity=".2"></path>
+                    <path d="m235.79 89l-104-56a8 8 0 0 0-7.58 0l-104 56A8 8 0 0 0 16 96v64a8 8 0 0 0 4.21 7.05l104 56a8 8 0 0 0 7.58 0l104-56A8 8 0 0 0 240 160V96a8 8 0 0 0-4.21-7M224 146.61L189.45 128L224 109.39Zm-51.43-27.7L136 99.22V53.39L215.13 96Zm-44.57 24L100.3 128l27.7-14.91L155.7 128Zm-8-89.52v45.83l-36.57 19.69L40.87 96Zm-88 56L66.55 128L32 146.61Zm51.43 27.7L120 156.78v45.83L40.87 160ZM136 202.61v-45.83l36.57-19.69L215.13 160Z"></path>
+                  </g>
+                </svg></div>
+              <div class="sidebar_link-text">
+                <div>Playground</div>
+              </div>
+            </a>
+          </div>
+          <div class="template-container">
+            <div class="sidebar_group">
+              <a href="https://campaigns.nextcommerce.com/gallery?template=https%3A%2F%2Fcampaigns.nextcommerce.com%2Ftemplates%2Fcheckout%2Fshop%3FforcePackageId%3D2%3A1" class="sidebar_link-group hide-mobile-p w-inline-block">
+                <div class="icon-1-5 w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--carbon" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 32 32">
+                    <path fill="currentColor" d="M26 6v4H6V6zm0-2H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2M10 16v10H6V16zm0-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V16a2 2 0 0 0-2-2m16 2v10H16V16zm0-2H16a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V16a2 2 0 0 0-2-2"></path>
+                  </svg></div>
+                <div class="sidebar_link-text">
+                  <div>Templates</div>
+                </div>
+              </a>
+            </div>
+            <div class="sidebar_group">
+              <div class="sidebar_title u-fc-3">
+                <div>Library</div>
+              </div>
+              <div>
+                <div class="sidebar-dashboard_sub-link-accordion">
+                  <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <div class="sidebar_link-text">
+                      <div>Checkouts</div>
+                    </div>
+                  </a>
+                  <div class="sidebar-dashboard_link-accordion-button">
+                    <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                  <div class="w-dyn-list">
+                    <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
+                      <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
+                        <div class="sidebar_link-text">
+                          <div class="w-dyn-bind-empty"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-dashboard_sub-link-accordion">
+                  <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <div class="sidebar_link-text">
+                      <div>Landing Pages</div>
+                    </div>
+                  </a>
+                  <div class="sidebar-dashboard_link-accordion-button">
+                    <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                  <div class="w-dyn-list">
+                    <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
+                      <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
+                        <div class="sidebar_link-text">
+                          <div class="w-dyn-bind-empty"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-dashboard_sub-link-accordion">
+                  <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <div class="sidebar_link-text">
+                      <div>Presell Pages</div>
+                    </div>
+                  </a>
+                  <div class="sidebar-dashboard_link-accordion-button">
+                    <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                  <div class="w-dyn-list">
+                    <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
+                      <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
+                        <div class="sidebar_link-text">
+                          <div class="w-dyn-bind-empty"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-dashboard_sub-link-accordion">
+                  <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <div class="sidebar_link-text">
+                      <div>Receipt</div>
+                    </div>
+                  </a>
+                  <div class="sidebar-dashboard_link-accordion-button">
+                    <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                  <div class="w-dyn-list">
+                    <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
+                      <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
+                        <div class="sidebar_link-text">
+                          <div class="w-dyn-bind-empty"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sidebar-dashboard_sub-link-accordion">
+                  <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
+                    <div class="sidebar_link-text">
+                      <div>Upsell</div>
+                    </div>
+                  </a>
+                  <div class="sidebar-dashboard_link-accordion-button">
+                    <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                  <div class="w-dyn-list">
+                    <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
+                      <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
+                        <div class="sidebar_link-text">
+                          <div class="w-dyn-bind-empty"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-dyn-empty">
+                      <div>No items found.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar_footer">
+          <div class="sidebar_group hide-tablet hide">
+            <div class="sidebar_title u-fc-3">
+              <div>Engage</div>
+            </div>
+            <a data-logged-in-display="none" data-tooltip="Home" href="#" class="sidebar_link-group hide-mobile-p w-inline-block">
               <div class="icon-1-5 w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.75 10.113V18C5.75 18.1381 5.86193 18.25 6 18.25H18C18.1381 18.25 18.25 18.1381 18.25 18V10.113C18.25 10.0412 18.2191 9.9728 18.1652 9.92534L12.1652 4.64522C12.0707 4.56212 11.9293 4.56212 11.8348 4.64522L5.83484 9.92534C5.78091 9.9728 5.75 10.0412 5.75 10.113Z" stroke="currentColor" stroke-width="1.5"></path>
                 </svg></div>
               <div class="sidebar_link-text">
-                <div>Home</div>
+                <div>New site</div>
+              </div>
+              <div class="sidebar_link-text secondary">
+                <div>↗</div>
+              </div>
+            </a>
+            <a data-logged-in-display="flex" data-tooltip="Home" href="#" class="sidebar_link-group hide-mobile-p w-inline-block">
+              <div class="icon-1-5 w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6C4 5.86193 4.11193 5.75 4.25 5.75H19.75C19.8881 5.75 20 5.86193 20 6V18C20 18.1381 19.8881 18.25 19.75 18.25H4.25C4.11193 18.25 4 18.1381 4 18V6Z" stroke="currentColor" stroke-width="1.5"></path>
+                  <path d="M17 10L9 10" stroke="currentColor" stroke-width="1.5"></path>
+                  <path d="M17 14L9 14" stroke="currentColor" stroke-width="1.5"></path>
+                </svg></div>
+              <div class="sidebar_link-text">
+                <div>Project dashboard</div>
+              </div>
+              <div class="sidebar_link-text secondary">
+                <div>↗</div>
               </div>
             </a>
           </div>
-          <div class="sidebar_group">
-            <div class="sidebar_title u-fc-3">
-              <div>Library</div>
-            </div>
-            <div>
-              <div class="sidebar-dashboard_sub-link-accordion">
-                <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
-                  <div class="sidebar_link-text">
-                    <div>Checkouts</div>
-                  </div>
-                </a>
-                <div class="sidebar-dashboard_link-accordion-button">
-                  <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="w-dyn-list">
-                  <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
-                    <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
-                      <div class="sidebar_link-text">
-                        <div class="w-dyn-bind-empty"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-dyn-empty">
-                    <div>No items found.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sidebar-dashboard_sub-link-accordion">
-                <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
-                  <div class="sidebar_link-text">
-                    <div>Landing Pages</div>
-                  </div>
-                </a>
-                <div class="sidebar-dashboard_link-accordion-button">
-                  <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="w-dyn-list">
-                  <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
-                    <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
-                      <div class="sidebar_link-text">
-                        <div class="w-dyn-bind-empty"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-dyn-empty">
-                    <div>No items found.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sidebar-dashboard_sub-link-accordion">
-                <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
-                  <div class="sidebar_link-text">
-                    <div>Presell Pages</div>
-                  </div>
-                </a>
-                <div class="sidebar-dashboard_link-accordion-button">
-                  <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="w-dyn-list">
-                  <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
-                    <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
-                      <div class="sidebar_link-text">
-                        <div class="w-dyn-bind-empty"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-dyn-empty">
-                    <div>No items found.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sidebar-dashboard_sub-link-accordion">
-                <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
-                  <div class="sidebar_link-text">
-                    <div>Receipt</div>
-                  </div>
-                </a>
-                <div class="sidebar-dashboard_link-accordion-button">
-                  <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="w-dyn-list">
-                  <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
-                    <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
-                      <div class="sidebar_link-text">
-                        <div class="w-dyn-bind-empty"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-dyn-empty">
-                    <div>No items found.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="sidebar-dashboard_sub-link-accordion">
-                <a href="#" data-accordion-id="sections-accordion" data-tooltip="Home" data-logged-in-display="none" data-preview="sections" class="sidebar-dashboard_sub-link is-secondary w-inline-block">
-                  <div class="sidebar_link-text">
-                    <div>Upsell</div>
-                  </div>
-                </a>
-                <div class="sidebar-dashboard_link-accordion-button">
-                  <div class="sidebar-arrow_button w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 20 20" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8474 14.8232C8.74977 14.9209 8.59148 14.9209 8.49384 14.8232L7.67678 14.0062C7.57915 13.9085 7.57915 13.7502 7.67678 13.6526L11.3294 10L7.67678 6.3474C7.57915 6.24977 7.57915 6.09148 7.67678 5.99384L8.49384 5.17678C8.59148 5.07915 8.74977 5.07915 8.8474 5.17678L13.4938 9.82322C13.5915 9.92085 13.5915 10.0791 13.4938 10.1768L8.8474 14.8232Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="w-dyn-list">
-                  <div role="list" class="sidebar-dashboard_sub-link-accordion-list w-dyn-items">
-                    <div data-template-url="" data-swap-template="" role="listitem" class="sidebar-dashboard_sub-link is-secondary w-dyn-item">
-                      <div class="sidebar_link-text">
-                        <div class="w-dyn-bind-empty"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="w-dyn-empty">
-                    <div>No items found.</div>
-                  </div>
-                </div>
+          <div data-sidebar="cta-container" class="cta-container">
+            <div data-ms-content="!members">
+              <a href="https://nextcommerce.com/" class="button-next w-inline-block">
+                <div>Get Started — It&#x27;s free</div>
+              </a>
+              <div class="hide w-embed">
+                <style>
+                    .button-next {
+                      color: #fff;
+                      text-align: center;
+                      background-color: #3c7dff;
+                      border: 1px solid #3c7dff;
+                      border-radius: 8px;
+                      justify-content: center;
+                      align-items: center;
+                      font-weight: 500;
+                      text-decoration: none;
+                      transition: box-shadow .3s cubic-bezier(.165, .84, .44, 1), background-color .3s cubic-bezier(.165, .84, .44, 1);
+                      display: flex;
+                      position: relative;
+                      box-shadow: inset 0 1px 1px #fff3, inset 0 6px 12px #ffffff0f, 0 4px 4px #08080814, 0 1px 2px #08080833;
+                      cursor: pointer;
+                      overflow: hidden;
+                    }
+                    .button-next::before {
+                      content: '';
+                      position: absolute;
+                      top: 0;
+                      left: -100%;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                      transition: left 0.5s ease;
+                    }
+                    .button-next:hover::before {
+                      left: 100%;
+                    }
+                  </style>
               </div>
             </div>
           </div>
@@ -709,6 +797,21 @@
     </nav>
     <div class="gallery__wrap">
       <div data-render="template" class="template_container"></div>
+      <a href="https://nextcommerce.com/?utm_source=webflow&amp;utm_campaign=gallery" class="next-overlay w-inline-block">
+        <div class="logo-flow w-embed"><svg class="debug-logo" width="100%" height="100%" viewbox="0 0 115.4 101.9" fill="none">
+            <defs>
+              <style>
+                  .st0 {
+                    fill: currentColor;
+                    stroke: currentColor;
+                    stroke-width: 2.5px;
+                  }
+                </style>
+            </defs>
+            <path class="st0" d="M83.5,58.3l-1.9-1.3L27.2,21.2c-.7-.4-1.4-.6-2-.6-2,0-3.6,1.6-3.6,3.6v53.4c0,2,1.6,3.6,3.6,3.6h3.8v12.3h-3.8c-8.8,0-15.8-7.1-15.8-15.8V24.3c0-8.8,7.1-15.8,15.8-15.8,3.1,0,6.2.9,8.7,2.6h0l49,33.4.5.4v13.5ZM90.2,8.4c8.8,0,15.8,7.1,15.8,15.8v53.4c0,8.8-7.1,15.8-15.8,15.8s-6.2-.9-8.7-2.6h0l-49-33.4-.5-.4v-13.5l1.9,1.3,54.3,35.7c.7.4,1.4.7,2,.7,2,0,3.6-1.6,3.6-3.6V24.3c0-2-1.6-3.6-3.6-3.6h-3.8v-12.3h3.8Z"></path>
+          </svg></div>
+        <div>Next Commerce</div>
+      </a>
     </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=685996de362613655dd702b4" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

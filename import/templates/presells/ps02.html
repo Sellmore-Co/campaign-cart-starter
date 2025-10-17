@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Sep 30 2025 17:36:53 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Fri Oct 17 2025 19:18:34 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="685996de362613655dd7038d" data-wf-site="685996de362613655dd702b4" lang="en">
 <head>
   <meta charset="utf-8">
@@ -43,7 +43,8 @@
         paymentConfig: {
           expressCheckout: {
             requireValidation: true,
-            requiredFields: ['email', 'fname', 'lname']
+            requiredFields: ['email', 'fname', 'lname'],
+            methodOrder: ['paypal', 'apple_pay', 'google_pay']
           }
         },
         addressConfig: {
@@ -114,7 +115,7 @@
         }
       };
     </script>
-  <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
   <style>
       html:not(.next-display-ready) [data-next-await] {
         position: relative;
@@ -196,7 +197,7 @@
   <div class="page-wrapper">
     <div data-remove-prod="" class="pageblock-styles">
       <div class="next-styles w-embed">
-        <link href="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.15/dist/campaign-cart.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@0/dist/campaign-cart.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://localhost:3000/css/olympus-mv.css" type="text/css">
         <!--  For development on webflow
 <link href="http://localhost:3000/src/styles/main.css" rel="stylesheet" type="text/css" />
@@ -387,7 +388,7 @@
       </div>
     </div>
     <div class="main-wrapper">
-      <div class="section_header">
+      <div data-next-hide="param.banner==&#x27;n&#x27;" class="section_header">
         <div class="announcement">
           <div class="announcement__block">
             <div class="announcement__text">GET UP TO 40% OFF NOW! <span class="text-span-53">USE PROMO CODE:</span></div>
@@ -1189,75 +1190,15 @@
                             <h1 class="h-cta"><span class="u-color-accent">UP TO 60%</span> OFF FOR A LIMITED TIME ONLY!</h1>
                             <div class="text-sm">This limited time deal is in high demand and stock keeps selling out.</div>
                           </div>
-                          <div class="adv-cta__button-holder"><button data-action="submit" data-button-type="primary" class="button-15">
+                          <div class="adv-cta__button-holder">
+                            <a href="#" class="button w-inline-block">
                               <div data-button="content" class="button_content">
                                 <div class="button_icon2 w-embed"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--ic" width="100%" height="100%" preserveaspectratio="xMidYMid meet" viewbox="0 0 24 24">
                                     <path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2M9 8V6c0-1.66 1.34-3 3-3s3 1.34 3 3v2z"></path>
                                   </svg></div>
                                 <div id="cta_text">Check Availablity</div>
-                              </div><svg viewbox="0 0 50 50" data-button="spinner" class="button_spinner">
-                                <circle class="ring ring" cx="25" cy="25" r="22.5"></circle>
-                                <circle cx="25" cy="25" r="22.5" class="line"></circle>
-                              </svg>
-                              <div class="custom-css w-embed">
-                                <style>
-                                    [data-action="submit"].is-submitting [data-button="spinner"] {
-                                      opacity: 1;
-                                      pointer-events: none;
-                                    }
-                                    [data-action="submit"].is-submitting [data-button="content"],
-                                    [data-action="submit"].is-submitting [data-button="icon"] {
-                                      opacity: 0;
-                                      pointer-events: none;
-                                    }
-                                    [data-button="spinner"] {
-                                      opacity: 0;
-                                      pointer-events: none;
-                                      font-size: calc(2 * 1em);
-                                      width: 1em;
-                                      height: 1em;
-                                      border-radius: 50%;
-                                      color: inherit;
-                                      /* Inherit color from parent */
-                                    }
-                                    [data-button="spinner"] .line {
-                                      fill: none;
-                                      stroke: currentColor;
-                                      /* Use currentColor */
-                                      stroke-width: 6px;
-                                      opacity: 1;
-                                      stroke-linecap: round;
-                                      transform-origin: 50% 50%;
-                                      transform: rotate3d(0, 0, 1, 0deg);
-                                      animation:
-                                        2156ms spinner-arc ease-in-out infinite,
-                                        1829ms spinner-rotate linear infinite;
-                                    }
-                                    [data-button="spinner"] .ring {
-                                      fill: none;
-                                      stroke: currentColor;
-                                      /* Use currentColor */
-                                      stroke-width: 6px;
-                                      opacity: 0.15;
-                                    }
-                                    @keyframes spinner-rotate {
-                                      to {
-                                        transform: rotate3d(0, 0, 1, 360deg);
-                                      }
-                                    }
-                                    @keyframes spinner-arc {
-                                      from {
-                                        stroke-dasharray: 0 150;
-                                        stroke-dashoffset: 0;
-                                      }
-                                      to {
-                                        stroke-dasharray: 100 150;
-                                        stroke-dashoffset: -140;
-                                      }
-                                    }
-                                  </style>
                               </div>
-                            </button>
+                            </a>
                             <div>
                               <div class="bot_cta_badge_div">
                                 <div class="div-block-1648">

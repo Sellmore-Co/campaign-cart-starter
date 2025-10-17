@@ -1,7 +1,4 @@
-      // Auto-generated from src/config.ts
-      // WARNING: This contains DEMO API keys only!
-      // For production, use your own configuration
-      window.nextConfig = {
+     window.nextConfig = {
         apiKey: "kLGpgEfCX3iUZG16hpI5zrCH9qxcOdahDY1im6ud",
         debug: false, // Always true since this file only loads in debug mode
         currencyBehavior: 'auto',
@@ -10,7 +7,8 @@
         paymentConfig: {
           expressCheckout: {
             requireValidation: true,
-            requiredFields: ['email', 'fname', 'lname']
+            requiredFields: ['email', 'fname', 'lname'],
+            methodOrder: ['paypal', 'apple_pay', 'google_pay']
           }
         },
         addressConfig: {

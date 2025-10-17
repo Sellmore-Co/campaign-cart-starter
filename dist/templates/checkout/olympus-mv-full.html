@@ -14,7 +14,7 @@
     <!-- Campaign Configuration -->
     <script src="/config.js"></script>
     <!-- Campaign Loader Script -->
-    <script src="https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js" type="module"></script>
 
     <!-- NEXT Metatags -->
     <meta name="next-api-key" content="FQqAM3Qj3ijsq3tSR5cC6NaS8u6NFO95Xq3rIQhO">
@@ -39,7 +39,6 @@
     <!--  SWIPERJS  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
   </head>
   <body>
     <div class="page-wrapper">
@@ -48,7 +47,7 @@
         <div class="w-embed">
 
         </div>
-        <div class="section_header">
+        <div data-next-hide="param.banner=='n'" class="section_header">
           <div class="announcement">
             <div class="announcement__block">
               <div class="announcement__text">GET UP TO 40% OFF NOW! <span class="text-span-53">USE PROMO CODE:</span></div>
@@ -344,7 +343,7 @@
                         <div>Improve your health while you sleep</div>
                       </div>
                     </div>
-                    <div class="scarcity-banner">
+                    <div data-next-hide="param.timer == 'n'" class="scarcity-banner">
                       <div class="scarcity-banner__left">
                         <div class="promo-wrapper">
                           <div class="next-icon w-embed"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -643,7 +642,7 @@
                                     </div>
                                     <div data-next-component="shipping-field-row" class="form-grid__row">
                                       <div class="form-group">
-                                        <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" required="" class="input-flds">
+                                        <div class="form-input"><label for="phone" class="label-checkout">Phone</label><input autocomplete="tel-full" name="phone" data-name="Phone" type="tel" id="phone" placeholder="201-555-0123" data-next-checkout-field="phone" class="input-flds">
 
                                         </div>
                                       </div>
@@ -1082,9 +1081,6 @@
     </div>
 
 
-    <script src="https://core.spreedly.com/iframe/iframe-v1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.7.2"></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.7.2"></script>
     <script defer="" src="/js/templates-checkout-olympus-mv-full.js"></script>

@@ -1501,7 +1501,7 @@ document.querySelectorAll('[swiper="sw12"]').forEach((sliderComponent) => {
   }
 });
 
-// Inline script 12 from olympus-mv-full.html
+// Inline script 9 from olympus-mv-full.html
 document.querySelectorAll('[data-next-element="timer"]').forEach(timer => {
   let [minutes, seconds] = timer.textContent.split(':').map(Number);
   let total = minutes * 60 + seconds;

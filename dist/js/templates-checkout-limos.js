@@ -1,6 +1,6 @@
 // JavaScript extracted from templates\checkout\limos.html
 
-// Inline script 6 from limos.html
+// Inline script 3 from limos.html
 // Wait for SDK to be fully initialized
 window.addEventListener('next:initialized', function() {
   // console.log('SDK initialized, starting FOMO popups...');
@@ -44,7 +44,7 @@ function customFomo() {
   });
 }
 
-// Inline script 7 from limos.html
+// Inline script 4 from limos.html
 // Wait for SDK to be fully initialized
 window.addEventListener('next:initialized', function() {
   // console.log('SDK initialized, setting up exit intent...');

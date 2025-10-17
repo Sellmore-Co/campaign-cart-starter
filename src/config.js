@@ -44,7 +44,7 @@ export const config = {
       ],
       scripts: [
         { src: 'config.js', external: false },
-        { src: 'https://cdn.jsdelivr.net/gh/sellmore-co/campaign-cart@v0.2.28/dist/loader.js', external: true, type: 'module' }
+        { src: 'https://cdn.jsdelivr.net/gh/NextCommerceCo/campaign-cart@v0.3.3/dist/loader.js', external: true, type: 'module' }
       ]
     },
     relocateNextMetaTags: {
